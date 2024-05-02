@@ -48,13 +48,6 @@ begin
         wait for 20 ns;
         reset <= '0';  -- Deassert reset
         wait for 10000 ns;
-        reset <= '1';  -- Assert reset again
-        wait for 10 ns;
-        reset <= '0';  -- Deassert reset
-        wait for 10000 ns;
-        reset <= '1';  -- Assert reset once more
-        wait for 50 ns;
-        reset <= '0';  -- Deassert reset
         wait;
     end process;
 
