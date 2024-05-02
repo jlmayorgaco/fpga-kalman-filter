@@ -1,0 +1,64 @@
+$date
+  Mon Apr 29 13:11:52 2024
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module full_adder_testbench $end
+$var reg 3 ! input[2:0] $end
+$var reg 2 " output[1:0] $end
+$scope module uut $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % ci $end
+$var reg 1 & s $end
+$var reg 1 ' co $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b000 !
+b00 "
+0#
+0$
+0%
+0&
+0'
+#10000000
+b001 !
+b01 "
+1#
+1&
+#20000000
+b010 !
+0#
+1$
+#30000000
+b100 !
+0$
+1%
+#40000000
+b011 !
+b10 "
+1#
+1$
+0%
+0&
+1'
+#50000000
+b110 !
+0#
+1%
+#60000000
+b111 !
+b11 "
+1#
+1&
+#70000000
