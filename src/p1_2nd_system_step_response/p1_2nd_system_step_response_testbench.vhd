@@ -1,61 +1,61 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
-entity up_counter_16bit_tb is
-end entity up_counter_16bit_tb;
+entity p1_2nd_system_step_response_tb is
+end p1_2nd_system_step_response_tb;
 
-architecture testbench of up_counter_16bit_tb is
-    constant CLK_PERIOD : time := 10 ns;  -- Clock period
-    signal clk : std_logic := '0';        -- Clock signal
-    signal reset : std_logic := '0';      -- Reset signal
-    signal count : std_logic_vector(15 downto 0);  -- Counter output
-
-    -- Instantiate the up counter module
-    component up_counter_16bit
-        port (
-            clk    : in  std_logic;
-            reset  : in  std_logic;
-            count  : out std_logic_vector(15 downto 0)
+architecture testbench of p1_2nd_system_step_response_tb is
+    -- Component declaration for the DUT (Design Under Test)
+    component p1_2nd_system_step_response
+        Port (
+            clk   : in  std_logic;   -- Clock input
+            rst   : in  std_logic;   -- Reset input
+            u     : in  integer;     -- Input integer
+            y     : out integer      -- Output scaled integer
         );
     end component;
 
+    -- Test signals
+    signal clk_tb   : std_logic := '0';   -- Test bench clock signal
+    signal rst_tb   : std_logic := '0';   -- Test bench reset signal
+    signal u_tb     : integer := 0;       -- Test bench input signal
+    signal y_tb     : integer;            -- Test bench output signal
+
 begin
-    -- Instantiate the up counter
-    uut : up_counter_16bit
-    port map (
-        clk => clk,
-        reset => reset,
-        count => count
-    );
+    -- Instantiate the DUT
+    dut : p1_2nd_system_step_response
+        port map (
+            clk => clk_tb,
+            rst => rst_tb,
+            u   => u_tb,
+            y   => y_tb
+        );
 
     -- Clock process
     clk_process : process
     begin
-        while now < 10000 ns loop  -- Run for 100 ns
-            clk <= '0';
-            wait for CLK_PERIOD / 2;
-            clk <= '1';
-            wait for CLK_PERIOD / 2;
+        while now < 1200 ns loop  -- Run for 1000 ns
+            clk_tb <= not clk_tb;  -- Toggle clock every half period
+            wait for 5 ns;         -- Wait for half period
         end loop;
-        wait;
+        wait;  -- Stop simulation
     end process;
 
     -- Stimulus process
     stimulus : process
     begin
-        reset <= '1';  -- Assert reset
-        wait for 20 ns;
-        reset <= '0';  -- Deassert reset
-        wait for 10000 ns;
-        reset <= '1';  -- Assert reset again
+        rst_tb <= '1';   -- Assert reset
         wait for 10 ns;
-        reset <= '0';  -- Deassert reset
-        wait for 10000 ns;
-        reset <= '1';  -- Assert reset once more
-        wait for 50 ns;
-        reset <= '0';  -- Deassert reset
-        wait;
-    end process;
+        rst_tb <= '0';   -- Deassert reset
+        wait for 10 ns;
 
-end architecture testbench;
+        -- Test with different input values
+        for i in 0 to 10 loop
+            u_tb <= i;   -- Apply input value
+            wait for 10 ns;
+        end loop;
+
+        wait;  -- Stop simulation
+    end process;
+end testbench;

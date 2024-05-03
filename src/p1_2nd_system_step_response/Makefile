@@ -11,7 +11,7 @@ SIM_OPTIONS := --vcd=$(PROJECT_NAME)_wave.vcd
 
 # GHDL commands
 GHDL := ghdl
-GHDL_FLAGS := -g
+GHDL_FLAGS := -g --ieee=synopsys
 
 # Default target
 all: compile simulate

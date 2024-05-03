@@ -17,7 +17,7 @@ architecture Behavioral of SecondOrderSystem is
     constant b : signed(31 downto 0) := to_signed(-1, 32); -- Adjust coefficients as needed
     constant c : signed(31 downto 0) := to_signed(-2, 32); -- Adjust coefficients as needed
 
-    signal yk_0, yk_1, yk_2 : signed(63 downto 0); -- Use signed integers for signal initialization
+    signal yk_0, yk_1, yk_2 : signed(32 downto 0); -- Use signed integers for signal initialization
 
 begin
     process(clk, reset)
@@ -31,7 +31,7 @@ begin
             -- Update state variables using difference equations
             yk_2 <= yk_1;
             yk_1 <= yk_0;
-            yk_0 <= a * uk + b * yk_1 + c * yk_2;
+            yk_0 <= a * u - b * yk_1 - c * yk_2;
         end if;
     end process;
 
