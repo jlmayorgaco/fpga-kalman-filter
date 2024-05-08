@@ -14,7 +14,7 @@ GHDL := ghdl
 GHDL_FLAGS := -g --ieee=synopsys
 
 # Default target
-all: compile simulate
+all: compile simulate plot
 
 # Compile VHDL files
 compile:
@@ -23,6 +23,9 @@ compile:
 # Simulate
 simulate:
 	$(GHDL) -r $(VHDL_TEST_ENTITY) $(SIM_OPTIONS)
+
+plot:
+	python scripts/vcd.py
 
 # Clean generated files
 clean:

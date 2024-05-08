@@ -26,10 +26,8 @@ architecture Behavioral of Main is
     constant MAX_VALUE : integer := 65536;  -- Maximum value to saturate
     constant MIN_VALUE : integer := -65536;  -- Maximum value to saturate
 
-    constant K : integer := 1 * SCALE_VALUE;
-
     constant b2 : integer := 1 * SCALE_VALUE;
-    constant b1 : integer := 1 * SCALE_VALUE;
+    constant b1 : integer := 2 * SCALE_VALUE;
     constant b0 : integer := 10 * SCALE_VALUE;
 
     constant a0 : integer := 4 * SCALE_VALUE;
