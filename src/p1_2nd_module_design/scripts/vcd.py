@@ -83,6 +83,7 @@ with open(fname) as vcd_file:
     plt.yticks(fontsize=10)
 
     plt.tight_layout()  # Adjust layout to prevent overlap
+    plt.savefig('test/main_wave_plot.svg', format='svg')  # Save svg file
     plt.show()
 
     #json_main_tb = json.children.find(item => item.name == "main_tb")
