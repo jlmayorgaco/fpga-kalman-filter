@@ -13,6 +13,8 @@ Combining Kalman filters with FPGA technology unlocks a realm of possibilities f
 
 In comparing Kalman filter implementations on FPGA platforms, two key applications stand out: drone navigation and power electronics in microgrid renewable energy systems. In drone navigation, FPGA-based Kalman filters can enhance onboard sensor fusion and localization, enabling precise flight control and autonomous navigation. Similarly, in microgrid systems, FPGA-based Kalman filters can optimize energy management and grid stability by accurately estimating renewable energy sources' output and predicting load demand. By comparing different Kalman filter architectures and FPGA implementations in these applications, we aim to uncover insights into their performance, efficiency, and suitability for real-world deployment.
 
+![VHDL Noise Simulation](src/p2_random_noise_generator/test/main_wave_plot.png)
+
 ## Experiments
 
 The project is organized into several experiments and simulations:
