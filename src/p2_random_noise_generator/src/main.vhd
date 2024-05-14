@@ -6,10 +6,11 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Main is
     Port (
-        clk   : in  std_logic;
-        rst   : in  std_logic;
-        u     : in  integer;
-        y     : out integer
+        clk     : in  std_logic;
+        rst     : in  std_logic;
+        u       : in  integer;
+        y       : out integer;
+        y_noise : out integer
     );
 end Main;
 
@@ -52,9 +53,19 @@ architecture Behavioral of Main is
         );
     end component;
 
+    component FilterLowPass is
+        Port (
+            clk   : in  std_logic;
+            rst   : in  std_logic;
+            x     : in  integer;
+            y     : out integer
+        );
+    end component;
+
     signal s_sat_in : integer;
     signal s_sat_out : integer;
     signal s_sat_noise_out : integer;
+    signal s_sat_noise_filtered_out : integer;
 
 begin
     process(clk, rst)
@@ -89,7 +100,16 @@ begin
         y => s_sat_noise_out
     );
 
-    y <= s_sat_noise_out;
+    filter_low_pass_inst : FilterLowPass
+    port map (
+        clk => clk,
+        rst => rst,
+        x => s_sat_noise_out,
+        y => s_sat_noise_filtered_out
+    );
+
+    y <= s_sat_noise_filtered_out;
+    y_noise <= s_sat_noise_out;
 
 end Behavioral;
 

@@ -12,7 +12,8 @@ architecture testbench of Main_tb is
             clk   : in  std_logic;   -- Clock input
             rst   : in  std_logic;   -- Reset input
             u     : in  integer;     -- Input integer
-            y     : out integer      -- Output scaled integer
+            y     : out integer;      -- Output scaled integer
+            y_noise     : out integer      -- Output scaled integer
         );
     end component;
 
@@ -21,6 +22,7 @@ architecture testbench of Main_tb is
     signal rst_tb   : std_logic := '0';   -- Test bench reset signal
     signal u_tb     : integer := 0;       -- Test bench input signal
     signal y_tb     : integer;            -- Test bench output signal
+    signal y_noise_tb     : integer;            -- Test bench output signal
 
 begin
     -- Instantiate the DUT
@@ -29,13 +31,14 @@ begin
             clk => clk_tb,
             rst => rst_tb,
             u   => u_tb,
-            y   => y_tb
+            y   => y_tb,
+            y_noise   => y_noise_tb
         );
 
     -- Clock process
     clk_process : process
     begin
-        while now < 6200 ns loop  -- Run for 1000 ns
+        while now < 10000 ns loop  -- Run for 1000 ns
             clk_tb <= not clk_tb;  -- Toggle clock every half period
             wait for 5 ns;         -- Wait for half period
         end loop;
