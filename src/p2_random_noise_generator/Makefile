@@ -2,7 +2,7 @@
 PROJECT_ENTRY_FILE := main
 
 # VHDL files
-VHDL_FILES := src/$(PROJECT_ENTRY_FILE).vhd lib/saturation.vhd
+VHDL_FILES := src/$(PROJECT_ENTRY_FILE).vhd lib/saturation.vhd lib/noise.vhd
 VHDL_TEST_BENCH := test/$(PROJECT_ENTRY_FILE)_testbench.vhd
 VHDL_TEST_ENTITY := $(PROJECT_ENTRY_FILE)_tb
 

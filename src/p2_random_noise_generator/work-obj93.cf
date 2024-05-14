@@ -1,0 +1,13 @@
+v 4
+file . "test/main_testbench.vhd" "18dc847abe66cbb5a69fb5df68974e83cc6dbe38" "20240511010402.899":
+  entity main_tb at 1( 0) + 0 on 521;
+  architecture testbench of main_tb at 8( 102) + 0 on 522;
+file . "src/main.vhd" "f03850cf9053366c3ab9fe0dccc1bfa62d6a2cae" "20240511010402.885":
+  entity main at 1( 0) + 0 on 515;
+  architecture behavioral of main at 16( 235) + 0 on 516;
+file . "lib/saturation.vhd" "2097bbdc882f0fea93bad0d0061718aa565fc30a" "20240511010402.886":
+  entity saturation at 1( 0) + 0 on 517;
+  architecture saturationrtl of saturation at 16( 359) + 0 on 518;
+file . "lib/noise.vhd" "75e287c68cc0823e6d8134b42796dfa1d23197af" "20240511010402.887":
+  entity noise at 1( 0) + 0 on 519;
+  architecture behavioral of noise at 14( 393) + 0 on 520;
