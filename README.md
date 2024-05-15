@@ -1,7 +1,8 @@
 
-
-
 # FPGA Kalman Filter
+
+> [!IMPORTANT]
+> Project in progress .
 
 This repository contains VHDL implementations and simulations for a FPGA-based Kalman filter. The project aims to compare different Kalman filter architectures and their performance on FPGA platforms.
 
@@ -19,17 +20,17 @@ In comparing Kalman filter implementations on FPGA platforms, two key applicatio
 
 The project is organized into several experiments and simulations:
 
-- **VHDL Simulation Set Up**: Set up VHDL simulation environment using GHDL and Makefiles.
-- **Basic Counter and Testbench Simulator**: Implement a basic counter and create a testbench simulator.
-- **2nd Order Linear Dynamical System Step Response Simulation**: Simulate the step response of a second-order linear dynamical system.
-- **Random Noise Simulator VHDL**: Implement a random noise simulator in VHDL.
-- **Feedback Loop Controller PID VHDL**: Implement a feedback loop controller using PID in VHDL.
-- **State Space 3rd Order Linear Dynamical System Simulation**: Simulate a third-order linear dynamical system using state space representation.
-- **2nd Order Kalman Filter Simulation**: Simulate a second-order Kalman filter.
-- **State Space Kalman Filter 3x3 Simulation**: Simulate a state space Kalman filter with a 3x3 matrix.
-- **Extended Kalman Filter Simulation**: Simulate an extended Kalman filter.
-- **Distributed Kalman Filter Simulation**: Simulate a distributed Kalman filter.
-- **Simulation Power System with EKF**: Simulate a power system with an extended Kalman filter.
+- [x] **VHDL Simulation Set Up**: Set up VHDL simulation environment using GHDL and Makefiles.
+- [x] **Basic Counter and Testbench Simulator**: Implement a basic counter and create a testbench simulator.
+- [x] **2nd Order Linear Dynamical System Step Response Simulation**: Simulate the step response of a second-order linear dynamical system.
+- [x] **Random Noise Simulator VHDL**: Implement a random noise simulator in VHDL.
+- [ ] **Feedback Loop Controller PID VHDL**: Implement a feedback loop controller using PID in VHDL.
+- [ ] **State Space 3rd Order Linear Dynamical System Simulation**: Simulate a third-order linear dynamical system using state space representation.
+- [ ] **2nd Order Kalman Filter Simulation**: Simulate a second-order Kalman filter.
+- [ ] **State Space Kalman Filter 3x3 Simulation**: Simulate a state space Kalman filter with a 3x3 matrix.
+- [ ] **Extended Kalman Filter Simulation**: Simulate an extended Kalman filter.
+- [ ] **Distributed Kalman Filter Simulation**: Simulate a distributed Kalman filter.
+- [ ] **Simulation Power System with EKF**: Simulate a power system with an extended Kalman filter.
 
 
 Setting Up example
