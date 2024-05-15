@@ -1,7 +1,8 @@
 
-
-
 # FPGA Kalman Filter
+
+> [!IMPORTANT]
+> Project in progress .
 
 This repository contains VHDL implementations and simulations for a FPGA-based Kalman filter. The project aims to compare different Kalman filter architectures and their performance on FPGA platforms.
 
