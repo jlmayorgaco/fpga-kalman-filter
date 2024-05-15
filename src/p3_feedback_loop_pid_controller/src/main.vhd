@@ -45,53 +45,40 @@ architecture Behavioral of Main is
         );
     end component;
 
-    signal s_sat_in : integer;
-    signal s_sat_out : integer;
-    signal s_sat_pid_out : integer;
+    signal s_pre_y : integer;
+    signal s_y : integer;
+    signal s_u : integer;
+    signal s_e : integer;
 
 begin
     process(clk, rst)
     begin
         if rst = '1' then
+            s_e <= 0;
             s_y <= 0;
-            s_dy <= 0;
-            s_ddy <= 0;
-            s_sat_in <= 0;
         elsif rising_edge(clk) then
-            s_ddy <= (u) * (a0 / b2) - s_dy * (b1 / b2) - s_y * (b0 / b2);
-            s_dy  <= s_dy + s_ddy / SCALE_DT;
-            s_y   <= s_y + s_dy / SCALE_DT;
-
-            s_sat_in <= s_y;
+            s_e <= ref - s_y ;
+            s_y <= s_pre_y + dist;
         end if;
     end process;
 
-    saturation_inst : Saturation
-    port map (
-        max_val => MAX_VALUE,
-        min_val => MIN_VALUE,
-        x       => s_sat_in,
-        y       => s_sat_out
-    );
-
-    noise_inst : Noise
+    plant2ndOrder_inst : Plant2ndOrder
     port map (
         clk => clk,
         rst => rst,
-        x => s_sat_out,
-        y => s_sat_noise_out
+        u => s_u,
+        y => s_pre_y
     );
 
-    filter_low_pass_inst : FilterLowPass
+    pid_inst : PID
     port map (
         clk => clk,
         rst => rst,
-        x => s_sat_noise_out,
-        y => s_sat_noise_filtered_out
+        e => s_e,
+        u => s_u
     );
 
-    y <= s_sat_noise_filtered_out;
-    y_noise <= s_sat_noise_out;
+    y <= s_y;
 
 end Behavioral;
 
