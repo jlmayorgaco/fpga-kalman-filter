@@ -11,18 +11,18 @@ architecture testbench of Main_tb is
         Port (
             clk   : in  std_logic;   -- Clock input
             rst   : in  std_logic;   -- Reset input
-            u     : in  integer;     -- Input integer
+            ref     : in  integer;     -- Input integer
             y     : out integer;      -- Output scaled integer
-            y_noise     : out integer      -- Output scaled integer
+            dist     : in integer      -- Output scaled integer
         );
     end component;
 
     -- Test signals
     signal clk_tb   : std_logic := '0';   -- Test bench clock signal
     signal rst_tb   : std_logic := '0';   -- Test bench reset signal
-    signal u_tb     : integer := 0;       -- Test bench input signal
-    signal y_tb     : integer;            -- Test bench output signal
-    signal y_noise_tb     : integer;            -- Test bench output signal
+    signal ref_tb   : integer := 0;       -- Test bench input signal
+    signal y_tb     : integer := 0;             -- Test bench output signal
+    signal dist_tb  : integer := 0;             -- Test bench output signal
 
 begin
     -- Instantiate the DUT
@@ -30,15 +30,15 @@ begin
         port map (
             clk => clk_tb,
             rst => rst_tb,
-            u   => u_tb,
-            y   => y_tb,
-            y_noise   => y_noise_tb
+            ref   => ref_tb,
+            dist   => dist_tb,
+            y   => y_tb
         );
 
     -- Clock process
     clk_process : process
     begin
-        while now < 10000 ns loop  -- Run for 1000 ns
+        while now < 30000 ns loop  -- Run for 1000 ns
             clk_tb <= not clk_tb;  -- Toggle clock every half period
             wait for 5 ns;         -- Wait for half period
         end loop;
@@ -48,18 +48,30 @@ begin
     -- Stimulus process
     stimulus : process
     begin
-        u_tb <= 0;
+        ref_tb <= 0;
+        dist_tb <= 0;
         rst_tb <= '1';   -- Assert reset
 
         wait for 20 ns;
-        u_tb <= 0;
+        ref_tb <= 0;
+        dist_tb <= 0;
         rst_tb <= '0';   -- Deassert reset
 
         wait for 20 ns;  -- u(t) = 0
-        u_tb <= 0;
+        ref_tb <= 0;
+        dist_tb <= 0;
 
-        wait for 20 ns;   -- u(t) = 1
-        u_tb <= 8192;
+        wait for 4000 ns;   -- u(t) = 1
+        ref_tb <= 8192;
+        dist_tb <= 0;
+
+        wait for 8000 ns;   -- u(t) = 1
+        ref_tb <= 8192;
+        dist_tb <= 1000;
+
+        wait for 8000 ns;   -- u(t) = 1
+        ref_tb <= 8192;
+        dist_tb <= 0;
 
         wait;  -- Stop simulation
     end process;

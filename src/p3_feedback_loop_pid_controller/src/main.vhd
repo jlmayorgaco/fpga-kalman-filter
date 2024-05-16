@@ -3,22 +3,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 
-
 entity Main is
     Port (
         clk     : in  std_logic;
         rst     : in  std_logic;
         ref     : in  integer;
         dist    : in  integer;
-        y       : out integer;
+        y       : out integer
     );
 end Main;
 
 architecture Behavioral of Main is
 
-    signal s_y : integer := 0;
-    signal s_dy : integer := 0;
-    signal s_ddy : integer := 0;
+    signal s_pre_y : integer;
+    signal s_y : integer;
+    signal s_u : integer;
+    signal s_e : integer;
 
     constant SCALE_VALUE : integer := 8192;
     constant SCALE_DT : integer := 100;
@@ -45,10 +45,7 @@ architecture Behavioral of Main is
         );
     end component;
 
-    signal s_pre_y : integer;
-    signal s_y : integer;
-    signal s_u : integer;
-    signal s_e : integer;
+
 
 begin
     process(clk, rst)

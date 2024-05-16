@@ -9,9 +9,9 @@ entity Plant2ndOrder is
         clk     : in  std_logic;
         rst     : in  std_logic;
         u       : in  integer;
-        y       : out integer;
+        y       : out integer
     );
-end Main;
+end Plant2ndOrder;
 
 architecture Plant2ndOrderRTL of Plant2ndOrder is
 
@@ -28,7 +28,7 @@ architecture Plant2ndOrderRTL of Plant2ndOrder is
     constant K : integer := 1 * SCALE_VALUE;
 
     constant b2 : integer := 1 * SCALE_VALUE;
-    constant b1 : integer := 2 * SCALE_VALUE;
+    constant b1 : integer := 5 * SCALE_VALUE;
     constant b0 : integer := 10 * SCALE_VALUE;
 
     constant a0 : integer := 10 * SCALE_VALUE;
