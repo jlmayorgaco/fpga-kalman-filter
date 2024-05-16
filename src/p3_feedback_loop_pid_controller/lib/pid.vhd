@@ -24,9 +24,14 @@ architecture PIDRTL of PID is
     signal s_int_saturated : std_logic := '0';
 
     -- Filter coefficients (adjust these based on your desired cutoff frequency)
-    constant K_p : integer := 2;
+    constant K_p : integer := 8;
+    constant K_p_Div : integer := 1;
+
     constant K_i : integer := 1;
-    constant K_d : integer := 110;
+    constant K_i_Div : integer := 8;
+
+    constant K_d : integer := 128;
+    constant K_d_Div : integer := 1;
 
     component Saturation is
         Port (
@@ -52,9 +57,9 @@ begin
         elsif rising_edge(clk) then
 
              -- PID terms
-             s_p <= K_p * s_e ;
-             s_i <= s_i + K_i * s_e / 25;
-             s_d <= K_d * (s_e - s_de);  -- calculate derivative
+             s_p <= (K_p / K_p_Div) * s_e ;
+             s_i <= s_i + (K_i) * (s_e / K_i_Div);
+             s_d <= (K_d / K_d_Div) * (s_e - s_de);  -- calculate derivative
 
              s_de <= s_e;
              s_e <= e;
