@@ -26,7 +26,7 @@ The project is organized into several experiments and simulations:
 - [x] **Basic Counter and Testbench Simulator**: Implement a basic counter and create a testbench simulator.
 - [x] **2nd Order Linear Dynamical System Step Response Simulation**: Simulate the step response of a second-order linear dynamical system.
 - [x] **Random Noise Simulator VHDL**: Implement a random noise simulator in VHDL.
-- [ ] **Feedback Loop Controller PID VHDL**: Implement a feedback loop controller using PID in VHDL.
+- [x] **Feedback Loop Controller PID VHDL**: Implement a feedback loop controller using PID in VHDL.
 - [ ] **State Space 3rd Order Linear Dynamical System Simulation**: Simulate a third-order linear dynamical system using state space representation.
 - [ ] **2nd Order Kalman Filter Simulation**: Simulate a second-order Kalman filter.
 - [ ] **State Space Kalman Filter 3x3 Simulation**: Simulate a state space Kalman filter with a 3x3 matrix.
