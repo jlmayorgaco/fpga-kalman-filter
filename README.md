@@ -1,5 +1,7 @@
 
+![VHDL Noise Simulation](images/header.svg)
 # FPGA Kalman Filter
+
 
 > [!IMPORTANT]
 > Project in progress .
