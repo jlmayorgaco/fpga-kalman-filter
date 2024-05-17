@@ -1,5 +1,5 @@
 
-![VHDL Noise Simulation](images/header.svg)
+![VHDL Noise Simulation](images/header.png)
 # FPGA Kalman Filter
 
 
