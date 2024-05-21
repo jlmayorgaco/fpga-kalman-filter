@@ -3,8 +3,8 @@
 
 # FPGA Kalman Filter
 
-![Logo Animation](images/project__logo_animated.gif)
-<img src="images/project__logo_animated.gif" width="48">
+
+<img src="images/project__logo_animated.gif" width="200">
 
 > [!IMPORTANT]
 > Project in progress .
