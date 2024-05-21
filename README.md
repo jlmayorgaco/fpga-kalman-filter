@@ -3,6 +3,9 @@
 
 # FPGA Kalman Filter
 
+
+<img src="images/project__logo_animated.gif" width="200">
+
 > [!IMPORTANT]
 > Project in progress .
 >
