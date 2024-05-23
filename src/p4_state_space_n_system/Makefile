@@ -2,7 +2,7 @@
 PROJECT_ENTRY_FILE := main
 
 # VHDL files
-VHDL_FILES := src/$(PROJECT_ENTRY_FILE).vhd lib/saturation.vhd lib/plant.vhd lib/pid.vhd
+VHDL_FILES := src/$(PROJECT_ENTRY_FILE).vhd $(shell find ../lib -name '*.vhd')
 VHDL_TEST_BENCH := test/$(PROJECT_ENTRY_FILE)_testbench.vhd
 VHDL_TEST_ENTITY := $(PROJECT_ENTRY_FILE)_tb
 
@@ -11,7 +11,7 @@ SIM_OPTIONS := --vcd=test/$(PROJECT_ENTRY_FILE)_wave.vcd
 
 # GHDL commands
 GHDL := ghdl
-GHDL_FLAGS := -g --ieee=synopsys 
+GHDL_FLAGS := -g --ieee=synopsys
 
 # Default target
 all: compile simulate plot
@@ -29,6 +29,6 @@ plot:
 
 # Clean generated files
 clean:
-	rm -f *.o *.cf wave.vcd
+	rm -f *.o *.cf test/$(PROJECT_ENTRY_FILE)_wave.vcd
 
 .PHONY: all compile simulate clean

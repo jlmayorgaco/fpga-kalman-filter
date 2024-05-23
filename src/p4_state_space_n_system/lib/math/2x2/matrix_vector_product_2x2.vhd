@@ -6,10 +6,10 @@ entity MatrixVectorProduct_2x2 is
     Port (
         clk  : in  std_logic; -- Clock input
         rst  : in  std_logic; -- Reset input
-        A11  : in  integer;   -- Input matrix A element (1,1)
-        A12  : in  integer;   -- Input matrix A element (1,2)
-        A21  : in  integer;   -- Input matrix A element (2,1)
-        A22  : in  integer;   -- Input matrix A element (2,2)
+        M11  : in  integer;   -- Input matrix A element (1,1)
+        M12  : in  integer;   -- Input matrix A element (1,2)
+        M21  : in  integer;   -- Input matrix A element (2,1)
+        M22  : in  integer;   -- Input matrix A element (2,2)
         x1   : in  integer;   -- Input vector x element (1)
         x2   : in  integer;   -- Input vector x element (2)
         y1   : out integer;   -- Output vector y element (1)
@@ -26,8 +26,8 @@ begin
             y2 <= 0;
         elsif rising_edge(clk) then
             -- Perform matrix-vector multiplication
-            y1 <= A11 * x1 + A12 * x2;
-            y2 <= A21 * x1 + A22 * x2;
+            y1 <= M11 * x1 + M12 * x2;
+            y2 <= M21 * x1 + M22 * x2;
         end if;
     end process;
 end Behavioral_MatrixVectorProduct_2x2;

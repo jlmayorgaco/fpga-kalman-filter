@@ -16,6 +16,13 @@ end entity Integrator_2x1;
 architecture Behavioral_Integrator_2x1 of Integrator_2x1 is
     signal sum_x1 : integer := 0;  -- Accumulated sum for x element (1)
     signal sum_x2 : integer := 0;  -- Accumulated sum for x element (2)
+
+    constant DT_TOP : integer := 1;
+    constant DT_BOTTOM : integer := 1;
+
+    constant MAX_VALUE : integer := 1000; -- Define maximum saturation value
+    constant MIN_VALUE : integer := -1000; -- Define minimum saturation value
+
 begin
     process(clk, rst)
     begin
@@ -26,12 +33,25 @@ begin
             int_x2 <= 0;
         elsif rising_edge(clk) then
             -- Perform integration (accumulation)
-            sum_x1 <= sum_x1 + x1;
-            sum_x2 <= sum_x2 + x2;
+            sum_x1 <= sum_x1 + DT_TOP * (x1 / DT_BOTTOM);
+            sum_x2 <= sum_x2 + DT_TOP * (x2 / DT_BOTTOM);
 
-            -- Output the integrated values
-            int_x1 <= sum_x1;
-            int_x2 <= sum_x2;
+            -- Apply saturation
+            if sum_x1 > MAX_VALUE then
+                int_x1 <= MAX_VALUE;
+            elsif sum_x1 < MIN_VALUE then
+                int_x1 <= MIN_VALUE;
+            else
+                int_x1 <= sum_x1;
+            end if;
+
+            if sum_x2 > MAX_VALUE then
+                int_x2 <= MAX_VALUE;
+            elsif sum_x2 < MIN_VALUE then
+                int_x2 <= MIN_VALUE;
+            else
+                int_x2 <= sum_x2;
+            end if;
         end if;
     end process;
 end Behavioral_Integrator_2x1;
