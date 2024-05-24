@@ -17,25 +17,31 @@ architecture PlantStateSpace2ndOrderRTL of PlantStateSpace2ndOrder is
 
     constant SCALE_VALUE : integer := 1;
 
-    constant a11 : integer := 10 * SCALE_VALUE;
-    constant a12 : integer := 10 * SCALE_VALUE;
-    constant a21 : integer := 10 * SCALE_VALUE;
-    constant a22 : integer := 10 * SCALE_VALUE;
+    --
+    -- Matrix A = [
+    --               [a11, a12]
+    --               [a21, a22]
+    --            ]
+    --
+    constant a11 : integer := -1 * SCALE_VALUE;
+    constant a12 : integer := -1 * SCALE_VALUE;
+    constant a21 : integer := 1 * SCALE_VALUE;
+    constant a22 : integer := -1 * SCALE_VALUE;
 
-    constant b11 : integer := 10 * SCALE_VALUE;
-    constant b12 : integer := 10 * SCALE_VALUE;
-    constant b21 : integer := 10 * SCALE_VALUE;
-    constant b22 : integer := 10 * SCALE_VALUE;
+    constant b11 : integer := 1 * SCALE_VALUE;
+    constant b12 : integer := 0 * SCALE_VALUE;
+    constant b21 : integer := 0 * SCALE_VALUE;
+    constant b22 : integer := -1 * SCALE_VALUE;
 
-    constant c11 : integer := 10 * SCALE_VALUE;
-    constant c12 : integer := 10 * SCALE_VALUE;
-    constant c21 : integer := 10 * SCALE_VALUE;
-    constant c22 : integer := 10 * SCALE_VALUE;
+    constant c11 : integer := 1 * SCALE_VALUE;
+    constant c12 : integer := 1 * SCALE_VALUE;
+    constant c21 : integer := 0 * SCALE_VALUE;
+    constant c22 : integer := 0 * SCALE_VALUE;
 
-    constant d11 : integer := 10 * SCALE_VALUE;
-    constant d12 : integer := 10 * SCALE_VALUE;
-    constant d21 : integer := 10 * SCALE_VALUE;
-    constant d22 : integer := 10 * SCALE_VALUE;
+    constant d11 : integer := 0 * SCALE_VALUE;
+    constant d12 : integer := 0 * SCALE_VALUE;
+    constant d21 : integer := 0 * SCALE_VALUE;
+    constant d22 : integer := 0 * SCALE_VALUE;
 
     component MatrixVectorProduct_2x2 is
         Port (
@@ -88,8 +94,7 @@ begin
     process(clk, rst)
     begin
         if rst = '1' then
-            s_x1 <= 0;
-            s_x2 <= 0;
+            -- State update logic here if needed
         elsif rising_edge(clk) then
             -- State update logic here if needed
         end if;

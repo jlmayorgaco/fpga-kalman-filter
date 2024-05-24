@@ -18,10 +18,10 @@ architecture Behavioral_Integrator_2x1 of Integrator_2x1 is
     signal sum_x2 : integer := 0;  -- Accumulated sum for x element (2)
 
     constant DT_TOP : integer := 1;
-    constant DT_BOTTOM : integer := 1;
+    constant DT_BOTTOM : integer := 100;
 
-    constant MAX_VALUE : integer := 1000; -- Define maximum saturation value
-    constant MIN_VALUE : integer := -1000; -- Define minimum saturation value
+    constant MAX_VALUE : integer := 1000000; -- Define maximum saturation value
+    constant MIN_VALUE : integer := -1000000; -- Define minimum saturation value
 
 begin
     process(clk, rst)
