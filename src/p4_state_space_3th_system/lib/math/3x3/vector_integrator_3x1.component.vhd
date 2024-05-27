@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity Integrator_3x1 is
+entity Vector_Integrator_3x1 is
     Port (
         clk : in std_logic;    -- Clock input
         rst : in std_logic;    -- Reset input
@@ -13,9 +13,9 @@ entity Integrator_3x1 is
         int_x2 : out integer;  -- Output integral of x element (2)
         int_x3 : out integer   -- Output integral of x element (3)
     );
-end entity Integrator_3x1;
+end entity Vector_Integrator_3x1;
 
-architecture Behavioral_Integrator_3x1 of Integrator_3x1 is
+architecture Behavioral_Vector_Integrator_3x1 of Vector_Integrator_3x1 is
     signal sum_x1 : integer := 0;  -- Accumulated sum for x element (1)
     signal sum_x2 : integer := 0;  -- Accumulated sum for x element (2)
     signal sum_x3 : integer := 0;  -- Accumulated sum for x element (3)
@@ -70,4 +70,4 @@ begin
             end if;
         end if;
     end process;
-end Behavioral_Integrator_3x1;
+end Behavioral_Vector_Integrator_3x1;
