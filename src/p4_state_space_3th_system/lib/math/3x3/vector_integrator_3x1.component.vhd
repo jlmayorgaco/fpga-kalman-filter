@@ -21,7 +21,7 @@ architecture Behavioral_Vector_Integrator_3x1 of Vector_Integrator_3x1 is
     signal sum_x3 : integer := 0;  -- Accumulated sum for x element (3)
 
     constant DT_TOP : integer := 1;
-    constant DT_BOTTOM : integer := 100;
+    constant DT_BOTTOM : integer := 1;
 
     constant MAX_VALUE : integer := 1000000; -- Define maximum saturation value
     constant MIN_VALUE : integer := -1000000; -- Define minimum saturation value
