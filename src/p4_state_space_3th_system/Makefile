@@ -2,16 +2,11 @@
 PROJECT_ENTRY_FILE := main
 
 # VHDL files
-# VHDL_FILES := src/$(PROJECT_ENTRY_FILE).vhd $(shell find ../lib -name '*.vhd')
-VHDL_FILES := src/$(PROJECT_ENTRY_FILE).vhd
-VHDL_FILES_MATH := lib/math/3x3/matrix_inverse_3x3.vhd lib/math/3x3/matrix_product_3x3.vhd lib/math/3x3/matrix_scale_3x3.vhd lib/math/3x3/matrix_sum_3x3.vhd lib/math/3x3/matrix_vector_product_3x3.vhd lib/math/3x3/vector_sum_3x1.vhd lib/math/3x3/vector_scale_3x1.vhd lib/math/3x3/vector_derivate_3x1.vhd lib/math/3x3/vector_integrator_3x1.vhd
-VHDL_FILES_UTITLIES := lib/utilities/saturation.vhd
-VHDL_FILES_CONTROLLERS := lib/controllers/pid.vhd
-VHDL_FILES_PLANTS := lib/systems/plant_ss.vhd
+VHDL_COMPONENT_FILES := $(shell find lib -name '*.component.vhd')
+VHDL_TEST_FILES := $(shell find lib -name '*.testbench.vhd')
 
-
-VHDL_TEST_BENCH := test/$(PROJECT_ENTRY_FILE)_testbench.vhd
-VHDL_TEST_ENTITY := $(PROJECT_ENTRY_FILE)_tb
+# Derive testbench entities from component files
+VHDL_TEST_ENTITIES := $(foreach file, $(VHDL_COMPONENT_FILES), $(basename $(notdir $(file)))_Testbench)
 
 # Simulation options
 SIM_OPTIONS := --vcd=test/$(PROJECT_ENTRY_FILE)_wave.vcd
