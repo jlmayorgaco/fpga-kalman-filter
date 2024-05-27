@@ -36,10 +36,9 @@ begin
             dx3 <= 0;
         elsif rising_edge(clk) then
             -- Compute the derivative (difference between current and previous values)
-            dx1 <= DT_TOP * (x1 - prev_x1) / DT_BOTTOM;
-            dx2 <= DT_TOP * (x2 - prev_x2) / DT_BOTTOM;
-            dx3 <= DT_TOP * (x3 - prev_x3) / DT_BOTTOM;
-
+            dx1 <= (x1 - prev_x1); --(x1 - prev_x1) * DT_TOP / DT_BOTTOM;
+            dx2 <= (x2 - prev_x2);--(x2 - prev_x2) * DT_TOP / DT_BOTTOM;
+            dx3 <= (x3 - prev_x3);--(x3 - prev_x3) * DT_TOP / DT_BOTTOM;
             -- Store the current values for the next clock cycle
             prev_x1 <= x1;
             prev_x2 <= x2;
