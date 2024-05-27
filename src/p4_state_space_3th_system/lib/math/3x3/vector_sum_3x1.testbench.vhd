@@ -77,9 +77,6 @@ begin
         wait for 20 ns;  -- Wait for initial signal stabilization
 
         report " ";
-        report " ";
-        report " ";
-        report " ";
         -----------------------------------------------
         -- It                                        --
         -- x = [0,0,0]                               --
@@ -170,13 +167,10 @@ begin
         -----------------------------------------------
         -- Final message indicating if all tests passed
         -----------------------------------------------
-        report " ";
-        report " ";
-        report " ";
-        report " ";
          if all_tests_passed then
-            report "[v/] All test cases passed!";
+            report " . . . . . . . .  [v/] All test cases passed!";
         else
+            report " x x x x x x x x ";
             report "[X] Some test cases failed!";
             all_tests_passed <= false;
         end if;
