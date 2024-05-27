@@ -1,0 +1,146 @@
+$date
+  Mon May 27 12:46:07 2024
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module vector_sum_3x1_testbench $end
+$var integer 32 ! x1 $end
+$var integer 32 " x2 $end
+$var integer 32 # x3 $end
+$var integer 32 $ y1 $end
+$var integer 32 % y2 $end
+$var integer 32 & y3 $end
+$var integer 32 ' z1 $end
+$var integer 32 ( z2 $end
+$var integer 32 ) z3 $end
+$var reg 1 * clk $end
+$var reg 1 + rst $end
+$var reg 1 , utest1_pass $end
+$var reg 1 - all_tests_passed $end
+$scope module dut $end
+$var integer 32 . x1 $end
+$var integer 32 / x2 $end
+$var integer 32 0 x3 $end
+$var integer 32 1 y1 $end
+$var integer 32 2 y2 $end
+$var integer 32 3 y3 $end
+$var integer 32 4 z1 $end
+$var integer 32 5 z2 $end
+$var integer 32 6 z3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0 !
+b0 "
+b0 #
+b0 $
+b0 %
+b0 &
+b0 '
+b0 (
+b0 )
+0*
+1+
+0,
+1-
+b0 .
+b0 /
+b0 0
+b0 1
+b0 2
+b0 3
+b0 4
+b0 5
+b0 6
+#5000000
+1*
+#10000000
+0*
+#15000000
+1*
+#20000000
+0*
+#25000000
+1*
+#30000000
+0*
+#35000000
+1*
+#40000000
+0*
+1,
+#45000000
+1*
+#50000000
+0*
+#55000000
+1*
+#60000000
+0*
+#65000000
+1*
+#70000000
+0*
+#75000000
+1*
+#80000000
+0*
+#85000000
+1*
+#90000000
+0*
+#95000000
+1*
+#100000000
+b1 !
+b10 "
+b11 #
+b100 $
+b101 %
+b110 &
+b101 '
+b111 (
+b1001 )
+b1 .
+b10 /
+b11 0
+b100 1
+b101 2
+b110 3
+b101 4
+b111 5
+b1001 6
+#110000000
+#160000000
+#170000000
+b1111101000 !
+b11111010000 "
+b101110111000 #
+b11111111111111111111110000011000 $
+b11111111111111111111100000110000 %
+b11111111111111111111010001001000 &
+b0 '
+b0 (
+b0 )
+b1111101000 .
+b11111010000 /
+b101110111000 0
+b11111111111111111111110000011000 1
+b11111111111111111111100000110000 2
+b11111111111111111111010001001000 3
+b0 4
+b0 5
+b0 6
+#180000000
+#230000000

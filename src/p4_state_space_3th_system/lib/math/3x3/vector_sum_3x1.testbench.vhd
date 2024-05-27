@@ -9,6 +9,16 @@ architecture testbench of Vector_Sum_3x1_Testbench is
     -- Constants for simulation parameters
     constant CLOCK_PERIOD : time := 10 ns;  -- Clock period (10 ns)
 
+
+    -- ANSI escape codes for colors
+    constant ANSI_RESET : string := "\033[0m";
+    constant ANSI_RED : string := "\033[31;1;4m";
+    constant ANSI_GREEN : string := "\033[32;1;4m";
+    constant ANSI_YELLOW : string := "\033[33m";
+    constant ANSI_BLUE : string := "\033[34m";
+    constant ANSI_MAGENTA : string := "\033[35m";
+    constant ANSI_CYAN : string := "\033[36m";
+
     -- Component declaration
     component Vector_Sum_3x1 is
         Port (
@@ -32,9 +42,10 @@ architecture testbench of Vector_Sum_3x1_Testbench is
 
     -- Signals Unit Test
     signal utest1_pass : std_logic := '0';         -- Unit Test Passed
+    signal all_tests_passed : boolean := true;     -- Flag for overall test status
 
 begin
-    -- Instantiate the VectorSum_3x1 module
+    -- Instantiate the Vector_Sum_3x1 module
     dut : Vector_Sum_3x1
         port map (
             x1 => x1,
@@ -65,6 +76,10 @@ begin
     begin
         wait for 20 ns;  -- Wait for initial signal stabilization
 
+        report " ";
+        report " ";
+        report " ";
+        report " ";
         -----------------------------------------------
         -- It                                        --
         -- x = [0,0,0]                               --
@@ -72,6 +87,8 @@ begin
         -- Should be                                 --
         -- z = [0,0,0]                               --
         -----------------------------------------------
+        wait for 10 ns;
+
         x1 <= 0;
         x2 <= 0;
         x3 <= 0;
@@ -80,10 +97,16 @@ begin
         y2 <= 0;
         y3 <= 0;
 
-        utest1_pass <= (z1 = 0) and (z2 = 0) and (z3 = 0);
-        wait for 10 ns;  -- Wait for signal propagation
+        wait for 10 ns;
+        if (z1 = 0 and z2 = 0 and z3 = 0) then
+            utest1_pass <= '1';
+            report "[v/] Test case 1 passed";
+        else
+            utest1_pass <= '0';
+            report "[X] Test case 1 failed: z1 = " & integer'image(z1) & ", z2 = " & integer'image(z2) & ", z3 = " & integer'image(z3);
+        end if;
+        wait for 50 ns;  -- Wait for signal propagation
         -----------------------------------------------
-
 
         -----------------------------------------------
         -- It                                        --
@@ -92,6 +115,8 @@ begin
         -- Should be                                 --
         -- z = [5,7,9]                               --
         -----------------------------------------------
+        wait for 10 ns;
+
         x1 <= 1;
         x2 <= 2;
         x3 <= 3;
@@ -100,12 +125,62 @@ begin
         y2 <= 5;
         y3 <= 6;
 
-        utest1_pass <= (z1 = 5) and (z2 = 7) and (z3 = 9);
-        wait for 10 ns;  -- Wait for signal propagation
+        wait for 10 ns;
+        if (z1 = 5 and z2 = 7 and z3 = 9) then
+            utest1_pass <= '1';
+            report "[v/] Test case 2 passed";
+        else
+            utest1_pass <= '0';
+            report "[X] Test case 2 failed: z1 = " & integer'image(z1) & ", z2 = " & integer'image(z2) & ", z3 = " & integer'image(z3);
+            all_tests_passed <= false;
+        end if;
+        wait for 50 ns;  -- Wait for signal propagation
         -----------------------------------------------
 
-        -- Display the result
-        report "z1 = " & integer'image(z1) & ", z2 = " & integer'image(z2) & ", z3 = " & integer'image(z3);
+
+     --------------------------------------------------
+        -- It                                        --
+        -- x = [1,2,3]                               --
+        -- y = [4,5,6]                               --
+        -- Should be                                 --
+        -- z = [5,7,9]                               --
+        -----------------------------------------------
+
+        wait for 10 ns;
+        x1 <= 1000;
+        x2 <= 2000;
+        x3 <= 3000;
+
+        y1 <= -1000;
+        y2 <= -2000;
+        y3 <= -3000;
+
+        wait for 10 ns;
+        if (z1 = 0 and z2 = 0 and z3 = 0) then
+            utest1_pass <= '1';
+            report "[v/] Test case 3 passed";
+        else
+            utest1_pass <= '0';
+            all_tests_passed <= false;
+            report "[X] Test case 3 failed: z1 = " & integer'image(z1) & ", z2 = " & integer'image(z2) & ", z3 = " & integer'image(z3);
+        end if;
+        wait for 50 ns;  -- Wait for signal propagation
+        -----------------------------------------------
+        -- UNIT TEST REPORT ---------------------------
+        -----------------------------------------------
+        -- Final message indicating if all tests passed
+        -----------------------------------------------
+        report " ";
+        report " ";
+        report " ";
+        report " ";
+         if all_tests_passed then
+            report "[v/] All test cases passed!";
+        else
+            report "[X] Some test cases failed!";
+            all_tests_passed <= false;
+        end if;
+        -----------------------------------------------
 
         wait;
     end process stimulus;

@@ -1,43 +1,55 @@
 v 4
-file . "test/main_testbench.vhd" "177d2b0a0129ee29ddc80a34c46717940d0c739c" "20240524041154.380":
-  entity main_tb at 1( 0) + 0 on 681;
-  architecture testbench of main_tb at 8( 102) + 0 on 682;
-file . "src/main.vhd" "96c2bc93032c5d66a086420450f0ac29d5d8f99b" "20240524041154.093":
-  entity main at 1( 0) + 0 on 655;
-  architecture behavioral of main at 15( 253) + 0 on 656;
-file . "lib/systems/plant_ss.vhd" "bd1d83b42f278e2de107fa974e3d2944dd279ed5" "20240524041154.112":
-  entity plantstatespace2ndorder at 1( 0) + 0 on 679;
-  architecture plantstatespace2ndorderrtl of plantstatespace2ndorder at 16( 313) + 0 on 680;
-file . "lib/utilities/saturation.vhd" "2097bbdc882f0fea93bad0d0061718aa565fc30a" "20240524041154.108":
-  entity saturation at 1( 0) + 0 on 675;
-  architecture saturationrtl of saturation at 16( 359) + 0 on 676;
-file . "lib/controllers/pid.vhd" "e1d1878d77fe3aac0d268504d025cc9c868bebaa" "20240524041154.110":
-  entity pid at 1( 0) + 0 on 677;
-  architecture pidrtl of pid at 14( 238) + 0 on 678;
-file . "lib/math/2x2/vector_sum_2x1.vhd" "415f55a94406b486af5b46c4ccef3debbc6149ec" "20240524041154.100":
-  entity vectorsum_2x1 at 1( 0) + 0 on 667;
-  architecture behavioral_vectorsum_2x1 of vectorsum_2x1 at 18( 591) + 0 on 668;
-file . "lib/math/2x2/vector_scale_2x1.vhd" "152a367ece7f516e3ebec9612fe990f9fb6168f8" "20240524041154.101":
-  entity vectorscale_2x1 at 1( 0) + 0 on 669;
-  architecture behavioral_vectorscale_2x1 of vectorscale_2x1 at 17( 528) + 0 on 670;
-file . "lib/math/2x2/vector_integrator_2x1.vhd" "efc5930a3f89417c09d65cb0c8e1cf1b816a70de" "20240524041154.103":
-  entity integrator_2x1 at 1( 0) + 0 on 673;
-  architecture behavioral_integrator_2x1 of integrator_2x1 at 16( 489) + 0 on 674;
-file . "lib/math/2x2/vector_derivate_2x1.vhd" "1655f129e4a7216ce1f52bc62e87917d51c3fd1d" "20240524041154.102":
-  entity derivator_2x1 at 1( 0) + 0 on 671;
-  architecture behavioral_derivator_2x1 of derivator_2x1 at 16( 509) + 0 on 672;
-file . "lib/math/2x2/matrix_inverse_2x2.vhd" "aa784702bfdc22481d7d912888e295754c412444" "20240524041154.094":
-  entity matrixinverse_2x2 at 1( 0) + 0 on 657;
-  architecture behavioral_matrixinverse_2x2 of matrixinverse_2x2 at 21( 810) + 0 on 658;
-file . "lib/math/2x2/matrix_product_2x2.vhd" "49f044c0acd5e0166378760e3cef8feda1c1ea4b" "20240524041154.095":
-  entity matrixproduct_2x2 at 1( 0) + 0 on 659;
-  architecture behavioral_matrixproduct_2x2 of matrixproduct_2x2 at 24( 971) + 0 on 660;
-file . "lib/math/2x2/matrix_scale_2x2.vhd" "714089c18072c92f2e67ffc296736e85b36bfcb0" "20240524041154.097":
-  entity matrixscale_2x2 at 1( 0) + 0 on 661;
-  architecture behavioral_matrixscale_2x2 of matrixscale_2x2 at 21( 818) + 0 on 662;
-file . "lib/math/2x2/matrix_sum_2x2.vhd" "6402f439fcf19b5cead64c183854cc2a55d584b3" "20240524041154.098":
-  entity matrixsum_2x2 at 1( 0) + 0 on 663;
-  architecture behavioral_matrixsum_2x2 of matrixsum_2x2 at 24( 1043) + 0 on 664;
+file . "lib/math/3x3/vector_sum_3x1.testbench.vhd" "70377293e4ce3918274af8ac12ace270894bcb8c" "20240527174607.666":
+  entity vector_sum_3x1_testbench at 1( 0) + 0 on 891;
+  architecture testbench of vector_sum_3x1_testbench at 8( 143) + 0 on 892;
+file . "lib/math/3x3/vector_sum_3x1.component.vhd" "1da19d68a81c294cdf696312143bd97aa540fd95" "20240527174607.664":
+  entity vector_sum_3x1 at 1( 0) + 0 on 887;
+  architecture behavioral_vector_sum_3x1 of vector_sum_3x1 at 19( 693) + 0 on 888;
 file . "lib/math/2x2/matrix_vector_product_2x2.vhd" "280d4135cc16c8e826c85f08b60586675b3e90f2" "20240524041154.099":
   entity matrixvectorproduct_2x2 at 1( 0) + 0 on 665;
   architecture behavioral_matrixvectorproduct_2x2 of matrixvectorproduct_2x2 at 20( 739) + 0 on 666;
+file . "lib/math/2x2/matrix_sum_2x2.vhd" "6402f439fcf19b5cead64c183854cc2a55d584b3" "20240524041154.098":
+  entity matrixsum_2x2 at 1( 0) + 0 on 663;
+  architecture behavioral_matrixsum_2x2 of matrixsum_2x2 at 24( 1043) + 0 on 664;
+file . "lib/math/2x2/matrix_scale_2x2.vhd" "714089c18072c92f2e67ffc296736e85b36bfcb0" "20240524041154.097":
+  entity matrixscale_2x2 at 1( 0) + 0 on 661;
+  architecture behavioral_matrixscale_2x2 of matrixscale_2x2 at 21( 818) + 0 on 662;
+file . "lib/math/2x2/matrix_product_2x2.vhd" "49f044c0acd5e0166378760e3cef8feda1c1ea4b" "20240524041154.095":
+  entity matrixproduct_2x2 at 1( 0) + 0 on 659;
+  architecture behavioral_matrixproduct_2x2 of matrixproduct_2x2 at 24( 971) + 0 on 660;
+file . "lib/math/2x2/matrix_inverse_2x2.vhd" "aa784702bfdc22481d7d912888e295754c412444" "20240524041154.094":
+  entity matrixinverse_2x2 at 1( 0) + 0 on 657;
+  architecture behavioral_matrixinverse_2x2 of matrixinverse_2x2 at 21( 810) + 0 on 658;
+file . "lib/math/2x2/vector_derivate_2x1.vhd" "1655f129e4a7216ce1f52bc62e87917d51c3fd1d" "20240524041154.102":
+  entity derivator_2x1 at 1( 0) + 0 on 671;
+  architecture behavioral_derivator_2x1 of derivator_2x1 at 16( 509) + 0 on 672;
+file . "lib/math/2x2/vector_integrator_2x1.vhd" "efc5930a3f89417c09d65cb0c8e1cf1b816a70de" "20240524041154.103":
+  entity integrator_2x1 at 1( 0) + 0 on 673;
+  architecture behavioral_integrator_2x1 of integrator_2x1 at 16( 489) + 0 on 674;
+file . "lib/math/2x2/vector_scale_2x1.vhd" "152a367ece7f516e3ebec9612fe990f9fb6168f8" "20240524041154.101":
+  entity vectorscale_2x1 at 1( 0) + 0 on 669;
+  architecture behavioral_vectorscale_2x1 of vectorscale_2x1 at 17( 528) + 0 on 670;
+file . "lib/math/2x2/vector_sum_2x1.vhd" "415f55a94406b486af5b46c4ccef3debbc6149ec" "20240524041154.100":
+  entity vectorsum_2x1 at 1( 0) + 0 on 667;
+  architecture behavioral_vectorsum_2x1 of vectorsum_2x1 at 18( 591) + 0 on 668;
+file . "lib/controllers/pid.vhd" "e1d1878d77fe3aac0d268504d025cc9c868bebaa" "20240524041154.110":
+  entity pid at 1( 0) + 0 on 677;
+  architecture pidrtl of pid at 14( 238) + 0 on 678;
+file . "lib/utilities/saturation.vhd" "2097bbdc882f0fea93bad0d0061718aa565fc30a" "20240524041154.108":
+  entity saturation at 1( 0) + 0 on 675;
+  architecture saturationrtl of saturation at 16( 359) + 0 on 676;
+file . "lib/systems/plant_ss.vhd" "bd1d83b42f278e2de107fa974e3d2944dd279ed5" "20240524041154.112":
+  entity plantstatespace2ndorder at 1( 0) + 0 on 679;
+  architecture plantstatespace2ndorderrtl of plantstatespace2ndorder at 16( 313) + 0 on 680;
+file . "src/main.vhd" "96c2bc93032c5d66a086420450f0ac29d5d8f99b" "20240524041154.093":
+  entity main at 1( 0) + 0 on 655;
+  architecture behavioral of main at 15( 253) + 0 on 656;
+file . "test/main_testbench.vhd" "177d2b0a0129ee29ddc80a34c46717940d0c739c" "20240524041154.380":
+  entity main_tb at 1( 0) + 0 on 681;
+  architecture testbench of main_tb at 8( 102) + 0 on 682;
+file . "lib/math/3x3/vector_scale_3x1.component.vhd" "56f13953d1ed5678287e8b11a2c241fc4fa87d4f" "20240527174607.665":
+  entity vector_scale_3x1 at 1( 0) + 0 on 889;
+  architecture behavioral_vector_scale_3x1 of vector_scale_3x1 at 18( 627) + 0 on 890;
+file . "lib/math/3x3/vector_scale_3x1.testbench.vhd" "4f3f09305bdc5d828157275286ccb7b44cc16389" "20240527174607.667":
+  entity vector_scale_3x1_testbench at 1( 0) + 0 on 893;
+  architecture testbench of vector_scale_3x1_testbench at 8( 147) + 0 on 894;
