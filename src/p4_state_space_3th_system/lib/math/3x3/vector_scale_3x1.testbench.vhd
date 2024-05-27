@@ -66,6 +66,8 @@ begin
     -- Stimulus process
     stimulus: process
     begin
+
+        report " ";
         wait for 20 ns;  -- Wait for initial signal stabilization
 
         -----------------------------------------------
@@ -81,10 +83,10 @@ begin
 
         if (y1 = 2 and y2 = 4 and y3 = 6) then
             utest1_pass <= '1';
-            report ANSI_GREEN & "[v/] Test case 1 passed" & ANSI_RESET;
+            report "[v/] Test case 1 passed";
         else
             utest1_pass <= '0';
-            report ANSI_RED & "[X] Test case 1 failed: y1 = " & integer'image(y1) & ", y2 = " & integer'image(y2) & ", y3 = " & integer'image(y3) & ANSI_RESET;
+            report "[X] Test case 1 failed: y1 = " & integer'image(y1) & ", y2 = " & integer'image(y2) & ", y3 = " & integer'image(y3) & ANSI_RESET;
             all_tests_passed <= false;
         end if;
         wait for 50 ns;  -- Wait for signal propagation
@@ -103,10 +105,10 @@ begin
 
         if (y1 = -4 and y2 = -9 and y3 = -13) then
             utest1_pass <= '1';
-            report ANSI_GREEN & "[v/] Test case 2 passed" & ANSI_RESET;
+            report "[v/] Test case 2 passed";
         else
             utest1_pass <= '0';
-            report ANSI_RED & "[X] Test case 2 failed: y1 = " & integer'image(y1) & ", y2 = " & integer'image(y2) & ", y3 = " & integer'image(y3) & ANSI_RESET;
+            report  "[X] Test case 2 failed: y1 = " & integer'image(y1) & ", y2 = " & integer'image(y2) & ", y3 = " & integer'image(y3) & ANSI_RESET;
             all_tests_passed <= false;
         end if;
         wait for 50 ns;  -- Wait for signal propagation
@@ -117,12 +119,11 @@ begin
         --------------------------------------------------
         -- Final message indicating if all tests passed
         --------------------------------------------------
-        report " ";
-        report " ";
          if all_tests_passed then
-            report ANSI_GREEN & "[v/] All test cases passed!" & ANSI_RESET;
+            report " . . . . . . . .  [v/] All test cases passed!";
         else
-            report ANSI_RED & "[X] Some test cases failed!" & ANSI_RESET;
+            report " x x x x x x x x ";
+            report "[X] Some test cases failed!";
             all_tests_passed <= false;
         end if;
         --------------------------------------------------
