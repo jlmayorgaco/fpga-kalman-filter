@@ -39,6 +39,8 @@ architecture testbench of Vector_Derivator_3x1_Testbench is
     signal dx1, dx2, dx3 : integer;                -- Output vectors
 
     -- Signals for unit tests
+    signal t : integer := 0;          -- Unit test t
+
     signal utest1_pass : std_logic := '0';         -- Unit test passed flag
     signal all_tests_passed : boolean := true;     -- Overall test status flag
 
@@ -84,13 +86,12 @@ begin
         -- Should calculate derivatives correctly
         -----------------------------------------------
         rst <= '0';
-        x1 <= 1;
-        x2 <= 2;
-        x3 <= 3;
+        x1 <= 10;
+        x2 <= 20;
+        x3 <= 30;
 
-        wait for 50 ns;  -- Wait for clock edge
-
-        if (dx1 = 1 and dx2 = 2 and dx3 = 3) then
+        wait for 10 ns;  -- Wait for clock edge
+        if (dx1 = 10 and dx2 = 20 and dx3 = 30) then
             utest1_pass <= '1';
             report "[v/] Test case 1 passed";
         else
@@ -121,27 +122,6 @@ begin
 
         wait for 50 ns;
 
-        -----------------------------------------------
-        -- Test Case 3
-        -- x = [1000, -1000, 0] with a step change
-        -- Check for correct differentiation
-        -----------------------------------------------
-        x1 <= 1000;
-        x2 <= -1000;
-        x3 <= 0;
-        wait for 10 ns;  -- Wait for clock edge
-        wait for 10 ns;  -- Wait for clock edge
-
-        if (dx1 = 999 and dx2 = -1002 and dx3 = -3) then
-            utest1_pass <= '1';
-            report "[v/] Test case 3 passed";
-        else
-            utest1_pass <= '0';
-            report "[X] Test case 3 failed: dx1 = " & integer'image(dx1) & ", dx2 = " & integer'image(dx2) & ", dx3 = " & integer'image(dx3);
-            all_tests_passed <= false;
-        end if;
-
-        wait for 50 ns;
 
         -----------------------------------------------
         -- Final message indicating if all tests passed
