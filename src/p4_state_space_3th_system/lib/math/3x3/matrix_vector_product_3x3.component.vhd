@@ -29,12 +29,42 @@ entity Matrix_Vector_Product_3x3 is
 end entity Matrix_Vector_Product_3x3;
 
 architecture Matrix_Vector_Product_3x3_RTL of Matrix_Vector_Product_3x3 is
+    -- Define saturation range
+    constant MIN_SATURATION : integer := -1000;  -- Minimum saturation value
+    constant MAX_SATURATION : integer := 1000;   -- Maximum saturation value
 begin
     process (M11, M12, M13, M21, M22, M23, M31, M32, M33, x1, x2, x3)
+        variable temp_y1, temp_y2, temp_y3 : integer;
     begin
         -- Perform matrix-vector multiplication
-        y1 <= M22 + M11; --M11 * x1 + M12 * x2 + M13 * x3;
-        y2 <= M22; --M21 * x1 + M22 * x2 + M23 * x3;
-        y3 <= M33; --M31 * x1 + M32 * x2 + M33 * x3;
+        temp_y1 := M11; --M11 * x1 + M12 * x2 + M13 * x3;
+        temp_y2 := 2 * M11; --M21 * x1 + M22 * x2 + M23 * x3;
+        temp_y3 := M11; --M31 * x1 + M32 * x2 + M33 * x3;
+        
+        -- Saturation logic
+        if temp_y1 < MIN_SATURATION then
+            y1 <= MIN_SATURATION;
+        elsif temp_y1 > MAX_SATURATION then
+            y1 <= MAX_SATURATION;
+        else
+            y1 <= temp_y1;
+        end if;
+        
+        if temp_y2 < MIN_SATURATION then
+            y2 <= MIN_SATURATION;
+        elsif temp_y2 > MAX_SATURATION then
+            y2 <= MAX_SATURATION;
+        else
+            y2 <= temp_y2;
+        end if;
+        
+        if temp_y3 < MIN_SATURATION then
+            y3 <= MIN_SATURATION;
+        elsif temp_y3 > MAX_SATURATION then
+            y3 <= MAX_SATURATION;
+        else
+            y3 <= temp_y3;
+        end if;
     end process;
 end architecture Matrix_Vector_Product_3x3_RTL;
+
