@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity MatrixScale_3x3 is
+entity Matrix_Scale_3x3 is
     Port (
 
         -- Scalar
@@ -31,11 +31,11 @@ entity MatrixScale_3x3 is
         C32     : out integer;   -- Output matrix C element (3,2)
         C33     : out integer    -- Output matrix C element (3,3)
     );
-end entity MatrixScale_3x3;
+end entity Matrix_Scale_3x3;
 
-architecture Combinational of MatrixScale_3x3 is
+architecture Matrix_Scale_3x3_RTL of Matrix_Scale_3x3 is
 begin
-    process (scalar, A11, A12, A13, A21, A22, A23, A31, A32, A33)
+    process (scalar_top, scalar_bottom, A11, A12, A13, A21, A22, A23, A31, A32, A33)
     begin
         -- Perform matrix scaling
         C11 <= scalar_top * A11 / scalar_bottom;
@@ -46,8 +46,8 @@ begin
         C22 <= scalar_top * A22 / scalar_bottom;
         C23 <= scalar_top * A23 / scalar_bottom;
 
-        C31 <= scalar_top * A31 / scalar_bottom;;
+        C31 <= scalar_top * A31 / scalar_bottom;
         C32 <= scalar_top * A32 / scalar_bottom;
         C33 <= scalar_top * A33 / scalar_bottom;
     end process;
-end architecture Combinational;
+end architecture Matrix_Scale_3x3_RTL;
