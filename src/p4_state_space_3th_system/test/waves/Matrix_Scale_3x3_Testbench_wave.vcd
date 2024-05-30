@@ -1,0 +1,169 @@
+$date
+  Thu May 30 11:45:24 2024
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module matrix_scale_3x3_testbench $end
+$var integer 32 ! scalar_top $end
+$var integer 32 " scalar_bottom $end
+$var integer 32 # a11 $end
+$var integer 32 $ a12 $end
+$var integer 32 % a13 $end
+$var integer 32 & a21 $end
+$var integer 32 ' a22 $end
+$var integer 32 ( a23 $end
+$var integer 32 ) a31 $end
+$var integer 32 * a32 $end
+$var integer 32 + a33 $end
+$var integer 32 , c11 $end
+$var integer 32 - c12 $end
+$var integer 32 . c13 $end
+$var integer 32 / c21 $end
+$var integer 32 0 c22 $end
+$var integer 32 1 c23 $end
+$var integer 32 2 c31 $end
+$var integer 32 3 c32 $end
+$var integer 32 4 c33 $end
+$scope module dut $end
+$var integer 32 5 scalar_top $end
+$var integer 32 6 scalar_bottom $end
+$var integer 32 7 a11 $end
+$var integer 32 8 a12 $end
+$var integer 32 9 a13 $end
+$var integer 32 : a21 $end
+$var integer 32 ; a22 $end
+$var integer 32 < a23 $end
+$var integer 32 = a31 $end
+$var integer 32 > a32 $end
+$var integer 32 ? a33 $end
+$var integer 32 @ c11 $end
+$var integer 32 A c12 $end
+$var integer 32 B c13 $end
+$var integer 32 C c21 $end
+$var integer 32 D c22 $end
+$var integer 32 E c23 $end
+$var integer 32 F c31 $end
+$var integer 32 G c32 $end
+$var integer 32 H c33 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b1 !
+b1 "
+b1 #
+b10 $
+b11 %
+b100 &
+b101 '
+b110 (
+b111 )
+b1000 *
+b1001 +
+b1 ,
+b10 -
+b11 .
+b100 /
+b101 0
+b110 1
+b111 2
+b1000 3
+b1001 4
+b1 5
+b1 6
+b1 7
+b10 8
+b11 9
+b100 :
+b101 ;
+b110 <
+b111 =
+b1000 >
+b1001 ?
+b1 @
+b10 A
+b11 B
+b100 C
+b101 D
+b110 E
+b111 F
+b1000 G
+b1001 H
+#10000000
+b10 !
+b10 ,
+b100 -
+b110 .
+b1000 /
+b1010 0
+b1100 1
+b1110 2
+b10000 3
+b10010 4
+b10 5
+b10 @
+b100 A
+b110 B
+b1000 C
+b1010 D
+b1100 E
+b1110 F
+b10000 G
+b10010 H
+#20000000
+b1 !
+b10 "
+b0 ,
+b1 -
+b1 .
+b10 /
+b10 0
+b11 1
+b11 2
+b100 3
+b100 4
+b1 5
+b10 6
+b0 @
+b1 A
+b1 B
+b10 C
+b10 D
+b11 E
+b11 F
+b100 G
+b100 H
+#30000000
+b11111111111111111111111111111111 !
+b1 "
+b11111111111111111111111111111111 ,
+b11111111111111111111111111111110 -
+b11111111111111111111111111111101 .
+b11111111111111111111111111111100 /
+b11111111111111111111111111111011 0
+b11111111111111111111111111111010 1
+b11111111111111111111111111111001 2
+b11111111111111111111111111111000 3
+b11111111111111111111111111110111 4
+b11111111111111111111111111111111 5
+b1 6
+b11111111111111111111111111111111 @
+b11111111111111111111111111111110 A
+b11111111111111111111111111111101 B
+b11111111111111111111111111111100 C
+b11111111111111111111111111111011 D
+b11111111111111111111111111111010 E
+b11111111111111111111111111111001 F
+b11111111111111111111111111111000 G
+b11111111111111111111111111110111 H
+#40000000
