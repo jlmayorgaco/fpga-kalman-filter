@@ -1,17 +1,12 @@
 # PROJECT files
-PROJECT_ENTRY_FILE := main
+PROJECT_ENTRY_FILE := matrix_vector_product_3x3
 
 # VHDL files
-VHDL_COMPONENT_FILES := $(shell find lib -name '*.component.vhd')
-VHDL_TEST_FILES := $(shell find lib -name '*.testbench.vhd')
+VHDL_COMPONENT_FILES := lib/math/3x3/matrix_vector_product_3x3.component.vhd
+VHDL_TEST_FILES := lib/math/3x3/matrix_vector_product_3x3.testbench.vhd
 
-# Function to convert component filename to testbench entity name
-define convert_to_testbench_entity
-$(shell echo $(1) | sed -e 's/.*\///' -e 's/\.component\.vhd//')
-endef
-
-# Derive testbench entities from component files
-VHDL_TEST_ENTITIES := $(foreach file, $(VHDL_COMPONENT_FILES), $(call convert_to_testbench_entity,$(file))_Testbench)
+# Testbench entity name
+VHDL_TEST_ENTITY := MatrixVectorProduct_3x3_Testbench
 
 # Simulation options
 SIM_OPTIONS := --vcd=test/$(PROJECT_ENTRY_FILE)_wave.vcd
@@ -21,19 +16,17 @@ GHDL := ghdl
 GHDL_FLAGS := -g --ieee=synopsys
 
 # Default target
-all: compile simulate validate
+all: compile simulate
 
 # Compile VHDL files
 compile:
 	$(GHDL) -a $(GHDL_FLAGS) $(VHDL_COMPONENT_FILES) $(VHDL_TEST_FILES)
 
-# Simulate each testbench and generate VCD files
-simulate: $(VHDL_TEST_ENTITIES)
+# Simulate the testbench and generate VCD file
+simulate: $(VHDL_TEST_ENTITY)
 
-$(VHDL_TEST_ENTITIES):
-	$(GHDL) -r $@ --vcd=test/waves/$@_wave.vcd
-
-validate:
+$(VHDL_TEST_ENTITY):
+	$(GHDL) -r $@ --vcd=test/waves/$(VHDL_TEST_ENTITY)_wave.vcd
 
 # Clean generated files
 clean:
