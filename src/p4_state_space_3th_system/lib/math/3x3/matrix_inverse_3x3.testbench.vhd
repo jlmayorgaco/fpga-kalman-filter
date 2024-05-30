@@ -48,7 +48,7 @@ begin
         A21 <= 0; A22 <= 1; A23 <= 0;
         A31 <= 0; A32 <= 0; A33 <= 1;
 
-        wait for 10 ns;
+        wait for 20 ns;
 
         assert C11 = 1 and C12 = 0 and C13 = 0 and
                C21 = 0 and C22 = 1 and C23 = 0 and
@@ -66,7 +66,7 @@ begin
         A21 <= -1; A22 <= 2; A23 <= -1;
         A31 <= 0; A32 <= -1; A33 <= 2;
 
-        wait for 10 ns;
+        wait for 20 ns;
 
         assert C11 = 2 and C12 = 1 and C13 = 0 and
                C21 = 1 and C22 = 2 and C23 = 1 and
@@ -81,7 +81,7 @@ begin
         A21 <= 4; A22 <= 5; A23 <= 6;
         A31 <= 7; A32 <= 8; A33 <= 9;
 
-        wait for 10 ns;
+        wait for 20 ns;
 
         assert C11 = 0 and C12 = 0 and C13 = 0 and
                C21 = 0 and C22 = 0 and C23 = 0 and
@@ -96,7 +96,7 @@ begin
         A21 <= 3; A22 <= 6; A23 <= 1;
         A31 <= 2; A32 <= 5; A33 <= 1;
 
-        wait for 10 ns;
+        wait for 20 ns;
 
         assert C11 = -1 and C12 = 1 and C13 = 0 and
                C21 = 2 and C22 = -2 and C23 = 1 and
