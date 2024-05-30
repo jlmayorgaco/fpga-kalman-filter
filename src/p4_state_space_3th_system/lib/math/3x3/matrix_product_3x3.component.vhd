@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity MatrixProduct_3x3 is
+entity Matrix_Product_3x3 is
     Port (
         A11, A12, A13 : in integer; -- Input matrix A elements
         A21, A22, A23 : in integer;
@@ -14,9 +14,9 @@ entity MatrixProduct_3x3 is
         C21, C22, C23 : out integer;
         C31, C32, C33 : out integer
     );
-end entity MatrixProduct_3x3;
+end entity Matrix_Product_3x3;
 
-architecture Combinational of MatrixProduct_3x3 is
+architecture Matrix_Product_3x3_RTL of Matrix_Product_3x3 is
 begin
     process (A11, A12, A13, A21, A22, A23, A31, A32, A33,
              B11, B12, B13, B21, B22, B23, B31, B32, B33)
@@ -34,5 +34,5 @@ begin
         C32 <= A31 * B12 + A32 * B22 + A33 * B32;
         C33 <= A31 * B13 + A32 * B23 + A33 * B33;
     end process;
-end architecture Combinational;
+end architecture Matrix_Product_3x3_RTL;
 
