@@ -1,12 +1,12 @@
 # PROJECT files
-PROJECT_ENTRY_FILE := matrix_vector_product_3x3
+PROJECT_ENTRY_FILE := matrix_sum_3x3
 
 # VHDL files
-VHDL_COMPONENT_FILES := lib/math/3x3/matrix_vector_product_3x3.component.vhd
-VHDL_TEST_FILES := lib/math/3x3/matrix_vector_product_3x3.testbench.vhd
+VHDL_COMPONENT_FILES := lib/math/3x3/matrix_sum_3x3.component.vhd
+VHDL_TEST_FILES := lib/math/3x3/matrix_sum_3x3.testbench.vhd
 
 # Testbench entity name
-VHDL_TEST_ENTITY := MatrixVectorProduct_3x3_Testbench
+VHDL_TEST_ENTITY := Matrix_Sum_3x3_Testbench
 
 # Simulation options
 SIM_OPTIONS := --vcd=test/$(PROJECT_ENTRY_FILE)_wave.vcd

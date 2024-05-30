@@ -1,0 +1,273 @@
+$date
+  Wed May 29 22:18:30 2024
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module matrix_sum_3x3_testbench $end
+$var integer 32 ! a11 $end
+$var integer 32 " a12 $end
+$var integer 32 # a13 $end
+$var integer 32 $ a21 $end
+$var integer 32 % a22 $end
+$var integer 32 & a23 $end
+$var integer 32 ' a31 $end
+$var integer 32 ( a32 $end
+$var integer 32 ) a33 $end
+$var integer 32 * b11 $end
+$var integer 32 + b12 $end
+$var integer 32 , b13 $end
+$var integer 32 - b21 $end
+$var integer 32 . b22 $end
+$var integer 32 / b23 $end
+$var integer 32 0 b31 $end
+$var integer 32 1 b32 $end
+$var integer 32 2 b33 $end
+$var integer 32 3 c11 $end
+$var integer 32 4 c12 $end
+$var integer 32 5 c13 $end
+$var integer 32 6 c21 $end
+$var integer 32 7 c22 $end
+$var integer 32 8 c23 $end
+$var integer 32 9 c31 $end
+$var integer 32 : c32 $end
+$var integer 32 ; c33 $end
+$scope module dut $end
+$var integer 32 < a11 $end
+$var integer 32 = a12 $end
+$var integer 32 > a13 $end
+$var integer 32 ? a21 $end
+$var integer 32 @ a22 $end
+$var integer 32 A a23 $end
+$var integer 32 B a31 $end
+$var integer 32 C a32 $end
+$var integer 32 D a33 $end
+$var integer 32 E b11 $end
+$var integer 32 F b12 $end
+$var integer 32 G b13 $end
+$var integer 32 H b21 $end
+$var integer 32 I b22 $end
+$var integer 32 J b23 $end
+$var integer 32 K b31 $end
+$var integer 32 L b32 $end
+$var integer 32 M b33 $end
+$var integer 32 N c11 $end
+$var integer 32 O c12 $end
+$var integer 32 P c13 $end
+$var integer 32 Q c21 $end
+$var integer 32 R c22 $end
+$var integer 32 S c23 $end
+$var integer 32 T c31 $end
+$var integer 32 U c32 $end
+$var integer 32 V c33 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0 !
+b0 "
+b0 #
+b0 $
+b0 %
+b0 &
+b0 '
+b0 (
+b0 )
+b0 *
+b0 +
+b0 ,
+b0 -
+b0 .
+b0 /
+b0 0
+b0 1
+b0 2
+b0 3
+b0 4
+b0 5
+b0 6
+b0 7
+b0 8
+b0 9
+b0 :
+b0 ;
+b0 <
+b0 =
+b0 >
+b0 ?
+b0 @
+b0 A
+b0 B
+b0 C
+b0 D
+b0 E
+b0 F
+b0 G
+b0 H
+b0 I
+b0 J
+b0 K
+b0 L
+b0 M
+b0 N
+b0 O
+b0 P
+b0 Q
+b0 R
+b0 S
+b0 T
+b0 U
+b0 V
+#10000000
+b1 !
+b1 %
+b1 )
+b1 3
+b1 7
+b1 ;
+b1 <
+b1 @
+b1 D
+b1 N
+b1 R
+b1 V
+#20000000
+#30000000
+b10 "
+b11 #
+b100 $
+b101 %
+b110 &
+b111 '
+b1000 (
+b1001 )
+b1001 *
+b1000 +
+b111 ,
+b110 -
+b101 .
+b100 /
+b11 0
+b10 1
+b1 2
+b1010 3
+b1010 4
+b1010 5
+b1010 6
+b1010 7
+b1010 8
+b1010 9
+b1010 :
+b1010 ;
+b10 =
+b11 >
+b100 ?
+b101 @
+b110 A
+b111 B
+b1000 C
+b1001 D
+b1001 E
+b1000 F
+b111 G
+b110 H
+b101 I
+b100 J
+b11 K
+b10 L
+b1 M
+b1010 N
+b1010 O
+b1010 P
+b1010 Q
+b1010 R
+b1010 S
+b1010 T
+b1010 U
+b1010 V
+#40000000
+#50000000
+b0 !
+b0 "
+b0 #
+b0 $
+b0 %
+b0 &
+b0 '
+b0 (
+b0 )
+b0 *
+b0 +
+b0 ,
+b0 -
+b0 .
+b0 /
+b0 0
+b0 1
+b0 2
+b0 3
+b0 4
+b0 5
+b0 6
+b0 7
+b0 8
+b0 9
+b0 :
+b0 ;
+b0 <
+b0 =
+b0 >
+b0 ?
+b0 @
+b0 A
+b0 B
+b0 C
+b0 D
+b0 E
+b0 F
+b0 G
+b0 H
+b0 I
+b0 J
+b0 K
+b0 L
+b0 M
+b0 N
+b0 O
+b0 P
+b0 Q
+b0 R
+b0 S
+b0 T
+b0 U
+b0 V
+#60000000
+#70000000
+b1 !
+b1 %
+b1 )
+b1 *
+b1 .
+b1 2
+b10 3
+b10 7
+b10 ;
+b1 <
+b1 @
+b1 D
+b1 E
+b1 I
+b1 M
+b10 N
+b10 R
+b10 V
+#80000000

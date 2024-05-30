@@ -29,3 +29,9 @@ file . "lib/math/3x3/vector_scale_3x1.testbench.vhd" "7b189b27f9dd857091a64be44d
 file . "lib/math/3x3/vector_derivator_3x1.testbench.vhd" "059c12250bf3badcc14bd606934a023916ffaf3f" "20240529232021.715":
   entity vector_derivator_3x1_testbench at 1( 0) + 0 on 1469;
   architecture testbench of vector_derivator_3x1_testbench at 8( 155) + 0 on 1470;
+file . "lib/math/3x3/matrix_sum_3x3.component.vhd" "7814856ddb65d8d6cc2ee9a622ece61149ec400c" "20240530031829.706":
+  entity matrix_sum_3x3 at 1( 0) + 0 on 1671;
+  architecture combinational of matrix_sum_3x3 at 43( 1976) + 0 on 1672;
+file . "lib/math/3x3/matrix_sum_3x3.testbench.vhd" "02ea8e1d93e7aabe96e0d6c03a75e8bee5953064" "20240530031829.708":
+  entity matrix_sum_3x3_testbench at 1( 0) + 0 on 1673;
+  architecture testbench of matrix_sum_3x3_testbench at 8( 143) + 0 on 1674;

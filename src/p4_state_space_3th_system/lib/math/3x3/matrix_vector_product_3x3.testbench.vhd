@@ -2,15 +2,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity MatrixVectorProduct_3x3_Testbench is
-end entity MatrixVectorProduct_3x3_Testbench;
+entity Matrix_Vector_Product_3x3_Testbench is
+end entity Matrix_Vector_Product_3x3_Testbench;
 
-architecture testbench of MatrixVectorProduct_3x3_Testbench is
+architecture testbench of Matrix_Vector_Product_3x3_Testbench is
     -- Constants for simulation parameters
     constant CLOCK_PERIOD : time := 10 ns;  -- Clock period (10 ns)
 
     -- Component declaration
-    component MatrixVectorProduct_3x3
+    component Matrix_Vector_Product_3x3
         Port (
             clk  : in  std_logic; -- Clock input
             rst  : in  std_logic; -- Reset input
@@ -45,7 +45,7 @@ architecture testbench of MatrixVectorProduct_3x3_Testbench is
 begin
 
     -- Instantiate the MatrixVectorProduct_3x3 module
-    dut : MatrixVectorProduct_3x3
+    dut : Matrix_Vector_Product_3x3
         port map (
             clk => clk,
             rst => rst,

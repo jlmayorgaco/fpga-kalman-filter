@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity MatrixSum_3x3 is
+entity Matrix_Sum_3x3 is
     Port (
 
         -- Matrix A
@@ -38,9 +38,9 @@ entity MatrixSum_3x3 is
         C32     : out integer;   -- Output matrix C element (3,2)
         C33     : out integer    -- Output matrix C element (3,3)
     );
-end entity MatrixSum_3x3;
+end entity Matrix_Sum_3x3;
 
-architecture Combinational of MatrixSum_3x3 is
+architecture Combinational of Matrix_Sum_3x3 is
 begin
     process (A11, A12, A13, A21, A22, A23, A31, A32, A33, B11, B12, B13, B21, B22, B23, B31, B32, B33)
     begin

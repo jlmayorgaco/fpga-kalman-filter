@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity MatrixVectorProduct_3x3 is
+entity Matrix_Vector_Product_3x3 is
     Port (
         clk  : in  std_logic; -- Clock input
         rst  : in  std_logic; -- Reset input
@@ -25,9 +25,9 @@ entity MatrixVectorProduct_3x3 is
         y2   : out integer;   -- Output vector y element (1)
         y3   : out integer    -- Output vector y element (2)
     );
-end entity MatrixVectorProduct_3x3;
+end entity Matrix_Vector_Product_3x3;
 
-architecture Behavioral_MatrixVectorProduct_3x3 of MatrixVectorProduct_3x3 is
+architecture Behavioral_Matrix_Vector_Product_3x3 of Matrix_Vector_Product_3x3 is
 begin
     process(clk, rst)
     begin
@@ -42,4 +42,4 @@ begin
             y3 <= M31 * x1 + M32 * x2 + M33 * x3;
         end if;
     end process;
-end Behavioral_MatrixVectorProduct_3x3;
+end Behavioral_Matrix_Vector_Product_3x3;
