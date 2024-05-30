@@ -110,6 +110,29 @@ begin
             report "Test Case 2 Failed: Arbitrary Matrix, x = [0, 1, 0]"
             severity error;
 
+        -- Test Case 3
+        -- Zero Result Case
+        wait for 10 ns;
+        M11 <= 1; M12 <= 2; M13 <= 3;
+        M21 <= 4; M22 <= 5; M23 <= 6;
+        M31 <= 7; M32 <= 8; M33 <= 9;
+        x1 <= 1; x2 <= 1; x3 <= 1;  -- Non-zero vector
+        wait for 10 ns;
+        assert y1 = 6 and y2 = 15 and y3 = 24
+            report "Test Case 3 Failed: Non-zero vector and matrix, but zero result"
+            severity error;
+
+        -- Test Case 4
+        -- Zero Result Case
+        wait for 10 ns;
+        M11 <= 1; M12 <= 1; M13 <= 1;
+        M21 <= 1; M22 <= 1; M23 <= 1;
+        M31 <= 1; M32 <= 1; M33 <= 1;
+        x1 <= 1; x2 <= -2; x3 <= 1;  -- Non-zero vector
+        wait for 10 ns;
+        assert y1 = 0 and y2 = 0 and y3 = 0
+            report "Test Case 4 Failed: Non-zero vector and matrix, but zero result"
+            severity error;
         -- End the simulation
         wait;
     end process stimulus;
