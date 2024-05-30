@@ -1,5 +1,5 @@
 $date
-  Thu May 30 11:55:57 2024
+  Thu May 30 12:40:21 2024
 $end
 $version
   GHDL v0
@@ -53,7 +53,10 @@ $var integer 32 C c31 $end
 $var integer 32 D c32 $end
 $var integer 32 E c33 $end
 $var reg 1 F valid $end
-$var integer 32 G determinant $end
+$var integer 32 G determinant_factor_1 $end
+$var integer 32 H determinant_factor_2 $end
+$var integer 32 I determinant_factor_3 $end
+$var integer 32 J determinant $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -97,6 +100,9 @@ b0 D
 b0 E
 1F
 b0 G
+b0 H
+b0 I
+b0 J
 #10000000
 b1 !
 b1 %
@@ -107,8 +113,9 @@ b1 8
 b1 <
 0F
 b1 G
-#20000000
+b1 J
 #30000000
+#40000000
 b10 !
 b11111111111111111111111111111111 "
 b11111111111111111111111111111111 $
@@ -143,9 +150,11 @@ b1 C
 b10 D
 b11 E
 1F
-b100 G
-#40000000
-#50000000
+b110 G
+b10 H
+b100 J
+#60000000
+#70000000
 b1 !
 b10 "
 b11 #
@@ -182,9 +191,12 @@ b1 B
 b0 C
 b1 D
 b0 E
-b0 G
-#60000000
-#70000000
+b11111111111111111111111111111101 G
+b11111111111111111111111111110100 H
+b11111111111111111111111111110111 I
+b0 J
+#90000000
+#100000000
 b100 !
 b111 "
 b10 #
@@ -215,5 +227,8 @@ b0 A
 b0 B
 b0 D
 0F
-b11 G
-#80000000
+b100 G
+b111 H
+b110 I
+b11 J
+#120000000
