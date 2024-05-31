@@ -1,5 +1,5 @@
 $date
-  Thu May 30 12:40:21 2024
+  Fri May 31 00:20:23 2024
 $end
 $version
   GHDL v0
@@ -14,55 +14,60 @@ $upscope $end
 $scope module numeric_std $end
 $upscope $end
 $scope module matrix_inverse_3x3_testbench $end
-$var integer 32 ! a11 $end
-$var integer 32 " a12 $end
-$var integer 32 # a13 $end
-$var integer 32 $ a21 $end
-$var integer 32 % a22 $end
-$var integer 32 & a23 $end
-$var integer 32 ' a31 $end
-$var integer 32 ( a32 $end
-$var integer 32 ) a33 $end
-$var integer 32 * c11 $end
-$var integer 32 + c12 $end
-$var integer 32 , c13 $end
-$var integer 32 - c21 $end
-$var integer 32 . c22 $end
-$var integer 32 / c23 $end
-$var integer 32 0 c31 $end
-$var integer 32 1 c32 $end
-$var integer 32 2 c33 $end
-$var reg 1 3 valid $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$var integer 32 # a11 $end
+$var integer 32 $ a12 $end
+$var integer 32 % a13 $end
+$var integer 32 & a21 $end
+$var integer 32 ' a22 $end
+$var integer 32 ( a23 $end
+$var integer 32 ) a31 $end
+$var integer 32 * a32 $end
+$var integer 32 + a33 $end
+$var integer 32 , c11 $end
+$var integer 32 - c12 $end
+$var integer 32 . c13 $end
+$var integer 32 / c21 $end
+$var integer 32 0 c22 $end
+$var integer 32 1 c23 $end
+$var integer 32 2 c31 $end
+$var integer 32 3 c32 $end
+$var integer 32 4 c33 $end
+$var reg 1 5 valid $end
+$var integer 32 6 alpha $end
 $scope module dut $end
-$var integer 32 4 a11 $end
-$var integer 32 5 a12 $end
-$var integer 32 6 a13 $end
-$var integer 32 7 a21 $end
-$var integer 32 8 a22 $end
-$var integer 32 9 a23 $end
-$var integer 32 : a31 $end
-$var integer 32 ; a32 $end
-$var integer 32 < a33 $end
-$var integer 32 = c11 $end
-$var integer 32 > c12 $end
-$var integer 32 ? c13 $end
-$var integer 32 @ c21 $end
-$var integer 32 A c22 $end
-$var integer 32 B c23 $end
-$var integer 32 C c31 $end
-$var integer 32 D c32 $end
-$var integer 32 E c33 $end
-$var reg 1 F valid $end
-$var integer 32 G determinant_factor_1 $end
-$var integer 32 H determinant_factor_2 $end
-$var integer 32 I determinant_factor_3 $end
-$var integer 32 J determinant $end
+$var reg 1 7 clk $end
+$var reg 1 8 reset $end
+$var integer 32 9 a11 $end
+$var integer 32 : a12 $end
+$var integer 32 ; a13 $end
+$var integer 32 < a21 $end
+$var integer 32 = a22 $end
+$var integer 32 > a23 $end
+$var integer 32 ? a31 $end
+$var integer 32 @ a32 $end
+$var integer 32 A a33 $end
+$var integer 32 B c11 $end
+$var integer 32 C c12 $end
+$var integer 32 D c13 $end
+$var integer 32 E c21 $end
+$var integer 32 F c22 $end
+$var integer 32 G c23 $end
+$var integer 32 H c31 $end
+$var integer 32 I c32 $end
+$var integer 32 J c33 $end
+$var reg 1 K valid $end
+$var integer 32 L determinant_factor_1 $end
+$var integer 32 M determinant_factor_2 $end
+$var integer 32 N determinant_factor_3 $end
+$var integer 32 O determinant $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
-b0 !
-b0 "
+0!
+1"
 b0 #
 b0 $
 b0 %
@@ -79,12 +84,12 @@ b0 /
 b0 0
 b0 1
 b0 2
-13
+b0 3
 b0 4
-b0 5
-b0 6
-b0 7
-b0 8
+05
+b1 6
+07
+18
 b0 9
 b0 :
 b0 ;
@@ -98,137 +103,294 @@ b0 B
 b0 C
 b0 D
 b0 E
-1F
+b0 F
 b0 G
 b0 H
 b0 I
 b0 J
+0K
+b0 L
+b0 M
+b0 N
+b0 O
+#5000000
+1!
+17
 #10000000
-b1 !
-b1 %
-b1 )
-03
-b1 4
-b1 8
-b1 <
-0F
-b1 G
-b1 J
+0!
+07
+#15000000
+1!
+17
+#20000000
+0!
+0"
+b1100100 6
+07
+08
+#25000000
+1!
+17
 #30000000
+0!
+b1100100 #
+b1100100 '
+b1100100 +
+07
+b1100100 9
+b1100100 =
+b1100100 A
+#35000000
+1!
+17
+b11110100001001000000 L
+b11110100001001000000 O
 #40000000
-b10 !
-b11111111111111111111111111111111 "
-b11111111111111111111111111111111 $
-b10 %
-b11111111111111111111111111111111 &
-b11111111111111111111111111111111 (
-b10 )
-b11 *
-b10 +
-b1 ,
-b10 -
-b100 .
-b10 /
-b1 0
-b10 1
-b11 2
-13
-b10 4
-b11111111111111111111111111111111 5
-b11111111111111111111111111111111 7
-b10 8
-b11111111111111111111111111111111 9
-b11111111111111111111111111111111 ;
-b10 <
-b11 =
-b10 >
-b1 ?
-b10 @
-b100 A
-b10 B
-b1 C
-b10 D
-b11 E
-1F
-b110 G
-b10 H
-b100 J
+0!
+07
+#45000000
+1!
+b11110100001001000000 ,
+b10011100010000 -
+15
+17
+b11110100001001000000 B
+b10011100010000 C
+1K
+#50000000
+0!
+07
+#55000000
+1!
+17
 #60000000
+0!
+b1 6
+07
+#65000000
+1!
+17
 #70000000
-b1 !
-b10 "
-b11 #
-b100 $
-b101 %
-b110 &
-b111 '
-b1000 (
-b1001 )
-b0 *
-b1 +
-b0 ,
-b1 -
-b11111111111111111111111111111101 .
-b1 /
-b0 0
-b1 1
-b0 2
-b1 4
-b10 5
-b11 6
-b100 7
-b101 8
-b110 9
-b111 :
-b1000 ;
-b1001 <
-b0 =
-b1 >
-b0 ?
-b1 @
-b11111111111111111111111111111101 A
-b1 B
-b0 C
-b1 D
-b0 E
-b11111111111111111111111111111101 G
-b11111111111111111111111111110100 H
-b11111111111111111111111111110111 I
-b0 J
-#90000000
-#100000000
-b100 !
-b111 "
+0!
 b10 #
-b11 $
-b110 %
-b1 &
+b11111111111111111111111111111111 $
+b11111111111111111111111111111111 &
 b10 '
-b101 (
-b1 )
-b0 +
-b0 -
-b0 .
-b0 /
-b0 1
-03
-b100 4
-b111 5
-b10 6
-b11 7
-b110 8
+b11111111111111111111111111111111 (
+b11111111111111111111111111111111 *
+b10 +
+07
+b10 9
+b11111111111111111111111111111111 :
+b11111111111111111111111111111111 <
+b10 =
+b11111111111111111111111111111111 >
+b11111111111111111111111111111111 @
+b10 A
+#75000000
+1!
+b11 -
+17
+b11 C
+b110 L
+b10 M
+b100 O
+#80000000
+0!
+07
+#85000000
+1!
+b100 ,
+b1 0
+17
+b100 B
+b1 F
+#90000000
+0!
+07
+#95000000
+1!
+17
+#100000000
+0!
+07
+#105000000
+1!
+17
+#110000000
+0!
+b1 #
+b10 $
+b11 %
+b100 &
+b101 '
+b110 (
+b111 )
+b1000 *
+b1001 +
+07
 b1 9
 b10 :
-b101 ;
-b1 <
-b0 >
-b0 @
-b0 A
-b0 B
-b0 D
-0F
-b100 G
-b111 H
-b110 I
-b11 J
+b11 ;
+b100 <
+b101 =
+b110 >
+b111 ?
+b1000 @
+b1001 A
+#115000000
+1!
+b11111111111111111111111111111101 -
+b1 /
+b11111111111111111111111111111101 0
+b1 1
+b1 3
+17
+b11111111111111111111111111111101 C
+b1 E
+b11111111111111111111111111111101 F
+b1 G
+b1 I
+b11111111111111111111111111111101 L
+b11111111111111111111111111110100 M
+b11111111111111111111111111110111 N
+b0 O
 #120000000
+0!
+07
+#125000000
+1!
+b0 ,
+b0 -
+b0 /
+b0 0
+b0 1
+b0 3
+05
+17
+b0 B
+b0 C
+b0 E
+b0 F
+b0 G
+b0 I
+0K
+#130000000
+0!
+07
+#135000000
+1!
+17
+#140000000
+0!
+07
+#145000000
+1!
+17
+#150000000
+0!
+b100 #
+b111 $
+b10 %
+b11 &
+b110 '
+b1 (
+b10 )
+b101 *
+b1 +
+07
+b100 9
+b111 :
+b10 ;
+b11 <
+b110 =
+b1 >
+b10 ?
+b101 @
+b1 A
+#155000000
+1!
+17
+b100 L
+b111 M
+b110 N
+b11 O
+#160000000
+0!
+07
+#165000000
+1!
+b11 ,
+b1 -
+b1 2
+b11111111111111111111111111111110 3
+b1 4
+15
+17
+b11 B
+b1 C
+b1 H
+b11111111111111111111111111111110 I
+b1 J
+1K
+#170000000
+0!
+07
+#175000000
+1!
+17
+#180000000
+0!
+07
+#185000000
+1!
+17
+#190000000
+0!
+07
+#195000000
+1!
+17
+#200000000
+0!
+07
+#205000000
+1!
+17
+#210000000
+0!
+07
+#215000000
+1!
+17
+#220000000
+0!
+07
+#225000000
+1!
+17
+#230000000
+0!
+07
+#235000000
+1!
+17
+#240000000
+0!
+07
+#245000000
+1!
+17
+#250000000
+0!
+07
+#255000000
+1!
+17
+#260000000
+0!
+07
+#265000000
+1!
+17
+#
