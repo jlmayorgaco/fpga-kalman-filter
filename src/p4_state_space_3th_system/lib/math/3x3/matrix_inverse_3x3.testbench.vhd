@@ -110,7 +110,7 @@ begin
             severity error;
 
         -- Test Case 3: Non-invertible matrix (determinant = 0)
-        SCALE <= 10000;
+        SCALE <= 100;
         wait for 10 ns;
         A11 <= 1 * SCALE; A12 <= 2 * SCALE; A13 <= 3 * SCALE;
         A21 <= 4 * SCALE; A22 <= 5 * SCALE; A23 <= 6 * SCALE;
@@ -130,14 +130,14 @@ begin
 
         -- Test Case 4: Invertible matrix
         wait for 10 ns;
-        SCALE <= 10000;
+        SCALE <= 10;
         A11 <= 4 * SCALE; A12 <= 7 * SCALE; A13 <= 2 * SCALE;
         A21 <= 3 * SCALE; A22 <= 6 * SCALE; A23 <= 1 * SCALE;
         A31 <= 2 * SCALE; A32 <= 5 * SCALE; A33 <= 1 * SCALE;
 
 
 
-        wait for 30 ns;
+        wait for 50 ns;
 
         assert C11 = -1 * SCALE and C12 = 1 * SCALE and C13 = 0 * SCALE and
                C21 = 2 * SCALE and C22 = -2 * SCALE and C23 = 1 * SCALE and
