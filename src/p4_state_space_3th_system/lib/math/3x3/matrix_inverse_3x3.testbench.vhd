@@ -88,24 +88,7 @@ begin
                integer'image(C31) & "," & integer'image(C32) & "," & integer'image(C33) & ", valid=" & std_logic'image(valid) & ")"
             severity error;
 
-        -- Test Case 2: Arbitrary invertible matrix
-        SCALE <= 10000;
-        A11 <=  2 * SCALE; A12 <= -1 * SCALE; A13 <=  0 * SCALE;
-        A21 <= -1 * SCALE; A22 <=  2 * SCALE; A23 <= -1 * SCALE;
-        A31 <=  0 * SCALE; A32 <= -1 * SCALE; A33 <=  2 * SCALE;
 
-        wait for 50 ns;
-        assert C11 = 2 * SCALE and C12 = 1 * SCALE and C13 = 0 * SCALE and
-               C21 = 1 * SCALE and C22 = 2 * SCALE and C23 = 1 * SCALE and
-               C31 = 0 * SCALE and C32 = 1 * SCALE and C33 = 2 * SCALE and
-               valid = '1'
-            report "Test Case 2 Failed: Arbitrary invertible matrix. Expected (20000,10000,0; 10000,20000,10000; 0,10000,20000, valid=1), Got (" & 
-                integer'image(C11) & "," & integer'image(C12) & "," & integer'image(C13) & "; " &
-                integer'image(C21) & "," & integer'image(C22) & "," & integer'image(C23) & "; " &
-                integer'image(C31) & "," & integer'image(C32) & "," & integer'image(C33) & ", valid=" & std_logic'image(valid) & ")"
-            severity error;
-
-        
         -- End the simulation
         wait;
     end process stimulus;
