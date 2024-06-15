@@ -74,6 +74,7 @@ begin
 
         -- Test Case 1: Identity Matrix (should result in Identity Matrix)
         SCALE <= 10000;
+        wait for 10 ns;
         A11 <= 1 * SCALE; A12 <= 0 * SCALE; A13 <= 0 * SCALE;
         A21 <= 0 * SCALE; A22 <= 1 * SCALE; A23 <= 0 * SCALE;
         A31 <= 0 * SCALE; A32 <= 0 * SCALE; A33 <= 1 * SCALE;
@@ -82,7 +83,11 @@ begin
                C21 = 0 * SCALE and C22 = 1 * SCALE and C23 = 0 * SCALE and
                C31 = 0 * SCALE and C32 = 0 * SCALE and C33 = 1 * SCALE and
                valid = '1'
-            report "Test Case 1 Failed: Identity Matrix. Expected (10000,0,0; 0,10000,0; 0,0,10000, valid=1), Got (" & 
+            report "Test Case 1 Failed: Identity Matrix. Inputs (" & 
+               integer'image(A11) & "," & integer'image(A12) & "," & integer'image(A13) & "; " &
+               integer'image(A21) & "," & integer'image(A22) & "," & integer'image(A23) & "; " &
+               integer'image(A31) & "," & integer'image(A32) & "," & integer'image(A33) & "). " &
+               "Expected (10000,0,0; 0,10000,0; 0,0,10000, valid=1), Got (" & 
                integer'image(C11) & "," & integer'image(C12) & "," & integer'image(C13) & "; " &
                integer'image(C21) & "," & integer'image(C22) & "," & integer'image(C23) & "; " &
                integer'image(C31) & "," & integer'image(C32) & "," & integer'image(C33) & ", valid=" & std_logic'image(valid) & ")"
