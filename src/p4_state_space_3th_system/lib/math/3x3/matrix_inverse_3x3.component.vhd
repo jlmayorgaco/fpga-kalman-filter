@@ -23,8 +23,6 @@ end entity Matrix_Inverse_3x3;
 
 architecture Matrix_Inverse_3x3_RTL of Matrix_Inverse_3x3 is
 
-    signal inv_det     : integer;
-    signal scaled_det  : integer;
     signal determinant : integer;
 
     signal p1 : integer;
@@ -46,8 +44,7 @@ begin
             C32 <= 0;
             C33 <= 0;
             valid <= '0';
-            inv_det <= 0;
-            scaled_det <= 0;
+
             determinant <= 0;
 
             p1 <= 0;
@@ -64,20 +61,16 @@ begin
 
             if determinant /= 0 then
 
-                -- Calculate the inverse determinant scaled by SCALE
-                scaled_det <= determinant;
-                inv_det <= 1;
-
                 -- Calculate the inverse matrix elements
-                C11 <=  (A22 * A33 - A23 * A32) * inv_det / scaled_det;
-                C12 <= -(A12 * A33 - A13 * A32) * inv_det / scaled_det;
-                C13 <=  (A12 * A23 - A13 * A22) * inv_det / scaled_det;
-                C21 <= -(A21 * A33 - A23 * A31) * inv_det / scaled_det;
-                C22 <=  (A11 * A33 - A13 * A31) * inv_det / scaled_det;
-                C23 <= -(A11 * A23 - A13 * A21) * inv_det / scaled_det;
-                C31 <=  (A21 * A32 - A22 * A31) * inv_det / scaled_det;
-                C32 <= -(A11 * A32 - A12 * A31) * inv_det / scaled_det;
-                C33 <=  (A11 * A22 - A12 * A21) * inv_det / scaled_det;
+                C11 <=  (A22 * A33 - A23 * A32) / determinant;
+                C12 <= -(A12 * A33 - A13 * A32) / determinant;
+                C13 <=  (A12 * A23 - A13 * A22) / determinant;
+                C21 <= -(A21 * A33 - A23 * A31) / determinant;
+                C22 <=  (A11 * A33 - A13 * A31) / determinant;
+                C23 <= -(A11 * A23 - A13 * A21) / determinant;
+                C31 <=  (A21 * A32 - A22 * A31) / determinant;
+                C32 <= -(A11 * A32 - A12 * A31) / determinant;
+                C33 <=  (A11 * A22 - A12 * A21) / determinant;
 
                 valid <= '1'; -- Inverse is valid
             else
