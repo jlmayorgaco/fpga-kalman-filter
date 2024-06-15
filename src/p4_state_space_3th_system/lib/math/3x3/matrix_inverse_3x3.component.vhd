@@ -57,6 +57,7 @@ begin
             p1 <= A11 * (A22 * A33 - A23 * A32);
             p2 <= A12 * (A21 * A33 - A23 * A31);
             p3 <= A13 * (A21 * A32 - A22 * A31);
+
             determinant <= p1 - p2 + p3 ;
 
             if determinant /= 0 then
