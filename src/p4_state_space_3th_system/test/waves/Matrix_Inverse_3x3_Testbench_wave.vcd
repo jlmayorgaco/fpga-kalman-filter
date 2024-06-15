@@ -1,5 +1,5 @@
 $date
-  Sat Jun 15 11:40:52 2024
+  Sat Jun 15 11:49:54 2024
 $end
 $version
   GHDL v0
@@ -59,12 +59,10 @@ $var integer 32 I c31 $end
 $var integer 32 J c32 $end
 $var integer 32 K c33 $end
 $var reg 1 L valid $end
-$var integer 32 M inv_det $end
-$var integer 32 N scaled_det $end
-$var integer 32 O determinant $end
-$var integer 32 P p1 $end
-$var integer 32 Q p2 $end
-$var integer 32 R p3 $end
+$var integer 32 M determinant $end
+$var integer 32 N p1 $end
+$var integer 32 O p2 $end
+$var integer 32 P p3 $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -117,8 +115,6 @@ b0 M
 b0 N
 b0 O
 b0 P
-b0 Q
-b0 R
 #5000000
 1!
 17
@@ -144,14 +140,54 @@ b1 B
 #25000000
 1!
 17
-b1 P
+b1 N
 #30000000
 0!
 07
 #35000000
 1!
 17
-b1 O
+b1 M
 #40000000
 0!
 07
+#45000000
+1!
+b1 -
+b1 1
+b1 5
+16
+17
+b1 C
+b1 G
+b1 K
+1L
+#50000000
+0!
+07
+#55000000
+1!
+17
+#60000000
+0!
+07
+#65000000
+1!
+17
+#70000000
+0!
+b100111000100000 #
+b11111111111111111101100011110000 $
+b11111111111111111101100011110000 &
+b100111000100000 '
+b11111111111111111101100011110000 (
+b11111111111111111101100011110000 *
+b100111000100000 +
+07
+b100111000100000 :
+b11111111111111111101100011110000 ;
+b11111111111111111101100011110000 =
+b100111000100000 >
+b11111111111111111101100011110000 ?
+b11111111111111111101100011110000 A
+b100111000100000 B
