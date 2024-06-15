@@ -1,0 +1,157 @@
+$date
+  Sat Jun 15 11:40:52 2024
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module matrix_inverse_3x3_testbench $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$var integer 32 # a11 $end
+$var integer 32 $ a12 $end
+$var integer 32 % a13 $end
+$var integer 32 & a21 $end
+$var integer 32 ' a22 $end
+$var integer 32 ( a23 $end
+$var integer 32 ) a31 $end
+$var integer 32 * a32 $end
+$var integer 32 + a33 $end
+$var integer 32 , scale $end
+$var integer 32 - c11 $end
+$var integer 32 . c12 $end
+$var integer 32 / c13 $end
+$var integer 32 0 c21 $end
+$var integer 32 1 c22 $end
+$var integer 32 2 c23 $end
+$var integer 32 3 c31 $end
+$var integer 32 4 c32 $end
+$var integer 32 5 c33 $end
+$var reg 1 6 valid $end
+$scope module dut $end
+$var reg 1 7 clk $end
+$var reg 1 8 reset $end
+$var integer 32 9 scale $end
+$var integer 32 : a11 $end
+$var integer 32 ; a12 $end
+$var integer 32 < a13 $end
+$var integer 32 = a21 $end
+$var integer 32 > a22 $end
+$var integer 32 ? a23 $end
+$var integer 32 @ a31 $end
+$var integer 32 A a32 $end
+$var integer 32 B a33 $end
+$var integer 32 C c11 $end
+$var integer 32 D c12 $end
+$var integer 32 E c13 $end
+$var integer 32 F c21 $end
+$var integer 32 G c22 $end
+$var integer 32 H c23 $end
+$var integer 32 I c31 $end
+$var integer 32 J c32 $end
+$var integer 32 K c33 $end
+$var reg 1 L valid $end
+$var integer 32 M inv_det $end
+$var integer 32 N scaled_det $end
+$var integer 32 O determinant $end
+$var integer 32 P p1 $end
+$var integer 32 Q p2 $end
+$var integer 32 R p3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+1"
+b0 #
+b0 $
+b0 %
+b0 &
+b0 '
+b0 (
+b0 )
+b0 *
+b0 +
+b1 ,
+b0 -
+b0 .
+b0 /
+b0 0
+b0 1
+b0 2
+b0 3
+b0 4
+b0 5
+06
+07
+18
+b1 9
+b0 :
+b0 ;
+b0 <
+b0 =
+b0 >
+b0 ?
+b0 @
+b0 A
+b0 B
+b0 C
+b0 D
+b0 E
+b0 F
+b0 G
+b0 H
+b0 I
+b0 J
+b0 K
+0L
+b0 M
+b0 N
+b0 O
+b0 P
+b0 Q
+b0 R
+#5000000
+1!
+17
+#10000000
+0!
+07
+#15000000
+1!
+17
+#20000000
+0!
+0"
+b1 #
+b1 '
+b1 +
+b10011100010000 ,
+07
+08
+b10011100010000 9
+b1 :
+b1 >
+b1 B
+#25000000
+1!
+17
+b1 P
+#30000000
+0!
+07
+#35000000
+1!
+17
+b1 O
+#40000000
+0!
+07
