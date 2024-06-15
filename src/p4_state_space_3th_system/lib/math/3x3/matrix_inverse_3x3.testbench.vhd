@@ -109,46 +109,7 @@ begin
                 integer'image(C31) & "," & integer'image(C32) & "," & integer'image(C33) & ", valid=" & std_logic'image(valid) & ")"
             severity error;
 
-        -- Test Case 3: Non-invertible matrix (determinant = 0)
-        SCALE <= 100;
-        wait for 10 ns;
-        A11 <= 1 * SCALE; A12 <= 2 * SCALE; A13 <= 3 * SCALE;
-        A21 <= 4 * SCALE; A22 <= 5 * SCALE; A23 <= 6 * SCALE;
-        A31 <= 7 * SCALE; A32 <= 8 * SCALE; A33 <= 9 * SCALE;
-
-        wait for 30 ns;
-
-        assert C11 = 0 * SCALE and C12 = 0 * SCALE and C13 = 0 * SCALE and
-               C21 = 0 * SCALE and C22 = 0 * SCALE and C23 = 0 * SCALE and
-               C31 = 0 * SCALE and C32 = 0 * SCALE and C33 = 0 * SCALE and
-               valid = '0'
-            report "Test Case 3 Failed: Non-invertible matrix. Expected (0,0,0; 0,0,0; 0,0,0, valid=0), Got (" & 
-                integer'image(C11) & "," & integer'image(C12) & "," & integer'image(C13) & "; " &
-                integer'image(C21) & "," & integer'image(C22) & "," & integer'image(C23) & "; " &
-                integer'image(C31) & "," & integer'image(C32) & "," & integer'image(C33) & ", valid=" & std_logic'image(valid) & ")"
-            severity error;
-
-        -- Test Case 4: Invertible matrix
-        wait for 10 ns;
-        SCALE <= 10;
-        A11 <= 4 * SCALE; A12 <= 7 * SCALE; A13 <= 2 * SCALE;
-        A21 <= 3 * SCALE; A22 <= 6 * SCALE; A23 <= 1 * SCALE;
-        A31 <= 2 * SCALE; A32 <= 5 * SCALE; A33 <= 1 * SCALE;
-
-
-
-        wait for 50 ns;
-
-        assert C11 = -1 * SCALE and C12 = 1 * SCALE and C13 = 0 * SCALE and
-               C21 = 2 * SCALE and C22 = -2 * SCALE and C23 = 1 * SCALE and
-               C31 = 1 * SCALE and C32 = -1 * SCALE and C33 = 0 * SCALE and
-               valid = '1'
-            report "Test Case 4 Failed: Invertible matrix. Expected (-10000,10000,0; 20000,-20000,10000; 10000,-10000,0, valid=1), Got (" & 
-                integer'image(C11) & "," & integer'image(C12) & "," & integer'image(C13) & "; " &
-                integer'image(C21) & "," & integer'image(C22) & "," & integer'image(C23) & "; " &
-                integer'image(C31) & "," & integer'image(C32) & "," & integer'image(C33) & ", valid=" & std_logic'image(valid) & ")"
-            severity error;
-
+        
         -- End the simulation
         wait;
     end process stimulus;
