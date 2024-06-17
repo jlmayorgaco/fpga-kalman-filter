@@ -54,24 +54,24 @@ begin
         elsif rising_edge(clk) then
 
             -- Calculate the determinant of the 3x3 matrix
-            p1 <= A11 * (A22 * A33 - A23 * A32);
-            p2 <= A12 * (A21 * A33 - A23 * A31);
-            p3 <= A13 * (A21 * A32 - A22 * A31);
+            p1 <= 1; --A11 * (A22 * A33 - A23 * A32);
+            p2 <= 1; --A12 * (A21 * A33 - A23 * A31);
+            p3 <= 1; --A13 * (A21 * A32 - A22 * A31);
 
-            determinant <= p1 - p2 + p3 ;
+            determinant <= 1;--p1 - p2 + p3 ;
 
             if determinant /= 0 then
 
                 -- Calculate the inverse matrix elements
-                C11 <=  (A22 * A33 - A23 * A32) / determinant;
-                C12 <= -(A12 * A33 - A13 * A32) / determinant;
-                C13 <=  (A12 * A23 - A13 * A22) / determinant;
-                C21 <= -(A21 * A33 - A23 * A31) / determinant;
-                C22 <=  (A11 * A33 - A13 * A31) / determinant;
-                C23 <= -(A11 * A23 - A13 * A21) / determinant;
-                C31 <=  (A21 * A32 - A22 * A31) / determinant;
-                C32 <= -(A11 * A32 - A12 * A31) / determinant;
-                C33 <=  (A11 * A22 - A12 * A21) / determinant;
+                C11 <=  (A22 * A33 - A23 * A32); -- / determinant;
+                C12 <=  0; --  -(A12 * A33 - A13 * A32) / determinant;
+                C13 <=  0; --  (A12 * A23 - A13 * A22) / determinant;
+                C21 <=  0; --  -(A21 * A33 - A23 * A31) / determinant;
+                C22 <=  0; --  (A11 * A33 - A13 * A31) / determinant;
+                C23 <=  0; --  -(A11 * A23 - A13 * A21) / determinant;
+                C31 <=  0; --  (A21 * A32 - A22 * A31) / determinant;
+                C32 <=  0; --  -(A11 * A32 - A12 * A31) / determinant;
+                C33 <=  0; --  (A11 * A22 - A12 * A21) / determinant;
 
                 valid <= '1'; -- Inverse is valid
             else
