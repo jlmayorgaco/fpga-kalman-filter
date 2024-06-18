@@ -22,12 +22,40 @@ entity Matrix_Inverse_3x3 is
 end entity Matrix_Inverse_3x3;
 
 architecture Matrix_Inverse_3x3_RTL of Matrix_Inverse_3x3 is
+    signal determinant : signed(31 downto 0);
+    signal p1, p2, p3  : signed(31 downto 0);
 
-    signal determinant : integer;
+    signal pC11        : signed(63 downto 0);
+    signal pC12        : signed(63 downto 0);
+    signal pC13        : signed(127 downto 0);
 
-    signal p1 : integer;
-    signal p2 : integer;
-    signal p3 : integer;
+    signal nC11        : signed(63 downto 0);
+    signal nC12        : signed(63 downto 0);
+    signal nC13        : signed(127 downto 0);
+
+    signal topC13        : signed(127 downto 0);
+    signal bottomC13     : signed(127 downto 0);
+    signal mC13          : signed(127 downto 0);
+
+    -- Convert input integers to signed 32-bit values
+
+
+    -- Convert input integers to signed 64-bit values
+    function to_signed64(value: integer) return signed is
+        begin
+            return to_signed(value, 64);
+        end function;
+
+    function to_signed32(value: integer) return signed is
+        begin
+            return to_signed(value, 32);
+    end function;
+
+    -- Custom function to convert signed value to integer
+    function signed_to_integer(value: signed) return integer is
+    begin
+        return to_integer(value);
+    end function;
 
 begin
     process (clk, reset)
@@ -45,33 +73,41 @@ begin
             C33 <= 0;
             valid <= '0';
 
-            determinant <= 0;
-
-            p1 <= 0;
-            p2 <= 0;
-            p3 <= 0;
+            determinant <= (others => '0');
+            p1 <= (others => '0');
+            p2 <= (others => '0');
+            p3 <= (others => '0');
 
         elsif rising_edge(clk) then
-
             -- Calculate the determinant of the 3x3 matrix
-            p1 <= 1; --A11 * (A22 * A33 - A23 * A32);
-            p2 <= 1; --A12 * (A21 * A33 - A23 * A31);
-            p3 <= 1; --A13 * (A21 * A32 - A22 * A31);
+            p1 <= (others => '0');
+            p2 <= (others => '0');
+            p3 <= (others => '0');
 
-            determinant <= 1;--p1 - p2 + p3 ;
+            determinant <= 1 + p1 - p2 + p3;
 
             if determinant /= 0 then
 
-                -- Calculate the inverse matrix elements
-                C11 <=  (A22 * A33 - A23 * A32); -- / determinant;
-                C12 <=  0; --  -(A12 * A33 - A13 * A32) / determinant;
-                C13 <=  0; --  (A12 * A23 - A13 * A22) / determinant;
-                C21 <=  0; --  -(A21 * A33 - A23 * A31) / determinant;
-                C22 <=  0; --  (A11 * A33 - A13 * A31) / determinant;
-                C23 <=  0; --  -(A11 * A23 - A13 * A21) / determinant;
-                C31 <=  0; --  (A21 * A32 - A22 * A31) / determinant;
-                C32 <=  0; --  -(A11 * A32 - A12 * A31) / determinant;
-                C33 <=  0; --  (A11 * A22 - A12 * A21) / determinant;
+                -- Calculate the inverse matrix elements using larger range types
+                -- Example calculation to check for overflow
+                pC11 <= to_signed64(10000);
+                pC12 <= to_signed32(10000) * to_signed32(10000);
+                pC13 <= to_signed32(A11) * to_signed32(A11) * to_signed32(A11) * to_signed32(1);
+
+                topC13 <= to_signed32(21004) * to_signed32(10000) * to_signed32(10000) * to_signed32(1);
+                bottomC13 <= to_signed32(10000) * to_signed32(10000) * to_signed32(1) * to_signed32(1);
+                mC13 <= topC13 / bottomC13;
+
+                -- Convert back to 32-bit signed integer for output
+                C11 <= signed_to_integer(resize(mC13, 32));
+                C12 <= 1;
+                C13 <= 1;
+                C21 <= 1;
+                C22 <= 1;
+                C23 <= 1;
+                C31 <= 1;
+                C32 <= 1;
+                C33 <= 1;
 
                 valid <= '1'; -- Inverse is valid
             else
