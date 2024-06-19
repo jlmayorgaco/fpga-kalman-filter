@@ -73,7 +73,7 @@ begin
         reset <= '0';
 
         -- Test Case 1: Identity Matrix (should result in Identity Matrix)
-        SCALE <= 10000;
+        SCALE <= 1000;
         wait for 10 ns;
         A11 <= 1 * SCALE; A12 <= 0 * SCALE; A13 <= 0 * SCALE;
         A21 <= 0 * SCALE; A22 <= 1 * SCALE; A23 <= 0 * SCALE;
