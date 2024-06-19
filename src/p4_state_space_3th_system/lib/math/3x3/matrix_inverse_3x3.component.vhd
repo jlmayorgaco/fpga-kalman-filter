@@ -26,6 +26,12 @@ architecture Matrix_Inverse_3x3_RTL of Matrix_Inverse_3x3 is
     signal bottomC11, bottomC12, bottomC13, bottomC21, bottomC22, bottomC23, bottomC31, bottomC32, bottomC33 : signed(127 downto 0);
     signal mC11, mC12, mC13, mC21, mC22, mC23, mC31, mC32, mC33 : signed(127 downto 0);
     signal determinant : signed(127 downto 0);
+    signal det1 : signed(127 downto 0);
+    signal det2 : signed(127 downto 0);
+    signal det3 : signed(127 downto 0);
+    signal det4 : signed(127 downto 0);
+    signal det5 : signed(127 downto 0);
+    signal det6 : signed(127 downto 0);
 
     -- Convert input integers to signed 64-bit values
     function to_signed32(value: integer) return signed is
@@ -87,22 +93,31 @@ begin
             mC33 <= (others => '0');
 
             determinant <= (others => '0');
+            det1 <= (others => '0');
+            det2 <= (others => '0');
+            det3 <= (others => '0');
+            det4 <= (others => '0');
+            det5 <= (others => '0');
+            det6 <= (others => '0');
 
             valid <= '0';
 
         elsif rising_edge(clk) then
             -- Calculate the determinant of the 3x3 matrix
-            determinant <=  to_signed32(A11) * to_signed32(A22) * to_signed32(A33) * to_signed32(1) +
-                            to_signed32(A12) * to_signed32(A23) * to_signed32(A31) * to_signed32(1) +
-                            to_signed32(A13) * to_signed32(A21) * to_signed32(A32) * to_signed32(1) -
-                            to_signed32(A13) * to_signed32(A22) * to_signed32(A31) * to_signed32(1) -
-                            to_signed32(A12) * to_signed32(A21) * to_signed32(A33) * to_signed32(1) -
-                            to_signed32(A11) * to_signed32(A23) * to_signed32(A32) * to_signed32(1) ;
 
-            topC11 <= to_signed32(A22) * to_signed32(A33) * to_signed32(1) * to_signed32(1) - to_signed32(A23) * to_signed32(A32) * to_signed32(1) * to_signed32(1);
+            det1 <= to_signed32(A11) * to_signed32(A22) * to_signed32(A33) * to_signed32(1) / ( SCALE * SCALE );
+            det2 <= to_signed32(A12) * to_signed32(A23) * to_signed32(A31) * to_signed32(1) / ( SCALE * SCALE );
+            det3 <= to_signed32(A13) * to_signed32(A21) * to_signed32(A32) * to_signed32(1) / ( SCALE * SCALE );
+            det4 <= to_signed32(A13) * to_signed32(A22) * to_signed32(A31) * to_signed32(1) / ( SCALE * SCALE );
+            det5 <= to_signed32(A12) * to_signed32(A21) * to_signed32(A33) * to_signed32(1) / ( SCALE * SCALE );
+            det6 <= to_signed32(A11) * to_signed32(A23) * to_signed32(A32) * to_signed32(1) / ( SCALE * SCALE );
+
+            determinant <=  det1 + det2 + det3 - det4 - det5 - det6 ;
+
+            topC11 <= to_signed32(A22) * to_signed32(A33) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A23) * to_signed32(A32) * to_signed32(1) * to_signed32(1) / ( SCALE );
             bottomC11 <= determinant;
 
-            mC11 <= (topC11) / (2);
+            mC11 <= (bottomC11) / (topC11);
 
 
             --if determinant /= 0 then
@@ -152,11 +167,11 @@ begin
                 valid <= '1'; -- Inverse is valid
             else
                 -- If determinant is zero, inverse does not exist
-                C11 <= signed_to_integer(resize(determinant, 32)); -- 1000000000
-                C12 <= signed_to_integer(resize(topC11, 32)); -- 1 000 000
-                C13 <= signed_to_integer(resize(bottomC11, 32)); -- 1 000 000 000;
+                C11 <= signed_to_integer(resize(mC11, 32)); -- 1000000000
+                C12 <= 0; -- 1 000 000
+                C13 <= 0; -- 1 000 000 000;
 
-                C21 <= signed_to_integer(resize(mC11, 32)); -- 500000
+                C21 <= 0; -- 500000
                 C22 <= 0;
                 C23 <= 0;
                 C31 <= 0;
