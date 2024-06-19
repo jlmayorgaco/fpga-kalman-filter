@@ -119,24 +119,24 @@ begin
 
                 -- Calculate the inverse matrix elements
                 topC11 <= to_signed32(A22) * to_signed32(A33) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A23) * to_signed32(A32) * to_signed32(1) * to_signed32(1) / ( SCALE );
-                topC12 <= to_signed32(A13) * to_signed32(A32) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A12) * to_signed32(A33) * to_signed32(1) * to_signed32(1) / ( SCALE );
+                topC12 <= to_signed32(A13) * to_signed32(A32) * to_signed32(1) * to_signed32(1) / ( SCALE )  - to_signed32(A12) * to_signed32(A33) * to_signed32(1) * to_signed32(1) / ( SCALE ) ;
                 topC13 <= to_signed32(A12) * to_signed32(A23) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A13) * to_signed32(A22) * to_signed32(1) * to_signed32(1) / ( SCALE );
                 topC21 <= to_signed32(A23) * to_signed32(A31) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A21) * to_signed32(A33) * to_signed32(1) * to_signed32(1) / ( SCALE );
                 topC22 <= to_signed32(A11) * to_signed32(A33) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A13) * to_signed32(A31) * to_signed32(1) * to_signed32(1) / ( SCALE );
                 topC23 <= to_signed32(A13) * to_signed32(A21) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A11) * to_signed32(A23) * to_signed32(1) * to_signed32(1) / ( SCALE );
                 topC31 <= to_signed32(A21) * to_signed32(A32) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A22) * to_signed32(A31) * to_signed32(1) * to_signed32(1) / ( SCALE );
-                topC32 <= to_signed32(A12) * to_signed32(A31) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A11) * to_signed32(A32) * to_signed32(1) * to_signed32(1) / ( SCALE );
+                topC32 <= to_signed32(A12) * to_signed32(A31) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A11) * to_signed32(A32) * to_signed32(1) * to_signed32(1) / ( SCALE ) ;
                 topC33 <= to_signed32(A11) * to_signed32(A22) * to_signed32(1) * to_signed32(1) / ( SCALE ) - to_signed32(A12) * to_signed32(A21) * to_signed32(1) * to_signed32(1) / ( SCALE );
 
-                bottomC11 <= determinant;
-                bottomC12 <= determinant;
-                bottomC13 <= determinant;
-                bottomC21 <= determinant;
-                bottomC22 <= determinant;
-                bottomC23 <= determinant;
-                bottomC31 <= determinant;
-                bottomC32 <= determinant;
-                bottomC33 <= determinant;
+                bottomC11 <= determinant / SCALE;
+                bottomC12 <= determinant / SCALE;
+                bottomC13 <= determinant / SCALE;
+                bottomC21 <= determinant / SCALE;
+                bottomC22 <= determinant / SCALE;
+                bottomC23 <= determinant / SCALE;
+                bottomC31 <= determinant / SCALE;
+                bottomC32 <= determinant / SCALE;
+                bottomC33 <= determinant / SCALE;
 
                 mC11 <= (topC11 + 1) / (bottomC11 + 1);
                 mC12 <= (topC12 + 1) / (bottomC12 + 1);
@@ -149,7 +149,7 @@ begin
                 mC33 <= (topC33 + 1) / (bottomC33 + 1);
 
                 -- Convert back to 32-bit signed integer for output
-                C11 <= signed_to_integer(resize(bottomC11, 32));
+                C11 <= signed_to_integer(resize(mC11, 32));
                 C12 <= signed_to_integer(resize(mC12, 32));
                 C13 <= signed_to_integer(resize(mC13, 32));
                 C21 <= signed_to_integer(resize(mC21, 32));
