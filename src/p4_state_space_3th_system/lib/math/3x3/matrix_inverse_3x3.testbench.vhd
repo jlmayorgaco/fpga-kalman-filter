@@ -75,9 +75,9 @@ begin
         -- Test Case 1: Identity Matrix (should result in Identity Matrix)
         SCALE <= 1000;
         wait for 10 ns;
-        A11 <= 1 * SCALE; A12 <= 0 * SCALE; A13 <= 0 * SCALE;
-        A21 <= 0 * SCALE; A22 <= 1 * SCALE; A23 <= 0 * SCALE;
-        A31 <= 0 * SCALE; A32 <= 0 * SCALE; A33 <= 1 * SCALE;
+        A11 <= 2 * SCALE; A12 <= 0 * SCALE; A13 <= 0 * SCALE;
+        A21 <= 0 * SCALE; A22 <= 2 * SCALE; A23 <= 0 * SCALE;
+        A31 <= 0 * SCALE; A32 <= 0 * SCALE; A33 <= 2 * SCALE;
         wait for 50 ns;
         assert C11 = 1 * SCALE and C12 = 0 * SCALE and C13 = 0 * SCALE and
                C21 = 0 * SCALE and C22 = 1 * SCALE and C23 = 0 * SCALE and
