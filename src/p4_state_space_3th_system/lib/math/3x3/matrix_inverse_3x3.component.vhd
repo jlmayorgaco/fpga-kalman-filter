@@ -53,18 +53,60 @@ begin
             C31 <= 0;
             C32 <= 0;
             C33 <= 0;
+
+            -- Initialize all signals to a known value
+            topC11 <= (others => '0');
+            topC12 <= (others => '0');
+            topC13 <= (others => '0');
+            topC21 <= (others => '0');
+            topC22 <= (others => '0');
+            topC23 <= (others => '0');
+            topC31 <= (others => '0');
+            topC32 <= (others => '0');
+            topC33 <= (others => '0');
+
+            -- Initialize other signals similarly
+            bottomC11 <= (others => '0');
+            bottomC12 <= (others => '0');
+            bottomC13 <= (others => '0');
+            bottomC21 <= (others => '0');
+            bottomC22 <= (others => '0');
+            bottomC23 <= (others => '0');
+            bottomC31 <= (others => '0');
+            bottomC32 <= (others => '0');
+            bottomC33 <= (others => '0');
+
+            mC11 <= (others => '0');
+            mC12 <= (others => '0');
+            mC13 <= (others => '0');
+            mC21 <= (others => '0');
+            mC22 <= (others => '0');
+            mC23 <= (others => '0');
+            mC31 <= (others => '0');
+            mC32 <= (others => '0');
+            mC33 <= (others => '0');
+
+            determinant <= (others => '0');
+
             valid <= '0';
 
         elsif rising_edge(clk) then
             -- Calculate the determinant of the 3x3 matrix
-            determinant <= to_signed32(A11) * to_signed32(A22) * to_signed32(A33) * to_signed32(1) +
-                           to_signed32(A12) * to_signed32(A23) * to_signed32(A31) * to_signed32(1) +
-                           to_signed32(A13) * to_signed32(A21) * to_signed32(A32) * to_signed32(1) -
-                           to_signed32(A13) * to_signed32(A22) * to_signed32(A31) * to_signed32(1) -
-                           to_signed32(A12) * to_signed32(A21) * to_signed32(A33) * to_signed32(1) -
-                           to_signed32(A11) * to_signed32(A23) * to_signed32(A32)* to_signed32(1) ;
+            determinant <=  to_signed32(A11) * to_signed32(A22) * to_signed32(A33) * to_signed32(1) +
+                            to_signed32(A12) * to_signed32(A23) * to_signed32(A31) * to_signed32(1) +
+                            to_signed32(A13) * to_signed32(A21) * to_signed32(A32) * to_signed32(1) -
+                            to_signed32(A13) * to_signed32(A22) * to_signed32(A31) * to_signed32(1) -
+                            to_signed32(A12) * to_signed32(A21) * to_signed32(A33) * to_signed32(1) -
+                            to_signed32(A11) * to_signed32(A23) * to_signed32(A32) * to_signed32(1) ;
 
-            if determinant /= 0 then
+            topC11 <= to_signed32(A22) * to_signed32(A33) * to_signed32(1) * to_signed32(1) - to_signed32(A23) * to_signed32(A32) * to_signed32(1) * to_signed32(1);
+            bottomC11 <= determinant;
+
+            mC11 <= (topC11) / (2);
+
+
+            --if determinant /= 0 then
+            if false then
                 -- Calculate the inverse matrix elements
                 topC11 <= to_signed32(A22) * to_signed32(A33) * to_signed32(1) * to_signed32(1) - to_signed32(A23) * to_signed32(A32) * to_signed32(1) * to_signed32(1);
                 topC12 <= to_signed32(A13) * to_signed32(A32) * to_signed32(1) * to_signed32(1) - to_signed32(A12) * to_signed32(A33) * to_signed32(1) * to_signed32(1);
@@ -110,10 +152,11 @@ begin
                 valid <= '1'; -- Inverse is valid
             else
                 -- If determinant is zero, inverse does not exist
-                C11 <= 0;
-                C12 <= 0;
-                C13 <= 0;
-                C21 <= 0;
+                C11 <= signed_to_integer(resize(determinant, 32)); -- 1000000000
+                C12 <= signed_to_integer(resize(topC11, 32)); -- 1 000 000
+                C13 <= signed_to_integer(resize(bottomC11, 32)); -- 1 000 000 000;
+
+                C21 <= signed_to_integer(resize(mC11, 32)); -- 500000
                 C22 <= 0;
                 C23 <= 0;
                 C31 <= 0;
