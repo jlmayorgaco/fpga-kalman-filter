@@ -22,33 +22,15 @@ entity Matrix_Inverse_3x3 is
 end entity Matrix_Inverse_3x3;
 
 architecture Matrix_Inverse_3x3_RTL of Matrix_Inverse_3x3 is
-    signal determinant : signed(31 downto 0);
-    signal p1, p2, p3  : signed(31 downto 0);
-
-    signal pC11        : signed(63 downto 0);
-    signal pC12        : signed(63 downto 0);
-    signal pC13        : signed(127 downto 0);
-
-    signal nC11        : signed(63 downto 0);
-    signal nC12        : signed(63 downto 0);
-    signal nC13        : signed(127 downto 0);
-
-    signal topC13        : signed(127 downto 0);
-    signal bottomC13     : signed(127 downto 0);
-    signal mC13          : signed(127 downto 0);
-
-    -- Convert input integers to signed 32-bit values
-
+    signal topC11, topC12, topC13, topC21, topC22, topC23, topC31, topC32, topC33 : signed(127 downto 0);
+    signal bottomC11, bottomC12, bottomC13, bottomC21, bottomC22, bottomC23, bottomC31, bottomC32, bottomC33 : signed(127 downto 0);
+    signal mC11, mC12, mC13, mC21, mC22, mC23, mC31, mC32, mC33 : signed(127 downto 0);
+    signal determinant : signed(127 downto 0);
 
     -- Convert input integers to signed 64-bit values
-    function to_signed64(value: integer) return signed is
-        begin
-            return to_signed(value, 64);
-        end function;
-
     function to_signed32(value: integer) return signed is
-        begin
-            return to_signed(value, 32);
+    begin
+        return to_signed(value, 32);
     end function;
 
     -- Custom function to convert signed value to integer
@@ -73,41 +55,57 @@ begin
             C33 <= 0;
             valid <= '0';
 
-            determinant <= (others => '0');
-            p1 <= (others => '0');
-            p2 <= (others => '0');
-            p3 <= (others => '0');
-
         elsif rising_edge(clk) then
             -- Calculate the determinant of the 3x3 matrix
-            p1 <= (others => '0');
-            p2 <= (others => '0');
-            p3 <= (others => '0');
-
-            determinant <= 1 + p1 - p2 + p3;
+            determinant <= to_signed32(A11) * to_signed32(A22) * to_signed32(A33) * to_signed32(1) +
+                           to_signed32(A12) * to_signed32(A23) * to_signed32(A31) * to_signed32(1) +
+                           to_signed32(A13) * to_signed32(A21) * to_signed32(A32) * to_signed32(1) -
+                           to_signed32(A13) * to_signed32(A22) * to_signed32(A31) * to_signed32(1) -
+                           to_signed32(A12) * to_signed32(A21) * to_signed32(A33) * to_signed32(1) -
+                           to_signed32(A11) * to_signed32(A23) * to_signed32(A32)* to_signed32(1) ;
 
             if determinant /= 0 then
+                -- Calculate the inverse matrix elements
+                topC11 <= to_signed32(A22) * to_signed32(A33) * to_signed32(1) * to_signed32(1) - to_signed32(A23) * to_signed32(A32) * to_signed32(1) * to_signed32(1);
+                topC12 <= to_signed32(A13) * to_signed32(A32) * to_signed32(1) * to_signed32(1) - to_signed32(A12) * to_signed32(A33) * to_signed32(1) * to_signed32(1);
+                topC13 <= to_signed32(A12) * to_signed32(A23) * to_signed32(1) * to_signed32(1) - to_signed32(A13) * to_signed32(A22) * to_signed32(1) * to_signed32(1);
+                topC21 <= to_signed32(A23) * to_signed32(A31) * to_signed32(1) * to_signed32(1) - to_signed32(A21) * to_signed32(A33) * to_signed32(1) * to_signed32(1);
+                topC22 <= to_signed32(A11) * to_signed32(A33) * to_signed32(1) * to_signed32(1) - to_signed32(A13) * to_signed32(A31) * to_signed32(1) * to_signed32(1);
+                topC23 <= to_signed32(A13) * to_signed32(A21) * to_signed32(1) * to_signed32(1) - to_signed32(A11) * to_signed32(A23) * to_signed32(1) * to_signed32(1);
+                topC31 <= to_signed32(A21) * to_signed32(A32) * to_signed32(1) * to_signed32(1) - to_signed32(A22) * to_signed32(A31) * to_signed32(1) * to_signed32(1);
+                topC32 <= to_signed32(A12) * to_signed32(A31) * to_signed32(1) * to_signed32(1) - to_signed32(A11) * to_signed32(A32) * to_signed32(1) * to_signed32(1);
+                topC33 <= to_signed32(A11) * to_signed32(A22) * to_signed32(1) * to_signed32(1) - to_signed32(A12) * to_signed32(A21) * to_signed32(1) * to_signed32(1);
 
-                -- Calculate the inverse matrix elements using larger range types
-                -- Example calculation to check for overflow
-                pC11 <= to_signed64(10000);
-                pC12 <= to_signed32(10000) * to_signed32(10000);
-                pC13 <= to_signed32(A11) * to_signed32(A11) * to_signed32(A11) * to_signed32(1);
+                bottomC11 <= determinant;
+                bottomC12 <= determinant;
+                bottomC13 <= determinant;
+                bottomC21 <= determinant;
+                bottomC22 <= determinant;
+                bottomC23 <= determinant;
+                bottomC31 <= determinant;
+                bottomC32 <= determinant;
+                bottomC33 <= determinant;
 
-                topC13 <= to_signed32(21004) * to_signed32(10000) * to_signed32(10000) * to_signed32(1);
-                bottomC13 <= to_signed32(10000) * to_signed32(10000) * to_signed32(1) * to_signed32(1);
+                mC11 <= topC11 / bottomC11;
+                mC12 <= topC12 / bottomC12;
                 mC13 <= topC13 / bottomC13;
+                mC21 <= topC21 / bottomC21;
+                mC22 <= topC22 / bottomC22;
+                mC23 <= topC23 / bottomC23;
+                mC31 <= topC31 / bottomC31;
+                mC32 <= topC32 / bottomC32;
+                mC33 <= topC33 / bottomC33;
 
                 -- Convert back to 32-bit signed integer for output
-                C11 <= signed_to_integer(resize(mC13, 32));
-                C12 <= 1;
-                C13 <= 1;
-                C21 <= 1;
-                C22 <= 1;
-                C23 <= 1;
-                C31 <= 1;
-                C32 <= 1;
-                C33 <= 1;
+                C11 <= signed_to_integer(resize(mC11, 32));
+                C12 <= signed_to_integer(resize(mC12, 32));
+                C13 <= signed_to_integer(resize(mC13, 32));
+                C21 <= signed_to_integer(resize(mC21, 32));
+                C22 <= signed_to_integer(resize(mC22, 32));
+                C23 <= signed_to_integer(resize(mC23, 32));
+                C31 <= signed_to_integer(resize(mC31, 32));
+                C32 <= signed_to_integer(resize(mC32, 32));
+                C33 <= signed_to_integer(resize(mC33, 32));
 
                 valid <= '1'; -- Inverse is valid
             else
