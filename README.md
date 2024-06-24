@@ -34,10 +34,18 @@ The project is organized into several experiments and simulations:
 - [x] **2nd Order Linear Dynamical System Step Response Simulation**: Simulate the step response of a second-order linear dynamical system.
 - [x] **Random Noise Simulator VHDL**: Implement a random noise simulator in VHDL.
 - [x] **Feedback Loop Controller PID VHDL**: Implement a feedback loop controller using PID in VHDL.
-- [ ] **State Space 3rd Order Linear Dynamical System Simulation**: Simulate a third-order linear dynamical system using state space representation.
-- [ ] **2nd Order Kalman Filter Simulation**: Simulate a second-order Kalman filter.
-- [ ] **State Space Kalman Filter 3x3 Simulation**: Simulate a state space Kalman filter with a 3x3 matrix.
-- [ ] **Extended Kalman Filter Simulation**: Simulate an extended Kalman filter.
+- [x] **State Space 3rd Order Linear Dynamical System Simulation**: Simulate a third-order linear dynamical system using state space representation.
+- [ ] **2x2 Generic Bit Matrix Library for Dynamical System**: Create a 2x2 Generic Bit (8, 16, 32 signed bit) library.
+- [ ] **3x3 Generic Bit Matrix Library for Dynamical System**: Create a 3x3 Generic Bit (8, 16, 32 signed bit) library.
+- [ ] **2x2 Generic Bit Dynamical System Step Response Simulation**:  .
+- [ ] **3x3 Generic Bit Dynamical System Step Response Simulation**:  .
+- [ ] **4x4 Generic Bit Dynamical System Step Response Simulation**:  .
+- [ ] **5x5 Generic Bit Dynamical System Step Response Simulation**:  .
+- [ ] **6x6 Generic Bit Dynamical System Step Response Simulation**:  .
+- [ ] **State Space Kalman Filter 2x2 Kalman Filter Simulation n-bits**: Simulate a second-order  2x2 Kalman filter.
+- [ ] **State Space Kalman Filter 3x3 Kalman Filter Simulation n-bits**: Simulate a state space Kalman filter with a 3x3 matrix.
+- [ ] **State Space Extended Kalman Filter (EKF) 3x3 n-bits Simulation**: Simulate an Extended Kalman filter.
+- [ ] **State Space Unscented Kalman Filter (UKF) 3x3 n-bits Simulation**: Simulate an Unscented Kalman filter.
 - [ ] **Distributed Kalman Filter Simulation**: Simulate a distributed Kalman filter.
 - [ ] **Simulation Power System with EKF**: Simulate a power system with an extended Kalman filter.
 
