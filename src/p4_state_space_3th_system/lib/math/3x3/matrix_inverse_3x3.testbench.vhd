@@ -114,6 +114,26 @@ begin
             integer'image(C31) & "," & integer'image(C32) & "," & integer'image(C33) & ", valid=" & std_logic'image(valid) & ")"
             severity error;
 
+        -- Test Case 3: Zero Matrix (should result in all zeros and valid = '0')
+        SCALE <= 1000;
+        wait for 10 ns;
+        A11 <= 0 * SCALE; A12 <= 0 * SCALE; A13 <= 0 * SCALE;
+        A21 <= 0 * SCALE; A22 <= 0 * SCALE; A23 <= 0 * SCALE;
+        A31 <= 0 * SCALE; A32 <= 0 * SCALE; A33 <= 0 * SCALE;
+        wait for 50 ns;
+        assert C11 = 0 and C12 = 0 and C13 = 0 and
+            C21 = 0 and C22 = 0 and C23 = 0 and
+            C31 = 0 and C32 = 0 and C33 = 0 and
+            valid = '0'
+            report "Test Case 4 Failed: Zero Matrix. Inputs (" & 
+            integer'image(A11) & "," & integer'image(A12) & "," & integer'image(A13) & "; " &
+            integer'image(A21) & "," & integer'image(A22) & "," & integer'image(A23) & "; " &
+            integer'image(A31) & "," & integer'image(A32) & "," & integer'image(A33) & "). " &
+            "Expected all zeros with valid = '0', Got (" & 
+            integer'image(C11) & "," & integer'image(C12) & "," & integer'image(C13) & "; " &
+            integer'image(C21) & "," & integer'image(C22) & "," & integer'image(C23) & "; " &
+            integer'image(C31) & "," & integer'image(C32) & "," & integer'image(C33) & ", valid=" & std_logic'image(valid) & ")"
+            severity error;
 
 
         -- End the simulation
