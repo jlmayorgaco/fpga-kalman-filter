@@ -162,11 +162,11 @@ begin
                 valid <= '1'; -- Inverse is valid
             else
                 -- If determinant is zero, inverse does not exist
-                C11 <= signed_to_integer(resize(mC11, 32)); -- 1000000000
-                C12 <= 0; -- 1 000 000
-                C13 <= 0; -- 1 000 000 000;
+                C11 <= 0;
+                C12 <= 0;
+                C13 <= 0;
 
-                C21 <= 0; -- 500000
+                C21 <= 0;
                 C22 <= 0;
                 C23 <= 0;
                 C31 <= 0;
