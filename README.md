@@ -25,6 +25,7 @@ In comparing Kalman filter implementations on FPGA platforms, two key applicatio
 
 
 
+
 ## Experiments
 
 The project is organized into several experiments and simulations:
@@ -50,7 +51,17 @@ The project is organized into several experiments and simulations:
 - [ ] **Simulation Power System with EKF**: Simulate a power system with an extended Kalman filter.
 
 
-Setting Up example
+## Experiments Results
+
+### Exp 0: 16 Bits Counter 
+<img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/graph/Board_P1_Graph.png" width="100%">
+
+
+
+
+
+
+##  Setting Up example
 
 
 ## Installing GHDL
