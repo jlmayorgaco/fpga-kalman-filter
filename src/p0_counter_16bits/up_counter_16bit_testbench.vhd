@@ -32,7 +32,7 @@ begin
     -- Clock process
     clk_process : process
     begin
-        while now < 10000 ns loop  -- Run for 100 ns
+        while now < 250 ns loop  -- Run for 100 ns
             clk <= '0';
             wait for CLK_PERIOD / 2;
             clk <= '1';
@@ -47,7 +47,7 @@ begin
         reset <= '1';  -- Assert reset
         wait for 20 ns;
         reset <= '0';  -- Deassert reset
-        wait for 10000 ns;
+        wait for 250 ns;
         wait;
     end process;
 
