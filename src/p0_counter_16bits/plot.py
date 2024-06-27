@@ -1,9 +1,10 @@
 from scripts.utils.VCDSignalsClass import VCDSignalsClass
 from scripts.graphs.GraphChartClass import GraphChartClass
 from scripts.graphs.GraphBitStreamClass import GraphBitStreamClass
-#from scripts.boards.ExpResultGraphBoardClass import ExpResultGraphBoardClass
+from scripts.boards.ExpResultGraphBoardClass import ExpResultGraphBoardClass
 
 if __name__ == "__main__":
+
 
     # ----------------------------------------------------------- #
     # --  VCD File                                            --- #
@@ -20,12 +21,15 @@ if __name__ == "__main__":
     # --  Signals                                             --- #
     # ----------------------------------------------------------- #
     signal_clk = vcd.getSignalByName('clk')
+    signal_clk.setLabel('clk')
     signal_clk.setType('bit')
 
     signal_rst = vcd.getSignalByName('reset')
+    signal_rst.setLabel('rst')
     signal_rst.setType('bit')
 
     signal_counter = vcd.getSignalByName('count[15:0]')
+    signal_counter.setLabel('counter')
     signal_counter.setType('int')
     # ----------------------------------------------------------- #
 
@@ -42,20 +46,29 @@ if __name__ == "__main__":
     bitstreamGraph = GraphBitStreamClass()
     bitstreamGraph.addSignal(signal_clk)
     bitstreamGraph.addSignal(signal_rst)
-    bitstreamGraph.addSignal(signal_counter)
     # ----------------------------------------------------------- #
+
+
+
+    # ----------------------------------------------------------- #
+    # --  Board                                               --- #
+    # ----------------------------------------------------------- #
+    board = ExpResultGraphBoardClass()
+    board.setChartGraph(chartGraph)
+    board.setBitStreamGraph(bitstreamGraph)
+    board.render()
 
     print('bitstreamGraph')
     print(bitstreamGraph)
     print('0o9')
 
+    # ----------------------------------------------------------- #
+
+
     '''
 
 
 
-    board = ExpResultGraphBoardClass()
-    board.setBitStreamGraph(bitstreamGraph)
-    board.setChartGraph(bitstreamGraph)
 
     board.plot()
     board.save()
