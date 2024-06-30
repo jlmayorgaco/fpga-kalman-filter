@@ -40,12 +40,16 @@ if __name__ == "__main__":
     chartGraph = GraphChartClass()
     chartGraph.addTitle('Counter 16 Bits')
     chartGraph.addLabelX('Time [ms]')
-    chartGraph.addLabelY('Value')
+    chartGraph.addLabelY('Value Signed 16 Bits')
     chartGraph.addSignal(signal_counter)
 
     bitstreamGraph = GraphBitStreamClass()
+    bitstreamGraph.addTitle('Timeline Signals')
+    bitstreamGraph.addLabelX('Time [ms]')
+    bitstreamGraph.addLabelY('')
     bitstreamGraph.addSignal(signal_clk)
     bitstreamGraph.addSignal(signal_rst)
+    bitstreamGraph.addSignal(signal_counter)
     # ----------------------------------------------------------- #
 
 
