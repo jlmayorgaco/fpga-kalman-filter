@@ -25,7 +25,7 @@ simulate:
 	$(GHDL) -r $(VHDL_TEST_ENTITY) $(SIM_OPTIONS)
 
 plot:
-	python scripts/vcd.py
+	python scripts/plot.py
 
 # Clean generated files
 clean:
