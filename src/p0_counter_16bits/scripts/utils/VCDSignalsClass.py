@@ -46,9 +46,11 @@ class SignalClass:
         self.binary_values = binary_values
         self.binary_timestamps = timestamps
         self.binary_time_milliseconds = time_milliseconds
-        y_binary_values_interpolated = self.getInterpolateSignal(self.clk_timestamps, self.binary_timestamps, self.binary_values)
+        y_binary_values_interpolated = self.interpolate_signal(self.clk_timestamps, self.binary_timestamps, self.binary_values)
         y_decimal_values = [self.convert_to_int(binary_value) for binary_value in y_binary_values_interpolated]
-        self.interpoled_timestamps = self.binary_time_milliseconds
+
+        self.binary_values = [self.convert_to_int(binary_value) for binary_value in binary_values]
+        self.interpoled_timestamps = self.clk_timestamps
         self.interpoled_values = y_decimal_values
 
     def getTimestampsAndValues(self, signal_data):
@@ -70,6 +72,30 @@ class SignalClass:
                     dist_binary_values_interpolated.append(dist_binary_values[k])
                 else:
                     break
+        return dist_binary_values_interpolated
+    
+    def interpolate_signal(self, clk_timestamps, dist_timestamps, dist_binary_values):
+        dist_binary_values_interpolated = []
+
+        k = 0
+        t_dist_k = dist_timestamps[k]
+        y_dist_k = dist_binary_values[k]
+
+        for i in range(len(clk_timestamps)):
+            t_clk_i = clk_timestamps[i]
+            if k == (len(dist_timestamps) - 1) or t_clk_i <= dist_timestamps[k + 1]:
+                dist_binary_values_interpolated.append(y_dist_k)
+            else:
+                k += 1
+                if k < len(dist_timestamps):
+                    t_dist_k = dist_timestamps[k]
+                    y_dist_k = dist_binary_values[k]
+                    dist_binary_values_interpolated.append(y_dist_k)
+                else:
+                    # Handle the case when k exceeds the length of dist_timestamps
+                    # Perhaps break out of the loop or handle the situation accordingly
+                    pass
+
         return dist_binary_values_interpolated
 
     @staticmethod
@@ -210,19 +236,27 @@ class VCDSignalsClass2:
         time_milliseconds = [time * 1000 for time in time_seconds]
         return timestamps, time_milliseconds, binary_values
 
-    def interpolate_signal(self, clk_timestamps, dist_timestamps, dist_binary_values):
+    def interpolate_signal(clk_timestamps, dist_timestamps, dist_binary_values):
         dist_binary_values_interpolated = []
+
         k = 0
+        t_dist_k = dist_timestamps[k]
+        y_dist_k = dist_binary_values[k]
 
         for i in range(len(clk_timestamps)):
-            if k == len(dist_timestamps) - 1 or clk_timestamps[i] <= dist_timestamps[k + 1]:
-                dist_binary_values_interpolated.append(dist_binary_values[k])
+            t_clk_i = clk_timestamps[i]
+            if k == (len(dist_timestamps) - 1) or t_clk_i <= dist_timestamps[k + 1]:
+                dist_binary_values_interpolated.append(y_dist_k)
             else:
                 k += 1
                 if k < len(dist_timestamps):
-                    dist_binary_values_interpolated.append(dist_binary_values[k])
+                    t_dist_k = dist_timestamps[k]
+                    y_dist_k = dist_binary_values[k]
+                    dist_binary_values_interpolated.append(y_dist_k)
                 else:
-                    break
+                    # Handle the case when k exceeds the length of dist_timestamps
+                    # Perhaps break out of the loop or handle the situation accordingly
+                    pass
 
         return dist_binary_values_interpolated
 
