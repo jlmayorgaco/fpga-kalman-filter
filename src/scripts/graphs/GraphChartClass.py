@@ -62,7 +62,7 @@ class GraphChartClass:
         # Add a vertical line and label at the last x value
         if last_x_clock is not None:
             self.axis.axvline(x=last_x_clock, color='red', linestyle='--', alpha=0.7)
-            self.axis.text(last_x_clock + 5, -2.65, str(int(last_x_clock)), color='black', va='bottom', ha='right')
+            #self.axis.text(last_x_clock + 5, -2.65, str(int(last_x_clock)), color='black', va='bottom', ha='right')
 
 
         self.axis.set_xlabel(self.xLabel)
