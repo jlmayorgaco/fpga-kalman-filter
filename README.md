@@ -55,12 +55,11 @@ The project is organized into several experiments and simulations:
 
 ### Exp 0: 16 Bits Counter 
 <img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/graph/Board_P1_Graph.png" width="100%">
-[https://github.com/jlmayorgaco/fpga-kalman-filter/tree/main/src/p0_counter_16bits](https://github.com/jlmayorgaco/fpga-kalman-filter/tree/main/src/p0_counter_16bits)
-
+https://github.com/jlmayorgaco/fpga-kalman-filter/tree/main/src/p0_counter_16bits
 
 ### Exp 1: Graph 2nd System Step Response
 <img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/graph/p1_2nd_order_system_step_response.png" width="100%">
-[https://github.com/jlmayorgaco/fpga-kalman-filter/tree/main/src/p1_2nd_system_step_response](https://github.com/jlmayorgaco/fpga-kalman-filter/tree/main/src/p1_2nd_system_step_response)
+https://github.com/jlmayorgaco/fpga-kalman-filter/tree/main/src/p1_2nd_system_step_response
 
 
 ##  Setting Up example
