@@ -57,7 +57,7 @@ The project is organized into several experiments and simulations:
 <img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/graph/Board_P1_Graph.png" width="100%">
 
 ### Exp 1: Graph 2nd System Step Response
-<img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/graph/graph_p2nd_system_step_response.png" width="100%">
+<img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/graph/p1_2nd_order_system_step_response.png" width="100%">
 
 
 
