@@ -79,7 +79,7 @@ class GraphBitStreamClass:
         int_y = [int(value) + offset for value in y]
         self.axis.plot(x, int_y, color='green', linewidth=2, drawstyle='steps-post')
         self.axis.fill_between(x, offset, int_y, step='post', color='green', alpha=0.3)
-        self.axis.text(-2*len(label) - 10, offset + 0.5, label, va='center', ha='left')
+        self.axis.text(-2*len(label) - 0, offset + 0.5, label, va='center', ha='left')
 
     def plot_integer_signal(self, signal, clock_signal: SignalClass, label, offset):
         x = [timestamp / TIME_SCALE for timestamp in signal.binary_timestamps][:TIME_MAX_LIMIT]
@@ -107,7 +107,7 @@ class GraphBitStreamClass:
             min_y = offset + 0.35 * height_increment
             if(mid_x < x[-1] + 1):
                 self.axis.text(mid_x, min_y, text_i, va='center', ha='center', fontsize=8, bbox=dict(facecolor='white', edgecolor='none', pad=5))
-        self.axis.text(-2*len(label) - 10, offset + 0.7, label, va='center', ha='left')
+        self.axis.text(-2*len(label) + 1, offset + 0.7, label, va='center', ha='left')
 
     def render(self) -> None:
         max_plots = 8
