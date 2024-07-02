@@ -1,12 +1,12 @@
 import json
 import itertools
 
-
 from typing import List
 from typing import Optional
 
-from ..utils.VCDSignalsClass import SignalClass
+from matplotlib.ticker import FuncFormatter
 
+from ..utils.VCDSignalsClass import SignalClass
 
 TIME_SCALE = 1e6 # 1e3
 class GraphChartClass:
@@ -33,6 +33,15 @@ class GraphChartClass:
 
     def addLabelX(self, label: str) -> None:
         self.xLabel = label
+
+    @staticmethod
+    def abbreviate_number(y, _):
+            if y >= 1_000_000:
+                return f'{y / 1_000_000:.0f}M'.rstrip('0').rstrip('.')
+            elif y >= 1_000:
+                return f'{y / 1_000:.0f}k'.rstrip('0').rstrip('.')
+            else:
+                return str(int(y))
 
     def render(self) -> None:
 
@@ -71,3 +80,6 @@ class GraphChartClass:
         self.axis.set_xlim([x[0], x[len(x) - 1]])
         self.axis.legend()
         self.axis.grid(True)
+        # Set custom formatter for the y-axis
+        self.axis.yaxis.set_major_formatter(FuncFormatter(self.abbreviate_number))
+
