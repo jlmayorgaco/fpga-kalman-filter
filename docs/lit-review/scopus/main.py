@@ -5,6 +5,7 @@ import geopandas as gpd
 from numpy.polynomial.polynomial import Polynomial
 import numpy as np
 import json
+import matplotlib.gridspec as gridspec
 
 title = 'Analysis of Publications on Power Systems Frequency Estimator'
 
@@ -58,14 +59,19 @@ axs[0, 0].legend()
 axs[0, 0].set_xlim([x_data.min(), x_data.max() + 1])
 axs[0, 0].set_ylim([0, y_data.max() + 2])
 
-# Load the world shapefile
-world = gpd.read_file('ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp')
+# Load the world shapefile and exclude Antarctica
+world = gpd.read_file('maps/natural-earth-vector-master/10m_cultural/ne_10m_admin_0_countries_usa.shp')
+world = world[world['ADMIN'] != 'Antarctica']
 # Merge the country data with the world shapefile
 world = world.merge(df_country, how='left', left_on='ADMIN', right_on='COUNTRY')
 # Plot the world map with country counts
-world.boundary.plot(ax=axs[0, 1], edgecolor='k')
-world.plot(column='Count', ax=axs[0, 1], legend=True, legend_kwds={'shrink': 0.5}, missing_kwds={'color': 'lightgrey'})
 axs[0, 1].set_title('Publications by Country')
+world.boundary.plot(ax=axs[0, 1], edgecolor='white', linewidth=0.001)
+world.plot(column='Count', ax=axs[0, 1], legend=True,  missing_kwds={'color': 'lightgrey'})
+
+# Adjust map subplot size and aspect ratio
+axs[0, 1].set_aspect('equal')
+axs[0, 1].axis('off')
 
 # Plot top authors
 top_authors = df_author.head(10).sort_values(by='Count', ascending=True)  # Adjust as needed and reverse order
@@ -95,13 +101,6 @@ for bar, full_name, count in zip(bars, top_funding['FUNDING-SPONSORS'], top_fund
     w_text = 0.5*len(full_name)
     w_bar_and_text = w_bar + w_text
     w_subplot = 1.1*top_funding['Count'].max()
-    print(' ')
-    print('full_name',full_name)
-    print('w_bar',w_bar)
-    print('w_text',w_text)
-    print('w_bar_and_text',w_bar_and_text)
-    print('w_subplot',w_subplot)
-    print(' ')
     if w_bar_and_text > w_subplot :
         # Text inside bar with color white
         axs[1, 1].text(
