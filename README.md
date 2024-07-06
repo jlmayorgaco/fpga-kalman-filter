@@ -54,12 +54,17 @@ The project is organized into several experiments and simulations:
 ## Experiments Results
 
 ### Exp 0: 16 Bits Counter 
-<img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/graph/Board_P1_Graph.png" width="100%">
+<img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/results/experimentals_boards/png/BOARD_P0_COUNTER.png" width="100%">
 https://github.com/jlmayorgaco/fpga-kalman-filter/tree/main/src/p0_counter_16bits
 
 ### Exp 1: Graph 2nd System Step Response
-<img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/graph/p1_2nd_order_system_step_response.png" width="100%">
+<img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/results/experimentals_boards/png/BOARD_P1_2ND_DYNAMICAL.png" width="100%">
 https://github.com/jlmayorgaco/fpga-kalman-filter/tree/main/src/p1_2nd_system_step_response
+
+### Exp 2: Graph Low Pass Filter on 2nd System Step Response + Noise
+<img src="https://github.com/jlmayorgaco/fpga-kalman-filter/blob/main/images/results/experimentals_boards/png/BOARD_P2_NOISE.png" width="100%">
+https://github.com/jlmayorgaco/fpga-kalman-filter/tree/main/src/p2_random_noise_generator
+
 
 
 ##  Setting Up example
