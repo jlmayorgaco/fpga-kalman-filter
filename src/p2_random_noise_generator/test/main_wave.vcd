@@ -1,5 +1,5 @@
 $date
-  Tue May 14 18:22:38 2024
+  Sat Jul  6 08:52:46 2024
 $end
 $version
   GHDL v0
@@ -14,11 +14,11 @@ $upscope $end
 $scope module numeric_std $end
 $upscope $end
 $scope module main_tb $end
-$var reg 1 ! clk_tb $end
-$var reg 1 " rst_tb $end
-$var integer 32 # u_tb $end
-$var integer 32 $ y_tb $end
-$var integer 32 % y_noise_tb $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var integer 32 # u $end
+$var integer 32 $ y $end
+$var integer 32 % y_noise $end
 $scope module dut $end
 $var reg 1 & clk $end
 $var reg 1 ' rst $end
