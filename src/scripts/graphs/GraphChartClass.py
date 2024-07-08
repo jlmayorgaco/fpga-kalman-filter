@@ -19,6 +19,8 @@ class GraphChartClass:
         self.yLabel: str = 'Signal Values'
         self.signals: List[SignalClass] = []
 
+        self.limitX = None
+
     def addSignal(self, signal: SignalClass) -> None:
         self.signals.append(signal)
 
@@ -34,6 +36,9 @@ class GraphChartClass:
     def addLabelX(self, label: str) -> None:
         self.xLabel = label
 
+    def setLimitX(self, limit: float) -> None:
+        self.limitX = limit
+
     @staticmethod
     def abbreviate_number(y, _):
             if y >= 1_000_000:
@@ -46,7 +51,7 @@ class GraphChartClass:
     def render(self) -> None:
 
         # Define a list of colors and line styles to cycle through
-        colors = ['green', 'yellowgreen', 'blue', 'red', 'cyan', 'magenta', 'yellow', 'black']
+        colors = ['green', 'yellowgreen', 'gray', 'darkgreen', 'blue', 'red', 'cyan', 'magenta', 'yellow', 'black']
         line_styles = ['-', '--', '-.', ':']
 
         # Create an iterator that cycles through the colors and line styles
@@ -77,7 +82,11 @@ class GraphChartClass:
         self.axis.set_xlabel(self.xLabel)
         self.axis.set_ylabel(self.yLabel)
         self.axis.set_title(self.title)
-        self.axis.set_xlim([x[0], x[len(x) - 1]])
+
+        if(self.limitX):
+            self.axis.set_xlim([x[0], self.limitX])
+        else:
+            self.axis.set_xlim([x[0], x[len(x) - 1]])
         self.axis.legend()
         self.axis.grid(True)
         # Set custom formatter for the y-axis
