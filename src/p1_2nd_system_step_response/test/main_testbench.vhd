@@ -17,26 +17,26 @@ architecture testbench of Main_tb is
     end component;
 
     -- Test signals
-    signal clk_tb   : std_logic := '0';   -- Test bench clock signal
-    signal rst_tb   : std_logic := '0';   -- Test bench reset signal
-    signal u_tb     : integer := 0;       -- Test bench input signal
-    signal y_tb     : integer;            -- Test bench output signal
+    signal clk   : std_logic := '0';   -- Test bench clock signal
+    signal rst   : std_logic := '0';   -- Test bench reset signal
+    signal u     : integer := 0;       -- Test bench input signal
+    signal y     : integer;            -- Test bench output signal
 
 begin
     -- Instantiate the DUT
     dut : Main
         port map (
-            clk => clk_tb,
-            rst => rst_tb,
-            u   => u_tb,
-            y   => y_tb
+            clk => clk,
+            rst => rst,
+            u   => u,
+            y   => y
         );
 
     -- Clock process
     clk_process : process
     begin
-        while now < 6200 ns loop  -- Run for 1000 ns
-            clk_tb <= not clk_tb;  -- Toggle clock every half period
+        while now < 620 ns loop  -- Run for 1000 ns
+            clk <= not clk;  -- Toggle clock every half period
             wait for 5 ns;         -- Wait for half period
         end loop;
         wait;  -- Stop simulation
@@ -45,18 +45,15 @@ begin
     -- Stimulus process
     stimulus : process
     begin
-        u_tb <= 0;
-        rst_tb <= '1';   -- Assert reset
+        u <= 0;
+        rst <= '1';   -- Assert reset
 
-        wait for 20 ns;
-        u_tb <= 0;
-        rst_tb <= '0';   -- Deassert reset
+        wait for 10 ns;
+        u <= 0;
+        rst <= '0';   -- Deassert reset
 
-        wait for 20 ns;  -- u(t) = 0
-        u_tb <= 0;
-
-        wait for 20 ns;   -- u(t) = 1
-        u_tb <= 8192;
+        wait for 10 ns;   -- u(t) = 1
+        u <= 8192;
 
         wait;  -- Stop simulation
     end process;
