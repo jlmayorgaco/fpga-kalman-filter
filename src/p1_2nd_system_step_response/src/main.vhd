@@ -19,8 +19,8 @@ architecture Behavioral of Main is
     signal s_dy : integer := 0;
     signal s_ddy : integer := 0;
 
-    constant SCALE_VALUE : integer := 8192;
-    constant SCALE_DT : integer := 100;
+    constant SCALE_VALUE : integer := 1190;
+    constant SCALE_DT : integer := 10;
 
     constant MAX_VALUE : integer := 65536;
     constant MIN_VALUE : integer := -65536;
@@ -28,10 +28,10 @@ architecture Behavioral of Main is
     constant K : integer := 1 * SCALE_VALUE;
 
     constant b2 : integer := 1 * SCALE_VALUE;
-    constant b1 : integer := 2 * SCALE_VALUE;
-    constant b0 : integer := 10 * SCALE_VALUE;
+    constant b1 : integer := 4 * SCALE_VALUE;
+    constant b0 : integer := 12 * SCALE_VALUE;
 
-    constant a0 : integer := 10 * SCALE_VALUE;
+    constant a0 : integer := 12 * SCALE_VALUE;
 
     component Saturation is
         Port (
