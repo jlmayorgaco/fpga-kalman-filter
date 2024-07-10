@@ -4986,7 +4986,7 @@
                             "0"
                         ]
                     ],
-                    "name": "clk_tb",
+                    "name": "clk",
                     "type": {
                         "name": "reg",
                         "width": 1
@@ -5003,7 +5003,7 @@
                             "0"
                         ]
                     ],
-                    "name": "rst_tb",
+                    "name": "rst",
                     "type": {
                         "name": "reg",
                         "width": 1
@@ -5020,7 +5020,7 @@
                             "b10000000000000"
                         ]
                     ],
-                    "name": "u_tb",
+                    "name": "u",
                     "type": {
                         "name": "integer",
                         "width": 32
@@ -7241,7 +7241,7 @@
                             "b10000000000101"
                         ]
                     ],
-                    "name": "y_tb",
+                    "name": "y",
                     "type": {
                         "name": "integer",
                         "width": 32
