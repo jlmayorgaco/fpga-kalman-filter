@@ -1,0 +1,22 @@
+{
+    "title":"Power Systems Frequency Estimator",
+    "database":"SCOPUS",
+    "timestamp":"Wednesday, July 10, 2024 1:50:56 AM",
+    "query":"TITLE-ABS-KEY ( power AND system AND frequency AND estimator )",
+    "keywords": ["power", "system", "frequency", "estimator"],
+    "years":{
+        "from":"1965",
+        "to":"2024"
+    },
+    "files":{
+
+        "AuthorCSV":"",
+        "CountryCSV":"",
+        "FundingSponsorCSV":"",
+        "YearCSV":"",
+
+        "DB_RIS":"",
+        "DB_CSV":"",
+        "DB_BIBTEXT":"scopus.bib"
+    }
+}
