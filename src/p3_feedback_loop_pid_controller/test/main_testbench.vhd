@@ -18,28 +18,28 @@ architecture testbench of Main_tb is
     end component;
 
     -- Test signals
-    signal clk_tb   : std_logic := '0';   -- Test bench clock signal
-    signal rst_tb   : std_logic := '0';   -- Test bench reset signal
-    signal ref_tb   : integer := 0;       -- Test bench input signal
-    signal y_tb     : integer := 0;             -- Test bench output signal
-    signal dist_tb  : integer := 0;             -- Test bench output signal
+    signal clk   : std_logic := '0';   -- Test bench clock signal
+    signal rst   : std_logic := '0';   -- Test bench reset signal
+    signal ref   : integer := 0;       -- Test bench input signal
+    signal y     : integer := 0;             -- Test bench output signal
+    signal dist  : integer := 0;             -- Test bench output signal
 
 begin
     -- Instantiate the DUT
     dut : Main
         port map (
-            clk => clk_tb,
-            rst => rst_tb,
-            ref   => ref_tb,
-            dist   => dist_tb,
-            y   => y_tb
+            clk => clk,
+            rst => rst,
+            ref   => ref,
+            dist   => dist,
+            y   => y
         );
 
     -- Clock process
     clk_process : process
     begin
         while now < 30000 ns loop  -- Run for 1000 ns
-            clk_tb <= not clk_tb;  -- Toggle clock every half period
+            clk <= not clk;  -- Toggle clock every half period
             wait for 5 ns;         -- Wait for half period
         end loop;
         wait;  -- Stop simulation
@@ -48,30 +48,38 @@ begin
     -- Stimulus process
     stimulus : process
     begin
-        ref_tb <= 0;
-        dist_tb <= 0;
-        rst_tb <= '1';   -- Assert reset
+        ref <= 0;
+        dist <= 0;
+        rst <= '1';   -- Assert reset
 
-        wait for 20 ns;
-        ref_tb <= 0;
-        dist_tb <= 0;
-        rst_tb <= '0';   -- Deassert reset
+        wait for 10 ns;
+        ref <= 0;
+        dist <= 0;
+        rst <= '0';   -- Deassert reset
 
-        wait for 20 ns;  -- u(t) = 0
-        ref_tb <= 0;
-        dist_tb <= 0;
+        wait for 10 ns;  -- u(t) = 0
+        ref <= 0;
+        dist <= 0;
 
-        wait for 4000 ns;   -- u(t) = 1
-        ref_tb <= 8192;
-        dist_tb <= 0;
+        wait for 10 ns;   -- u(t) = 1
+        ref <= 512;
+        dist <= 0;
 
-        wait for 8000 ns;   -- u(t) = 1
-        ref_tb <= 8192;
-        dist_tb <= 1000;
+        wait for 1024 ns;   -- u(t) = 1
+        ref <= 500;
+        dist <= 100;
 
-        wait for 8000 ns;   -- u(t) = 1
-        ref_tb <= 8192;
-        dist_tb <= 0;
+        wait for 1024 ns;   -- u(t) = 1
+        ref <= 500;
+        dist <= 0;
+
+        wait for 1024 ns;   -- u(t) = 1
+        ref <= 500;
+        dist <= 0;
+
+        wait for 1024 ns;   -- u(t) = 1
+        ref <= 500;
+        dist <= 0;
 
         wait;  -- Stop simulation
     end process;
