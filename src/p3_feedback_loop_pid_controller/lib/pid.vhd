@@ -13,8 +13,8 @@ end entity PID;
 
 architecture PIDRTL of PID is
 
-    constant MAX_VALUE : integer := 65536;
-    constant MIN_VALUE : integer := -65536;
+    constant MAX_VALUE : integer := 65536000;
+    constant MIN_VALUE : integer := -65536000;
 
     -- Internal signals for storing the previous output value
     signal s_sat_in : integer := 0;
@@ -24,13 +24,14 @@ architecture PIDRTL of PID is
     signal s_int_saturated : std_logic := '0';
 
     -- Filter coefficients (adjust these based on your desired cutoff frequency)
-    constant K_p : integer := 8;
+    constant K_p : integer := 100;
     constant K_p_Div : integer := 1;
+    
 
     constant K_i : integer := 1;
-    constant K_i_Div : integer := 8;
+    constant K_i_Div : integer := 2;
 
-    constant K_d : integer := 128;
+    constant K_d : integer := 160;
     constant K_d_Div : integer := 1;
 
     component Saturation is
@@ -57,9 +58,9 @@ begin
         elsif rising_edge(clk) then
 
              -- PID terms
-             s_p <= (K_p / K_p_Div) * s_e ;
-             s_i <= s_i + (K_i) * (s_e / K_i_Div);
-             s_d <= (K_d / K_d_Div) * (s_e - s_de);  -- calculate derivative
+             s_p <= (K_p / K_p_Div) * s_e;
+             s_i <= s_i + (K_i / K_i_Div) * s_e;
+             s_d <= (K_d / K_d_Div) * (s_e - s_de);
 
              s_de <= s_e;
              s_e <= e;
