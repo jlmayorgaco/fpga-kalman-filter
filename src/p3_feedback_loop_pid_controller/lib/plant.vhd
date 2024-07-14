@@ -19,19 +19,19 @@ architecture Plant2ndOrderRTL of Plant2ndOrder is
     signal s_dy : integer := 0;
     signal s_ddy : integer := 0;
 
-    constant SCALE_VALUE : integer := 8192;
+    constant SCALE_VALUE : integer := 1024;
     constant SCALE_DT : integer := 100;
 
-    constant MAX_VALUE : integer := 65536;
-    constant MIN_VALUE : integer := -65536;
+    constant MAX_VALUE : integer := 65536000;
+    constant MIN_VALUE : integer := -65536000;
 
     constant K : integer := 1 * SCALE_VALUE;
 
     constant b2 : integer := 1 * SCALE_VALUE;
-    constant b1 : integer := 5 * SCALE_VALUE;
-    constant b0 : integer := 10 * SCALE_VALUE;
+    constant b1 : integer := 42 * SCALE_VALUE;
+    constant b0 : integer := 1 * SCALE_VALUE;
 
-    constant a0 : integer := 10 * SCALE_VALUE;
+    constant a0 : integer := 4 * SCALE_VALUE;
 
     component Saturation is
         Port (
