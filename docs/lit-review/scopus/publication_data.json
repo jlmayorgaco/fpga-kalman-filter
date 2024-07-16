@@ -1,0 +1,1798 @@
+{
+    "author": [
+        {
+            "AUTHOR NAME": "Petri, D.",
+            "Count": 24
+        },
+        {
+            "AUTHOR NAME": "Belega, D.",
+            "Count": 15
+        },
+        {
+            "AUTHOR NAME": "Mandic, D.P.",
+            "Count": 12
+        },
+        {
+            "AUTHOR NAME": "Giannakis, G.B.",
+            "Count": 11
+        },
+        {
+            "AUTHOR NAME": "Ma, X.",
+            "Count": 9
+        },
+        {
+            "AUTHOR NAME": "Routtenberg, T.",
+            "Count": 9
+        },
+        {
+            "AUTHOR NAME": "Terzija, V.",
+            "Count": 9
+        },
+        {
+            "AUTHOR NAME": "Xia, Y.",
+            "Count": 9
+        },
+        {
+            "AUTHOR NAME": "Guerrero, J.M.",
+            "Count": 8
+        },
+        {
+            "AUTHOR NAME": "Huang, S.",
+            "Count": 8
+        },
+        {
+            "AUTHOR NAME": "Minn, H.",
+            "Count": 7
+        },
+        {
+            "AUTHOR NAME": "Sen, D.",
+            "Count": 7
+        },
+        {
+            "AUTHOR NAME": "Ahmed, H.",
+            "Count": 7
+        },
+        {
+            "AUTHOR NAME": "Macii, D.",
+            "Count": 7
+        },
+        {
+            "AUTHOR NAME": "MacIi, D.",
+            "Count": 7
+        },
+        {
+            "AUTHOR NAME": "Malinowski, M.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Zhao, W.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Zhao, J.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Yona, A.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Wang, F.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Fu, L.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Jung, P.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Jeoti, V.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Fontanelli, D.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Benbouzid, M.",
+            "Count": 6
+        },
+        {
+            "AUTHOR NAME": "Li, H.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Zhao, D.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Yang, Q.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Wira, P.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Vernotte, F.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Sodhi, R.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Senjyu, T.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Mo, R.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Li, Z.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Li, C.P.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Karimi-Ghartemani, M.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Horvat, M.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Fu, X.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "El-Naggar, K.M.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Cheng, Z.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Chen, L.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Bakhshai, A.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Bai, Z.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Kazmierkowski, M.P.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Aboutanios, E.",
+            "Count": 5
+        },
+        {
+            "AUTHOR NAME": "Meng, L.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Sun, J.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Tugnait, J.K.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Trapp, A.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Tong, L.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Sanguinetti, L.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Steendam, H.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Singh, B.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Shu, F.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Vosoughi, A.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Morelli, M.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Ventura, N.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Wu, H.C.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Vrettos, E.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Wang, D.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Wang, X.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Wolfsteiner, P.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Wu, Y.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Xie, X.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Xiong, S.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Yang, L.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "You, X.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Younis, S.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Yousefzadeh, V.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Molisch, A.F.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Tellambura, C.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Mathieu, J.L.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Funabashi, T.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Manzoor, R.S.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Al-Dweik, A.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Angrisani, L.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Asif, M.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Barchi, G.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Bazerque, J.A.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Chew, Y.H.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Datta, M.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Dong, X.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Duque, C.A.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Edfors, O.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Borkowski, J.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Hashmi, K.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Kumar, R.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Mai, R.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Hazmi, A.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Liu, W.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Lin, T.T.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Lantz, E.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Lee, Y.H.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Kanna, S.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Kamel, N.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Jain, P.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Hua, J.",
+            "Count": 4
+        },
+        {
+            "AUTHOR NAME": "Kam, P.Y.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Huang, C.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Jou, S.J.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Jing, Y.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Jia, D.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Hwang, F.H.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "He, S.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Hu, W.W.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Heydt, G.T.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Hei, Y.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Heath, R.W.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Guvensen, G.M.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Khan, M.M.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Kania, D.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Medjahdi, Y.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Kwak, K.S.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Ledwich, G.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Li, G.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Li, S.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Li, S.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Lin, F.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Ma, K.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Mai, R.K.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Maksimovi\u0107, D.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Mateos, G.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "McHugh, M.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Golovins, E.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Meliopoulos, A.P.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Milano, F.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Guillaume, P.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Choqueuse, V.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Golestan, S.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Chen, H.Y.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Adachi, F.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Ali, M.S.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Amin, M.G.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Amirat, Y.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Amleh, K.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Andersson, G.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Bansal, Y.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Belmans, R.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Blaabjerg, F.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Braithwaite, R.N.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Brante, G.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Chakrabarti, S.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Chang, B.S.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Chen, M.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Ghosh, A.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Chen, Y.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Chin, W.L.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Choi, J.W.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Ciblat, P.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Cox, D.C.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "D'Apuzzo, M.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Dobre, O.A.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Dosiek, L.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Driesen, J.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Eldar, Y.C.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Escobar, G.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Farag, A.S.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Furukawa, H.",
+            "Count": 3
+        },
+        {
+            "AUTHOR NAME": "Mili, L.",
+            "Count": 3
+        }
+    ],
+    "year": [
+        {
+            "YEAR": 2023,
+            "Count": 116
+        },
+        {
+            "YEAR": 2022,
+            "Count": 104
+        },
+        {
+            "YEAR": 2021,
+            "Count": 103
+        },
+        {
+            "YEAR": 2020,
+            "Count": 101
+        },
+        {
+            "YEAR": 2019,
+            "Count": 101
+        },
+        {
+            "YEAR": 2015,
+            "Count": 100
+        },
+        {
+            "YEAR": 2017,
+            "Count": 88
+        },
+        {
+            "YEAR": 2018,
+            "Count": 84
+        },
+        {
+            "YEAR": 2014,
+            "Count": 80
+        },
+        {
+            "YEAR": 2012,
+            "Count": 79
+        },
+        {
+            "YEAR": 2010,
+            "Count": 79
+        },
+        {
+            "YEAR": 2011,
+            "Count": 75
+        },
+        {
+            "YEAR": 2013,
+            "Count": 73
+        },
+        {
+            "YEAR": 2008,
+            "Count": 73
+        },
+        {
+            "YEAR": 2006,
+            "Count": 72
+        },
+        {
+            "YEAR": 2009,
+            "Count": 64
+        },
+        {
+            "YEAR": 2007,
+            "Count": 64
+        },
+        {
+            "YEAR": 2016,
+            "Count": 64
+        },
+        {
+            "YEAR": 2004,
+            "Count": 45
+        },
+        {
+            "YEAR": 2005,
+            "Count": 40
+        },
+        {
+            "YEAR": 2003,
+            "Count": 39
+        },
+        {
+            "YEAR": 2001,
+            "Count": 30
+        },
+        {
+            "YEAR": 2002,
+            "Count": 18
+        },
+        {
+            "YEAR": 2000,
+            "Count": 16
+        },
+        {
+            "YEAR": 1995,
+            "Count": 14
+        },
+        {
+            "YEAR": 1997,
+            "Count": 12
+        },
+        {
+            "YEAR": 1989,
+            "Count": 11
+        },
+        {
+            "YEAR": 1999,
+            "Count": 11
+        },
+        {
+            "YEAR": 1998,
+            "Count": 9
+        },
+        {
+            "YEAR": 1996,
+            "Count": 8
+        },
+        {
+            "YEAR": 1986,
+            "Count": 8
+        },
+        {
+            "YEAR": 1990,
+            "Count": 8
+        },
+        {
+            "YEAR": 1992,
+            "Count": 7
+        },
+        {
+            "YEAR": 1984,
+            "Count": 6
+        },
+        {
+            "YEAR": 1985,
+            "Count": 6
+        },
+        {
+            "YEAR": 1991,
+            "Count": 6
+        },
+        {
+            "YEAR": 1988,
+            "Count": 5
+        },
+        {
+            "YEAR": 1993,
+            "Count": 5
+        },
+        {
+            "YEAR": 1981,
+            "Count": 5
+        },
+        {
+            "YEAR": 1987,
+            "Count": 4
+        },
+        {
+            "YEAR": 1994,
+            "Count": 3
+        },
+        {
+            "YEAR": 1983,
+            "Count": 2
+        },
+        {
+            "YEAR": 1976,
+            "Count": 2
+        },
+        {
+            "YEAR": 1982,
+            "Count": 1
+        },
+        {
+            "YEAR": 1980,
+            "Count": 1
+        },
+        {
+            "YEAR": 1978,
+            "Count": 1
+        },
+        {
+            "YEAR": 1975,
+            "Count": 1
+        },
+        {
+            "YEAR": 1965,
+            "Count": 1
+        }
+    ],
+    "country": [
+        {
+            "COUNTRY": "United States of America",
+            "Count": 376
+        },
+        {
+            "COUNTRY": "China",
+            "Count": 333
+        },
+        {
+            "COUNTRY": "India",
+            "Count": 135
+        },
+        {
+            "COUNTRY": "United Kingdom",
+            "Count": 115
+        },
+        {
+            "COUNTRY": "Canada",
+            "Count": 91
+        },
+        {
+            "COUNTRY": "Italy",
+            "Count": 87
+        },
+        {
+            "COUNTRY": "Undefined",
+            "Count": 84
+        },
+        {
+            "COUNTRY": "Germany",
+            "Count": 84
+        },
+        {
+            "COUNTRY": "France",
+            "Count": 81
+        },
+        {
+            "COUNTRY": "South Korea",
+            "Count": 66
+        },
+        {
+            "COUNTRY": "Taiwan",
+            "Count": 54
+        },
+        {
+            "COUNTRY": "Australia",
+            "Count": 44
+        },
+        {
+            "COUNTRY": "Iran",
+            "Count": 44
+        },
+        {
+            "COUNTRY": "Japan",
+            "Count": 42
+        },
+        {
+            "COUNTRY": "Spain",
+            "Count": 42
+        },
+        {
+            "COUNTRY": "Brazil",
+            "Count": 37
+        },
+        {
+            "COUNTRY": "Sweden",
+            "Count": 34
+        },
+        {
+            "COUNTRY": "Mexico",
+            "Count": 28
+        },
+        {
+            "COUNTRY": "Poland",
+            "Count": 27
+        },
+        {
+            "COUNTRY": "Denmark",
+            "Count": 26
+        },
+        {
+            "COUNTRY": "Finland",
+            "Count": 26
+        },
+        {
+            "COUNTRY": "Turkey",
+            "Count": 25
+        },
+        {
+            "COUNTRY": "Belgium",
+            "Count": 24
+        },
+        {
+            "COUNTRY": "Netherlands",
+            "Count": 23
+        },
+        {
+            "COUNTRY": "Romania",
+            "Count": 22
+        },
+        {
+            "COUNTRY": "Algeria",
+            "Count": 21
+        },
+        {
+            "COUNTRY": "Singapore",
+            "Count": 20
+        },
+        {
+            "COUNTRY": "Malaysia",
+            "Count": 19
+        },
+        {
+            "COUNTRY": "Switzerland",
+            "Count": 18
+        },
+        {
+            "COUNTRY": "United Arab Emirates",
+            "Count": 18
+        },
+        {
+            "COUNTRY": "Egypt",
+            "Count": 16
+        },
+        {
+            "COUNTRY": "Hong Kong",
+            "Count": 16
+        },
+        {
+            "COUNTRY": "Portugal",
+            "Count": 15
+        },
+        {
+            "COUNTRY": "Ireland",
+            "Count": 14
+        },
+        {
+            "COUNTRY": "Saudi Arabia",
+            "Count": 14
+        },
+        {
+            "COUNTRY": "Tunisia",
+            "Count": 13
+        },
+        {
+            "COUNTRY": "Greece",
+            "Count": 12
+        },
+        {
+            "COUNTRY": "Israel",
+            "Count": 12
+        },
+        {
+            "COUNTRY": "Austria",
+            "Count": 11
+        },
+        {
+            "COUNTRY": "Pakistan",
+            "Count": 11
+        },
+        {
+            "COUNTRY": "South Africa",
+            "Count": 10
+        },
+        {
+            "COUNTRY": "Norway",
+            "Count": 9
+        },
+        {
+            "COUNTRY": "Russian Federation",
+            "Count": 8
+        },
+        {
+            "COUNTRY": "Morocco",
+            "Count": 8
+        },
+        {
+            "COUNTRY": "Kuwait",
+            "Count": 7
+        },
+        {
+            "COUNTRY": "Qatar",
+            "Count": 7
+        },
+        {
+            "COUNTRY": "Slovenia",
+            "Count": 7
+        },
+        {
+            "COUNTRY": "Argentina",
+            "Count": 6
+        },
+        {
+            "COUNTRY": "Thailand",
+            "Count": 6
+        },
+        {
+            "COUNTRY": "Bangladesh",
+            "Count": 6
+        },
+        {
+            "COUNTRY": "Chile",
+            "Count": 5
+        },
+        {
+            "COUNTRY": "Croatia",
+            "Count": 5
+        },
+        {
+            "COUNTRY": "Iraq",
+            "Count": 5
+        },
+        {
+            "COUNTRY": "New Zealand",
+            "Count": 5
+        },
+        {
+            "COUNTRY": "Serbia",
+            "Count": 4
+        },
+        {
+            "COUNTRY": "Macao",
+            "Count": 4
+        },
+        {
+            "COUNTRY": "Czech Republic",
+            "Count": 4
+        },
+        {
+            "COUNTRY": "Colombia",
+            "Count": 4
+        },
+        {
+            "COUNTRY": "Bosnia and Herzegovina",
+            "Count": 3
+        },
+        {
+            "COUNTRY": "Indonesia",
+            "Count": 3
+        },
+        {
+            "COUNTRY": "Syrian Arab Republic",
+            "Count": 3
+        },
+        {
+            "COUNTRY": "Luxembourg",
+            "Count": 2
+        },
+        {
+            "COUNTRY": "Viet Nam",
+            "Count": 2
+        },
+        {
+            "COUNTRY": "Slovakia",
+            "Count": 2
+        },
+        {
+            "COUNTRY": "Montenegro",
+            "Count": 2
+        },
+        {
+            "COUNTRY": "Kyrgyzstan",
+            "Count": 2
+        },
+        {
+            "COUNTRY": "Lebanon",
+            "Count": 2
+        },
+        {
+            "COUNTRY": "Kenya",
+            "Count": 2
+        },
+        {
+            "COUNTRY": "Bulgaria",
+            "Count": 2
+        },
+        {
+            "COUNTRY": "Jordan",
+            "Count": 2
+        },
+        {
+            "COUNTRY": "Bahrain",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Costa Rica",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Cote d'Ivoire",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Cyprus",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Fiji",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Ghana",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Macedonia",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Moldova",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Sudan",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Ukraine",
+            "Count": 1
+        },
+        {
+            "COUNTRY": "Venezuela",
+            "Count": 1
+        }
+    ],
+    "funding": [
+        {
+            "FUNDING-SPONSORS": "National Natural Science Foundation of China",
+            "Count": 91
+        },
+        {
+            "FUNDING-SPONSORS": "National Science Foundation",
+            "Count": 55
+        },
+        {
+            "FUNDING-SPONSORS": "Engineering and Physical Sciences Research Council",
+            "Count": 17
+        },
+        {
+            "FUNDING-SPONSORS": "Fundamental Research Funds for the Central Universities",
+            "Count": 15
+        },
+        {
+            "FUNDING-SPONSORS": "Conselho Nacional de Desenvolvimento Cient\u00edfico e Tecnol\u00f3gico",
+            "Count": 13
+        },
+        {
+            "FUNDING-SPONSORS": "European Commission",
+            "Count": 12
+        },
+        {
+            "FUNDING-SPONSORS": "Seventh Framework Programme",
+            "Count": 12
+        },
+        {
+            "FUNDING-SPONSORS": "National Key Research and Development Program of China",
+            "Count": 11
+        },
+        {
+            "FUNDING-SPONSORS": "Natural Sciences and Engineering Research Council of Canada",
+            "Count": 11
+        },
+        {
+            "FUNDING-SPONSORS": "U.S. Department of Energy",
+            "Count": 11
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Science and Technology, Taiwan",
+            "Count": 10
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Science and Technology of the People's Republic of China",
+            "Count": 10
+        },
+        {
+            "FUNDING-SPONSORS": "Coordena\u00e7\u00e3o de Aperfei\u00e7oamento de Pessoal de N\u00edvel Superior",
+            "Count": 9
+        },
+        {
+            "FUNDING-SPONSORS": "National Research Foundation of Korea",
+            "Count": 9
+        },
+        {
+            "FUNDING-SPONSORS": "National Science Council",
+            "Count": 8
+        },
+        {
+            "FUNDING-SPONSORS": "Army Research Laboratory",
+            "Count": 7
+        },
+        {
+            "FUNDING-SPONSORS": "China Scholarship Council",
+            "Count": 7
+        },
+        {
+            "FUNDING-SPONSORS": "Department of Science and Technology, Ministry of Science and Technology, India",
+            "Count": 7
+        },
+        {
+            "FUNDING-SPONSORS": "Deutsche Forschungsgemeinschaft",
+            "Count": 7
+        },
+        {
+            "FUNDING-SPONSORS": "European Regional Development Fund",
+            "Count": 7
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Education of the People's Republic of China",
+            "Count": 7
+        },
+        {
+            "FUNDING-SPONSORS": "National Institutes of Health",
+            "Count": 6
+        },
+        {
+            "FUNDING-SPONSORS": "Natural Science Foundation of Jiangsu Province",
+            "Count": 6
+        },
+        {
+            "FUNDING-SPONSORS": "Japan Society for the Promotion of Science",
+            "Count": 6
+        },
+        {
+            "FUNDING-SPONSORS": "Horizon 2020 Framework Programme",
+            "Count": 6
+        },
+        {
+            "FUNDING-SPONSORS": "Australian Research Council",
+            "Count": 6
+        },
+        {
+            "FUNDING-SPONSORS": "Department of Science and Technology, Government of Kerala",
+            "Count": 5
+        },
+        {
+            "FUNDING-SPONSORS": "Ministerio de Econom\u00eda y Competitividad",
+            "Count": 5
+        },
+        {
+            "FUNDING-SPONSORS": "Science Foundation Ireland",
+            "Count": 5
+        },
+        {
+            "FUNDING-SPONSORS": "Science and Engineering Research Board",
+            "Count": 5
+        },
+        {
+            "FUNDING-SPONSORS": "Office of Naval Research",
+            "Count": 4
+        },
+        {
+            "FUNDING-SPONSORS": "Agence Nationale de la Recherche",
+            "Count": 4
+        },
+        {
+            "FUNDING-SPONSORS": "Agencia Estatal de Investigaci\u00f3n",
+            "Count": 4
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Education, Science and Technology",
+            "Count": 4
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Trade, Industry and Energy",
+            "Count": 4
+        },
+        {
+            "FUNDING-SPONSORS": "National Nuclear Security Administration",
+            "Count": 4
+        },
+        {
+            "FUNDING-SPONSORS": "National Major Science and Technology Projects of China",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Science, ICT and Future Planning",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "National Basic Research Program of China (973 Program)",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "National Institute of Standards and Technology",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Ministero dell\u2019Istruzione, dell\u2019Universit\u00e0 e della Ricerca",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "National Science Fund for Distinguished Young Scholars",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Natural Science Foundation of\u00a0Hunan Province",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Qatar National Research Fund",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Tsinghua National Laboratory for Information Science and Technology",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Knowledge Economy",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Bundesministerium f\u00fcr Bildung und Forschung",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Laboratory Directed Research and Development",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Israel Science Foundation",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Industrial Technology Research Institute",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Higher Education Discipline Innovation Project",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Grantov\u00e1 Agentura \u010cesk\u00e9 Republiky",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Air Force Office of Scientific Research",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Academy of Finland",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Aalborg Universitet",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "Korea Institute of Energy Technology Evaluation and Planning",
+            "Count": 3
+        },
+        {
+            "FUNDING-SPONSORS": "National Research Foundation",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Natural Science Foundation of Shandong Province",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Natural Science Foundation of Shaanxi Province",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Natural Science Foundation of Liaoning Province",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "National High-tech Research and Development Program",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "National Institute on Deafness and Other Communication Disorders",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "National IT Industry Promotion Agency",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "National Human Genome Research Institute",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Office of Energy Efficiency and Renewable Energy",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "National Aeronautics and Space Administration",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Nokia Foundation",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Science and Technology Project of State Grid",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Power Systems Engineering Research Center",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Sandia National Laboratories",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Science and Technology Program of Hunan Province",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Scientific Research Foundation of the Graduate School of Southeast University",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Semiconductor Research Corporation",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Solar Energy Technologies Office",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Southeast University",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Special Foundation for the Development of Strategic Emerging Industries of Shenzhen",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Tekes",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Vetenskapsr\u00e5det",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Higher Education, Malaysia",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Education and Human Resources Development",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Ministry of Education",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "European Research Council",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Ministerio de Ciencia, Innovaci\u00f3n y Universidades",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Air Force Research Laboratory",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Battelle",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Beijing Municipal Natural Science Foundation",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Canadian Institutes of Health Research",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Comisi\u00f3n Interministerial de Ciencia y Tecnolog\u00eda",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Danmarks Grundforskningsfond",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Defense Advanced Research Projects Agency",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Department of Electrical Engineering, Chulalongkorn University",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Directorate for Mathematical and Physical Sciences",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Consejo Nacional de Ciencia y Tecnolog\u00eda",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Fondazione di Sardegna",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Fonds De La Recherche Scientifique - FNRS",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Fonds Qu\u00e9b\u00e9cois de la Recherche sur la Nature et les Technologies",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Funda\u00e7\u00e3o de Amparo \u00e0 Pesquisa do Estado de Minas Gerais",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Funda\u00e7\u00e3o para a Ci\u00eancia e a Tecnologia",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Innovationsfonden",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Instituto Nacional de Energia El\u00e9trica",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Korea Electric Power Corporation",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Major Science and Technology Project of Hainan Province",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Fondo Nacional de Desarrollo Cient\u00edfico y Tecnol\u00f3gico",
+            "Count": 2
+        },
+        {
+            "FUNDING-SPONSORS": "Centre National de la Recherche Scientifique",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "China Postdoctoral Science Foundation",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "China National Funds for Distinguished Young Scientists",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "China Academy of Space Technology",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Centre for Integrated Computer Systems Research",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Center for Robotics and Industrial Automation, Universiti Teknikal Malaysia Melaka",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Central South University",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Central Power Research Institute",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Center for Social Inclusion",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Center for Evolutionary and Theoretical Immunology",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "China University of Geosciences, Wuhan",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "China Southern Power Grid",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Daegu Gyeongbuk Institute of Science and Technology",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Chongqing Municipal Education Commission",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Chulalongkorn University",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Chung-Ang University",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Colorado Power Electronics Center, University of Colorado Boulder",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Conseil National de la Recherche Scientifique",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Core Research for Evolutional Science and Technology",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Council for Higher Education",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Council of Scientific and Industrial Research, India",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Cyrus Tang Foundation",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Czech Science Foundation",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Canada Research Chairs",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Departamento Administrativo de Ciencia, Tecnolog\u00eda e Innovaci\u00f3n (COLCIENCIAS)",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Department of Education and Training",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Cardiff University",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Austrian Science Fund",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Canada Foundation for Innovation",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "California State University Long Beach",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Agence de la transition \u00e9cologique",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Agencia Nacional de Promoci\u00f3n Cient\u00edfica y Tecnol\u00f3gica",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Agenzia Spaziale Italiana",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Ag\u00e8ncia de Gesti\u00f3 d'Ajuts Universitaris i de Recerca",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Ag\u00eancia Nacional de Energia El\u00e9trica",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Alberta Innovates",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Alexander von Humboldt-Stiftung",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Alfred P. Sloan Foundation",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "All India Council for Technical Education",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Anhui Provincial Key Research and Development Plan",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Antares Pharma",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Assistance publique-H\u00f4pitaux de Paris",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Association of Research Libraries",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Australian Government",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Australian Institute of Sport",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Australian Sports Commission",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Bayerische Forschungsstiftung",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Beijing Municipal Science and Technology Commission",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Beijing Nova Program",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Ben-Gurion University of the Negev",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Bilimsel Ara\u015ft\u0131rma Projeleri Birimi, \u0130stanbul Teknik \u00dcniversitesi",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Biotechnology and Biological Sciences Research Council",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Blanche Moore Foundation",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Brookhaven National Laboratory",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Bundesministerium f\u00fcr Wirtschaft und Technologie",
+            "Count": 1
+        },
+        {
+            "FUNDING-SPONSORS": "Department of Science and Technology",
+            "Count": 1
+        }
+    ]
+}
