@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
         "./libs"
-    ]
+    ],
+    "r.lsp.diagnostics": false
 }
