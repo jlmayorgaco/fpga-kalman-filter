@@ -1,0 +1,16 @@
+{
+    "title":"",
+    "database":"",
+    "timestamp":"",
+    "query":"TITLE-ABS-KEY ( power AND system AND frequency AND estimator ) AND ( LIMIT-TO ( EXACTSRCTITLE , \"IEEE Transactions On Power Systems\" ) OR LIMIT-TO ( EXACTSRCTITLE , \"IEEE Transactions On Power Delivery\" ) OR LIMIT-TO ( EXACTSRCTITLE , \"International Journal Of Electrical Power And Energy Systems\" ) OR LIMIT-TO ( EXACTSRCTITLE , \"IEEE Transactions On Power Electronics\" ) OR LIMIT-TO ( EXACTSRCTITLE , \"Electric Power Systems Research\" ) OR LIMIT-TO ( EXACTSRCTITLE , \"IEEE Power And Energy Society General Meeting\" ) )",
+    "keywords": ["power", "system", "frequency", "estimator"],
+    "years":{
+        "from":"1981",
+        "to":"2023"
+    },
+    "files":{
+        "DB_RIS":"",
+        "DB_CSV":"",
+        "DB_BIBTEXT":"scopus.bib"
+    }
+}
