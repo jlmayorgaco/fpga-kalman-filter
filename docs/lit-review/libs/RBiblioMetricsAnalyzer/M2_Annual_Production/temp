@@ -1,0 +1,499 @@
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(broom)
+library(Metrics)
+library(minpack.lm)
+
+
+
+# Define growth model functions
+linear_growth <- function(t, a, b) { a * t + b }
+exponential_growth <- function(t, r, N0) { N0 * exp(r * (t - min(t))) }
+logarithmic_growth <- function(t, a, b) { a * log(t) + b }
+powerlaw_growth <- function(t, a, b) { a * t^b }
+gompertz_growth <- function(t, K, r, t0) { K * exp(-exp(-r * (t - t0))) }
+weibull_growth <- function(t, K, r, t0) { K * (1 - exp(-(t/t0)^r)) }
+vonbertalanffy_growth <- function(t, Linf, k, t0) { Linf * (1 - exp(-k * (t - t0))) }
+normal_growth <- function(t, mu, sigma, A) { A * exp(-0.5 * ((t - mu) / sigma)^2) }
+logistic_growth <- function(t, K, r, t0) { K / (1 + exp(-r * (t - t0))) }
+
+# Function to fit models with error handling
+fit_model <- function(formula, data, start) {
+  tryCatch(
+    {
+      nls(formula, data = data, start = start)
+    },
+    error = function(e) {
+      message("Error fitting model: ", e$message)
+      NULL
+    }
+  )
+}
+
+# Function to calculate model metrics
+calculate_metrics <- function(model, data) {
+  if (!is.null(model)) {
+    predictions <- predict(model, newdata = data)
+    residuals <- data$Articles - predictions
+    rmse <- sqrt(mean(residuals^2))
+    r_squared <- 1 - sum(residuals^2) / sum((data$Articles - mean(data$Articles))^2)
+    list(rmse = rmse, r_squared = r_squared)
+  } else {
+    list(rmse = NA, r_squared = NA)
+  }
+}
+
+# Function to extract model parameters
+extract_parameters <- function(model) {
+  if (!is.null(model)) {
+    paste(names(coef(model)), "=", coef(model), collapse = ", ")
+  } else {
+    NA
+  }
+}
+
+# Function to manually calculate AIC for nls models
+manual_aic <- function(model) {
+  if (!is.null(model)) {
+    rss <- sum(residuals(model)^2)
+    n <- length(residuals(model))
+    k <- length(coef(model))
+    n * log(rss / n) + 2 * k
+  } else {
+    NA
+  }
+}
+
+# Generalized function to fit specific growth models
+fit_specific_model <- function(model_func, start_params, data) {
+  years <- data$Year
+  papers <- data$Articles
+  fit_model(papers ~ model_func(years, !!!start_params), data, start = start_params)
+}
+
+# Function to predict model values
+predict_model <- function(model, year_seq) {
+  if (!is.null(model)) {
+    predict(model, newdata = data.frame(Year = year_seq))
+  } else {
+    rep(NA, length(year_seq))
+  }
+}
+
+# Function to determine the best model based on a specific criterion
+determine_best_model <- function(comparison_table, criterion = "AIC") {
+  best_index <- which.min(comparison_table[[criterion]])
+  comparison_table$Model[best_index]
+}
+
+
+# Function to add lines conditionally based on the best model
+add_line_if_valid <- function(plot, data, color, linetype, model_name, best_model) {
+  if (model_name != best_model) return(plot)
+  plot + geom_line(data = data, aes(x = Year, y = Articles), color = color, linetype = "solid")
+}
+
+# Function to add vertical lines with labels
+add_vline_if_valid <- function(plot, xintercept, color, linetype, label = NULL) {
+  if (!is.na(xintercept)) {
+    plot <- plot + geom_vline(xintercept = xintercept, linetype = linetype, color = color)
+    if (!is.null(label)) {
+      plot <- plot + annotate("text", x = xintercept, y = Inf, label = label, angle = 90, vjust = -0.5, hjust = 1, color = color)
+    }
+  }
+  plot
+}
+
+
+
+
+
+
+
+# Main function for author production over time regression
+fn_m2_author_prod_over_time_regression2 <- function(df) {
+
+    annual_production <- df %>% filter(Year < 2024)
+    annual_production$Year <- as.numeric(as.character(annual_production$Year))
+
+    # Fit models
+    linear_model <- lm(Articles ~ Year, data = annual_production)
+    exponential_model <- fit_specific_model(exponential_growth, list(r = 0.1, N0 = min(annual_production$Articles)), annual_production)
+    logarithmic_model <- fit_specific_model(logarithmic_growth, list(a = 1, b = 1), annual_production)
+    logistic_model <- fit_specific_model(logistic_growth, list(K = 150, r = 0.1, t0 = 2000), annual_production)
+    gompertz_model <- fit_specific_model(gompertz_growth, list(K = 150, r = 0.1, t0 = 2000), annual_production)
+    weibull_model <- fit_specific_model(weibull_growth, list(K = 150, r = 0.1, t0 = 2000), annual_production)
+    vonbertalanffy_model <- fit_specific_model(vonbertalanffy_growth, list(Linf = 150, k = 0.1, t0 = 2000), annual_production)
+    normal_model <- fit_specific_model(normal_growth, list(mu = mean(annual_production$Year), sigma = sd(annual_production$Year), A = max(annual_production$Articles)), annual_production)
+
+    # Calculate model metrics
+    models <- list(
+        Linear = linear_model,
+        Exponential = exponential_model,
+        Logarithmic = logarithmic_model,
+        Logistic = logistic_model,
+        Gompertz = gompertz_model,
+        Weibull = weibull_model,
+        vonBertalanffy = vonbertalanffy_model,
+        Normal = normal_model
+    )
+
+    metrics <- lapply(models, calculate_metrics, data = annual_production)
+    aics <- sapply(models, manual_aic)
+
+    # Create the comparison table
+    comparison_table <- data.frame(
+        Model = names(models),
+        AIC = aics,
+        RMSE = sapply(metrics, function(m) m$rmse),
+        R_Squared = sapply(metrics, function(m) m$r_squared),
+        Parameters = sapply(models, extract_parameters)
+    )
+
+
+    # Determine the best model based on AIC
+    best_model <- determine_best_model(comparison_table, criterion = "AIC")
+
+    # Predict future values for plotting
+    year_seq <- seq(min(annual_production$Year), max(annual_production$Year), length.out = 100)
+    future_years <- data.frame(year = seq(2015, 2070))
+
+    predict_future_values <- function(model, year_seq, future_years) {
+        list(
+            present = predict_model(model, year_seq),
+            future = predict_model(model, future_years$year)
+        )
+    }
+
+    predictions <- predict_future_values(gompertz_model, year_seq, future_years)
+
+    present_df <- data.frame(Year = year_seq, Articles = predictions$present)
+    future_df <- data.frame(Year = future_years$year, Articles = predictions$future)
+
+
+    # Save and print the comparison table
+    write.csv(comparison_table, "model_comparison_table.csv", row.names = FALSE)
+    print(comparison_table)
+} 
+
+
+
+
+
+
+
+# Define growth model functions
+logistic_growth <- function(t, K, r, t0) {
+    K / (1 + exp(-r * (t - t0)))
+}
+
+
+# Improved logistic growth model fitting function
+fit_logistic_model <- function(data) {
+    tryCatch({
+        # Initial parameter guesses
+        years <- data$Year
+        papers <- data$Articles
+        start_params <- list(K = 150, r = 0.1, t0 = 2000)
+        # Fit the model using nlsLM from minpack.lm
+        fit <- nlsLM(papers ~ logistic_growth(years, K, r, t0), start = start_params)
+        return(fit)
+    }, error = function(e) {
+            message(" ")
+            message(" ")
+            message(" ")
+            message(" ====> Error fitting Logistic model:")
+            message(e$message)
+            message(" ")
+            message(" ")
+            message(" ")
+            NULL
+        }
+    )
+}
+
+# Improved Gompertz growth model fitting function
+fit_gompertz_model <- function(data) {
+  tryCatch({
+    years <- data$Year
+    papers <- data$Articles
+    start_params <- list(K = 150, r = 0.1, t0 = 2000)
+    fit <- nlsLM(papers ~ gompertz_growth(years, K, r, t0), start = start_params)
+    return(fit)
+  }, error = function(e) {
+    message(" ")
+    message(" ") # nolint
+    message(" ====> Error fitting Gompertz model:")
+    message(e$message)
+    message(" ")
+    message(" ")
+    NULL
+  })
+}
+
+
+# Improved Weibull growth model fitting function
+fit_weibull_model <- function(data) {
+  tryCatch({
+    years <- data$Year
+    papers <- data$Articles
+    start_params <- list(K = 150, r = 0.1, t0 = 2000)
+    fit <- nlsLM(papers ~ weibull_growth(years, K, r, t0), start = start_params)
+    return(fit)
+  }, error = function(e) {
+    message(" ")
+    message(" ")
+    message(" ====> Error fitting Weibull model:")
+    message(e$message)
+    message(" ")
+    message(" ")
+    NULL
+  })
+}
+# Improved von Bertalanffy growth model fitting function
+fit_vonbertalanffy_model <- function(data) {
+  tryCatch({
+    years <- data$Year
+    papers <- data$Articles
+    start_params <- list(L_inf = 150, k = 0.1, t0 = 2000)
+    fit <- nlsLM(papers ~ vonbertalanffy_growth(years, L_inf, k, t0), start = start_params)
+    return(fit)
+  }, error = function(e) {
+    message(" ")
+    message(" ")
+    message(" ")
+    message(" ====> Error fitting von Bertalanffy model:")
+    message(e$message)
+    message(" ")
+    message(" ")
+    message(" ")
+    NULL
+  })
+}
+
+# Improved normal equation fitting function
+fit_normal_model <- function(data) {
+  tryCatch({
+    years <- data$Year
+    papers <- data$Articles
+    start_params <- list(mu = mean(years), sigma = sd(years), A = max(papers))
+    fit <- nlsLM(papers ~ normal_growth(years, mu, sigma, A), start = start_params)
+    return(fit)
+  }, error = function(e) {
+    message(" ")
+    message(" ")
+    message(" ")
+    message(" ====> Error fitting Normal model:")
+    message(e$message)
+    message(" ")
+    message(" ")
+    message(" ")
+    NULL
+  })
+}
+
+
+# ---------------------------------------------------------------------------- #
+# -- M2 Author Production Over Time Regression  ------------------------------ #
+# ---------------------------------------------------------------------------- #
+fn_m2_author_prod_over_time_regression <- function(df) {
+    # Load Database
+    annual_production <- df
+
+    # Convert 'Year' to numeric if necessary
+    annual_production$Year <- as.numeric(as.character(annual_production$Year))
+    annual_production <- annual_production %>% filter(Year < 2024)
+
+    # ------------------------------------------------------------------------ #
+    # Regression Models
+    # ------------------------------------------------------------------------ #
+    linear_model <- lm(Articles ~ Year, data = annual_production)
+    exponential_model <- fit_model(Articles ~ exponential_growth(Year, r, N0), annual_production, start = list(r = 0.1, N0 = min(annual_production$Articles)))
+    logarithmic_model <- fit_model(Articles ~ logarithmic_growth(Year, a, b), annual_production, start = list(a = 1, b = 1))
+    logistic_model <- fit_logistic_model(annual_production)
+    gompertz_model <- fit_gompertz_model(annual_production)
+    weibull_model <- fit_weibull_model(annual_production)
+    vonbertalanffy_model <- fit_vonbertalanffy_model(annual_production)
+    normal_model <- fit_normal_model(annual_production)
+
+
+
+
+    # ------------------------------------------------------------------------ #
+    # Models Metrics
+    # ------------------------------------------------------------------------ #
+
+
+    # Metrics of Models
+    metrics_linear <- calculate_metrics(linear_model, annual_production)
+    metrics_exponential <- calculate_metrics(exponential_model, annual_production)
+    metrics_logarithmic <- calculate_metrics(logarithmic_model, annual_production)
+    metrics_logistic <- calculate_metrics(logistic_model, annual_production)
+    metrics_gompertz <- calculate_metrics(gompertz_model, annual_production)
+    metrics_weibull <- calculate_metrics(weibull_model, annual_production)
+    metrics_vonbertalanffy <- calculate_metrics(vonbertalanffy_model, annual_production)
+    metrics_normal <- calculate_metrics(normal_model, annual_production)
+
+    # Create the comparison table
+    comparison_table <- data.frame(
+        Model = c("Linear", "Exponential", "Logarithmic", "Logistic", "Gompertz", "Weibull", "von Bertalanffy", "Normal"),
+        AIC = c(
+            AIC(linear_model), 
+            manual_aic(exponential_model), 
+            manual_aic(logarithmic_model), 
+            manual_aic(logistic_model), 
+            manual_aic(gompertz_model), 
+            manual_aic(weibull_model),
+            manual_aic(vonbertalanffy_model),
+            manual_aic(normal_model)
+        ),
+        RMSE = c(
+            metrics_linear$rmse, 
+            metrics_exponential$rmse, 
+            metrics_logarithmic$rmse, 
+            metrics_logistic$rmse, 
+            metrics_gompertz$rmse, 
+            metrics_weibull$rmse,
+            metrics_vonbertalanffy$rmse,
+            metrics_normal$rmse
+        ),
+        R_Squared = c(
+            metrics_linear$r_squared, 
+            metrics_exponential$r_squared, 
+            metrics_logarithmic$r_squared, 
+            metrics_logistic$r_squared, 
+            metrics_gompertz$r_squared, 
+            metrics_weibull$r_squared,
+            metrics_vonbertalanffy$r_squared,
+            metrics_normal$r_squared
+        ),
+        Parameters = c(
+            extract_parameters(linear_model),
+            extract_parameters(exponential_model),
+            extract_parameters(logarithmic_model),
+            extract_parameters(logistic_model),
+            extract_parameters(gompertz_model),
+            extract_parameters(weibull_model),
+            extract_parameters(vonbertalanffy_model),
+            extract_parameters(normal_model)
+        )
+    )
+
+    # Save the comparison table to a CSV file
+    write.csv(comparison_table, "model_comparison_table.csv", row.names = FALSE)
+
+    # Print the comparison table
+    print(comparison_table)
+
+    # Function to determine the best model based on a specific criterion
+    determine_best_model <- function(comparison_table, criterion = "AIC") {
+        best_index <- which.min(comparison_table[[criterion]])
+        best_model <- comparison_table$Model[best_index]
+        return(best_model)
+    }
+
+    # Determine the best model based on AIC
+    best_model <- determine_best_model(comparison_table, criterion = "AIC")
+
+
+
+
+
+    # ------------------------------------------------------------------------ #
+    # Predicting Model
+    # ------------------------------------------------------------------------ #
+
+    # Create a sequence of years for plotting
+    year_seq <- seq(min(annual_production$Year), max(annual_production$Year), length.out = 100)
+
+    # Get predictions for each model
+    predict_model <- function(model, year_seq) {
+        if (!is.null(model)) {
+            predict(model, newdata = data.frame(Year = year_seq))
+        } else {
+            rep(NA, length(year_seq))
+        }
+    }
+
+    future_years <- data.frame(year = seq(2015, 2070))
+
+    # Predicted Models
+    predicted_linear <- predict_model(linear_model, year_seq)
+    predicted_exponential <- predict_model(exponential_model, year_seq)
+    predicted_logarithmic <- predict_model(logarithmic_model, year_seq)
+    predicted_logistic <- predict_model(logistic_model, year_seq)
+    predicted_gompertz <- predict_model(gompertz_model, year_seq)
+    predicted_weibull <- predict_model(weibull_model, year_seq)
+
+    # Generate predictions for future years
+    params <- coef(gompertz_model)
+    K <- params["K"] 
+    r <- params["r"]
+    t0 <- params["t0"]
+
+    t <- future_years$year
+    inpterpolated_points <- gompertz_growth(year_seq, K, r, t0)
+    future_predictions <- gompertz_growth(future_years$year, K, r, t0)
+
+    present_df <- data.frame(Year = year_seq, Articles = inpterpolated_points)
+    future_df <- data.frame(Year = future_years$year, Articles = future_predictions)
+ 
+
+    # ------------------------------------------------------------------------ #
+    # Plotting
+    # ------------------------------------------------------------------------ #
+
+    # Check if data contains NA values
+    clean_data <- na.omit(annual_production)
+
+    # Function to check validity of line data and add it to the plot
+    add_line_if_valid <- function(plot, data, color, linetype, model_name, best_model) {
+        if (model_name != best_model) {
+            return(plot)
+        }
+        plot <- plot + geom_line(data = data, aes(x = Year, y = Articles), color = color, linetype = "solid")
+        return(plot)
+    }
+    # Function to check validity of x-intercept and add vertical line to the plot
+    add_vline_if_valid <- function(plot, xintercept, color, linetype, label = NULL) {
+        if (!is.na(xintercept)) {
+            plot <- plot + geom_vline(xintercept = xintercept, linetype = linetype, color = color)
+            if (!is.null(label)) {
+            plot <- plot + annotate("text", x = xintercept, y = Inf, label = label, angle = 90, vjust = -0.5, hjust = 1, color = color)
+            }
+        }
+        return(plot)
+    }
+
+    # Initial plot with clean data points
+    title <- paste("Annual Publications '", best_model, "' Fit")
+    plot <- ggplot(clean_data, aes(x = Year, y = Articles))
+    plot <- plot + geom_point()
+    plot <- plot + theme_minimal()
+    plot <- plot + scale_y_continuous(limits = c(0, NA))
+    plot <- plot + theme(legend.position = "none")
+    plot <- plot + labs(x = "Year", y = "Articles", title = title)
+
+    # Add lines conditionally based on the best model
+    #plot <- add_line_if_valid(plot, data.frame(Year = year_seq, Articles = predicted_linear), "orange", "longdash", "Linear", best_model)
+    #plot <- add_line_if_valid(plot, data.frame(Year = year_seq, Articles = predicted_exponential), "purple", "dotdash", "Exponential", best_model)
+    #plot <- add_line_if_valid(plot, data.frame(Year = year_seq, Articles = predicted_logarithmic), "brown", "dotted", "Logarithmic", best_model)
+    plot <- add_line_if_valid(plot, data.frame(Year = year_seq, Articles = predicted_logistic), "blue", "solid", "Logistic", best_model)
+    #plot <- add_line_if_valid(plot, data.frame(Year = year_seq, Articles = predicted_gompertz), "green", "solid", "Gompertz", best_model)
+    #plot <- add_line_if_valid(plot, data.frame(Year = year_seq, Articles = predicted_weibull), "red", "dashed", "Weibull", best_model)
+
+    # Add Model Interpolations and Predictions
+    plot <- plot + geom_line(data = present_df, linetype = "solid", color = "blue", size = 1)
+    plot <- plot + geom_line(data = future_df, linetype = "dotted", color = "blue", size = 1)
+
+    # Add vertical lines conditionally with labels
+    plot <- add_vline_if_valid(plot, 2020, "blue", "dashed", label = "COVID-19")
+    plot <- add_vline_if_valid(plot, 2008, "blue", "dashed", label = "Market Crash")
+
+    # Save the plot as PNG
+    annual_prod_plot_file <- "results/growth_model_fits.png"
+    ggsave(annual_prod_plot_file, plot = plot, width = 6, height = 4, dpi = 600)
+
+    return("Ok")
+}
