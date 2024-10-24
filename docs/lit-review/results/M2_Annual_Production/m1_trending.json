@@ -1,0 +1,73 @@
+{
+  "model_name": "Gompertz",
+  "model_params": {},
+  "model_r_squared": 0.9621,
+  "model_aic": 196.8665,
+  "model_rmse": 7.3005,
+  "model_regression_table": [
+    {
+      "Model_Name": "Linear",
+      "AIC": 261.2417,
+      "RMSE": 15.4346,
+      "R_Squared": 0.8307,
+      "Parameters": "(Intercept) = -4776.74200068276, Year = 2.40797865650997",
+      "_row": "Linear"
+    },
+    {
+      "Model_Name": "Exponential",
+      "AIC": 4779.4586,
+      "RMSE": 1.1326979749556525e+22,
+      "R_Squared": -9.1183648203589403e+40,
+      "Parameters": "r = 0.0650999999307977, N0 = 1.73348026459883e-35, t0 = 0.01008527197741",
+      "_row": "Exponential"
+    },
+    {
+      "Model_Name": "Logarithmic",
+      "AIC": 261.863,
+      "RMSE": 15.537,
+      "R_Squared": 0.8284,
+      "Parameters": "a = 4805.11926273148, b = -36483.9079416081",
+      "_row": "Logarithmic"
+    },
+    {
+      "Model_Name": "Logistic",
+      "AIC": 199.159,
+      "RMSE": 7.8059,
+      "R_Squared": 0.9567,
+      "Parameters": "K = 102.151713944841, r = 0.20525184451242, t0 = 2006.1793127706",
+      "_row": "Logistic"
+    },
+    {
+      "Model_Name": "Gompertz",
+      "AIC": 196.8665,
+      "RMSE": 7.3005,
+      "R_Squared": 0.9621,
+      "Parameters": "N0 = 101.921089705327, Nmax = 5.50959749305911, k = 0.14659943586129, t0 = 1996.92332482151, y0 = 4.32863709313928",
+      "_row": "Gompertz"
+    },
+    {
+      "Model_Name": "GompertzDerivate",
+      "_row": "GompertzDerivate"
+    },
+    {
+      "Model_Name": "Weibull",
+      "_row": "Weibull"
+    },
+    {
+      "Model_Name": "VonBertalanffy",
+      "AIC": 263.6082,
+      "RMSE": 15.4949,
+      "R_Squared": 0.8294,
+      "Parameters": "Linf = 8325.59255485187, k = 0.000288922165830535, t0 = 1983.68929246444",
+      "_row": "VonBertalanffy"
+    },
+    {
+      "Model_Name": "Normal",
+      "AIC": 205.7415,
+      "RMSE": 8.3721,
+      "R_Squared": 0.9502,
+      "Parameters": "mu = 2022.40660066948, sigma = 13.3320334576804, A = 101.249057770973",
+      "_row": "Normal"
+    }
+  ]
+}
