@@ -1,0 +1,558 @@
+{
+  "start_date": 1965,
+  "end_year": 2023,
+  "peak_year": 2023,
+  "peak_articles": 115,
+  "anomalies": [
+    {
+      "Year": 1965,
+      "Articles": 1,
+      "residuals": 46.0639
+    }
+  ],
+  "outliers": {
+    "zscore": [],
+    "identified": []
+  },
+  "moving_averages_arrays": [
+    [
+      {
+        "Year": 1965
+      },
+      {
+        "Year": 1976
+      },
+      {
+        "Year": 1978
+      },
+      {
+        "Year": 1980
+      },
+      {
+        "Year": 1981,
+        "Articles": 2
+      },
+      {
+        "Year": 1982,
+        "Articles": 2
+      },
+      {
+        "Year": 1983,
+        "Articles": 2
+      },
+      {
+        "Year": 1984,
+        "Articles": 3
+      },
+      {
+        "Year": 1985,
+        "Articles": 4
+      },
+      {
+        "Year": 1986,
+        "Articles": 4.6
+      },
+      {
+        "Year": 1987,
+        "Articles": 5.2
+      },
+      {
+        "Year": 1988,
+        "Articles": 5.8
+      },
+      {
+        "Year": 1989,
+        "Articles": 6.8
+      },
+      {
+        "Year": 1990,
+        "Articles": 7.2
+      },
+      {
+        "Year": 1991,
+        "Articles": 6.8
+      },
+      {
+        "Year": 1992,
+        "Articles": 7.4
+      },
+      {
+        "Year": 1993,
+        "Articles": 7.4
+      },
+      {
+        "Year": 1994,
+        "Articles": 5.8
+      },
+      {
+        "Year": 1995,
+        "Articles": 6.8
+      },
+      {
+        "Year": 1996,
+        "Articles": 6.8
+      },
+      {
+        "Year": 1997,
+        "Articles": 7.6
+      },
+      {
+        "Year": 1998,
+        "Articles": 8.4
+      },
+      {
+        "Year": 1999,
+        "Articles": 10
+      },
+      {
+        "Year": 2000,
+        "Articles": 10.4
+      },
+      {
+        "Year": 2001,
+        "Articles": 15.2
+      },
+      {
+        "Year": 2002,
+        "Articles": 16.2
+      },
+      {
+        "Year": 2003,
+        "Articles": 22
+      },
+      {
+        "Year": 2004,
+        "Articles": 28.8
+      },
+      {
+        "Year": 2005,
+        "Articles": 33.2
+      },
+      {
+        "Year": 2006,
+        "Articles": 41.2
+      },
+      {
+        "Year": 2007,
+        "Articles": 50.6
+      },
+      {
+        "Year": 2008,
+        "Articles": 57.4
+      },
+      {
+        "Year": 2009,
+        "Articles": 61
+      },
+      {
+        "Year": 2010,
+        "Articles": 69.2
+      },
+      {
+        "Year": 2011,
+        "Articles": 69.4
+      },
+      {
+        "Year": 2012,
+        "Articles": 72.4
+      },
+      {
+        "Year": 2013,
+        "Articles": 72.2
+      },
+      {
+        "Year": 2014,
+        "Articles": 75.4
+      },
+      {
+        "Year": 2015,
+        "Articles": 79.4
+      },
+      {
+        "Year": 2016,
+        "Articles": 78
+      },
+      {
+        "Year": 2017,
+        "Articles": 79.6
+      },
+      {
+        "Year": 2018,
+        "Articles": 82
+      },
+      {
+        "Year": 2019,
+        "Articles": 86.2
+      },
+      {
+        "Year": 2020,
+        "Articles": 86.2
+      },
+      {
+        "Year": 2021,
+        "Articles": 93.8
+      },
+      {
+        "Year": 2022,
+        "Articles": 97.2
+      },
+      {
+        "Year": 2023,
+        "Articles": 103.6
+      }
+    ],
+    [
+      {
+        "Year": 1965
+      },
+      {
+        "Year": 1976
+      },
+      {
+        "Year": 1978
+      },
+      {
+        "Year": 1980
+      },
+      {
+        "Year": 1981
+      },
+      {
+        "Year": 1982
+      },
+      {
+        "Year": 1983
+      },
+      {
+        "Year": 1984
+      },
+      {
+        "Year": 1985
+      },
+      {
+        "Year": 1986,
+        "Articles": 3.3
+      },
+      {
+        "Year": 1987,
+        "Articles": 3.6
+      },
+      {
+        "Year": 1988,
+        "Articles": 3.9
+      },
+      {
+        "Year": 1989,
+        "Articles": 4.9
+      },
+      {
+        "Year": 1990,
+        "Articles": 5.6
+      },
+      {
+        "Year": 1991,
+        "Articles": 5.7
+      },
+      {
+        "Year": 1992,
+        "Articles": 6.3
+      },
+      {
+        "Year": 1993,
+        "Articles": 6.6
+      },
+      {
+        "Year": 1994,
+        "Articles": 6.3
+      },
+      {
+        "Year": 1995,
+        "Articles": 7
+      },
+      {
+        "Year": 1996,
+        "Articles": 6.8
+      },
+      {
+        "Year": 1997,
+        "Articles": 7.5
+      },
+      {
+        "Year": 1998,
+        "Articles": 7.9
+      },
+      {
+        "Year": 1999,
+        "Articles": 7.9
+      },
+      {
+        "Year": 2000,
+        "Articles": 8.6
+      },
+      {
+        "Year": 2001,
+        "Articles": 11
+      },
+      {
+        "Year": 2002,
+        "Articles": 11.9
+      },
+      {
+        "Year": 2003,
+        "Articles": 15.2
+      },
+      {
+        "Year": 2004,
+        "Articles": 19.4
+      },
+      {
+        "Year": 2005,
+        "Articles": 21.8
+      },
+      {
+        "Year": 2006,
+        "Articles": 28.2
+      },
+      {
+        "Year": 2007,
+        "Articles": 33.4
+      },
+      {
+        "Year": 2008,
+        "Articles": 39.7
+      },
+      {
+        "Year": 2009,
+        "Articles": 44.9
+      },
+      {
+        "Year": 2010,
+        "Articles": 51.2
+      },
+      {
+        "Year": 2011,
+        "Articles": 55.3
+      },
+      {
+        "Year": 2012,
+        "Articles": 61.5
+      },
+      {
+        "Year": 2013,
+        "Articles": 64.8
+      },
+      {
+        "Year": 2014,
+        "Articles": 68.2
+      },
+      {
+        "Year": 2015,
+        "Articles": 74.3
+      },
+      {
+        "Year": 2016,
+        "Articles": 73.7
+      },
+      {
+        "Year": 2017,
+        "Articles": 76
+      },
+      {
+        "Year": 2018,
+        "Articles": 77.1
+      },
+      {
+        "Year": 2019,
+        "Articles": 80.8
+      },
+      {
+        "Year": 2020,
+        "Articles": 82.8
+      },
+      {
+        "Year": 2021,
+        "Articles": 85.9
+      },
+      {
+        "Year": 2022,
+        "Articles": 88.4
+      },
+      {
+        "Year": 2023,
+        "Articles": 92.8
+      }
+    ],
+    [
+      {
+        "Year": 1965
+      },
+      {
+        "Year": 1976
+      },
+      {
+        "Year": 1978
+      },
+      {
+        "Year": 1980
+      },
+      {
+        "Year": 1981
+      },
+      {
+        "Year": 1982
+      },
+      {
+        "Year": 1983
+      },
+      {
+        "Year": 1984
+      },
+      {
+        "Year": 1985
+      },
+      {
+        "Year": 1986
+      },
+      {
+        "Year": 1987
+      },
+      {
+        "Year": 1988
+      },
+      {
+        "Year": 1989
+      },
+      {
+        "Year": 1990
+      },
+      {
+        "Year": 1991
+      },
+      {
+        "Year": 1992
+      },
+      {
+        "Year": 1993
+      },
+      {
+        "Year": 1994
+      },
+      {
+        "Year": 1995
+      },
+      {
+        "Year": 1996,
+        "Articles": 5.05
+      },
+      {
+        "Year": 1997,
+        "Articles": 5.55
+      },
+      {
+        "Year": 1998,
+        "Articles": 5.9
+      },
+      {
+        "Year": 1999,
+        "Articles": 6.4
+      },
+      {
+        "Year": 2000,
+        "Articles": 7.1
+      },
+      {
+        "Year": 2001,
+        "Articles": 8.35
+      },
+      {
+        "Year": 2002,
+        "Articles": 9.1
+      },
+      {
+        "Year": 2003,
+        "Articles": 10.9
+      },
+      {
+        "Year": 2004,
+        "Articles": 12.85
+      },
+      {
+        "Year": 2005,
+        "Articles": 14.4
+      },
+      {
+        "Year": 2006,
+        "Articles": 17.5
+      },
+      {
+        "Year": 2007,
+        "Articles": 20.45
+      },
+      {
+        "Year": 2008,
+        "Articles": 23.8
+      },
+      {
+        "Year": 2009,
+        "Articles": 26.4
+      },
+      {
+        "Year": 2010,
+        "Articles": 29.9
+      },
+      {
+        "Year": 2011,
+        "Articles": 33.15
+      },
+      {
+        "Year": 2012,
+        "Articles": 36.7
+      },
+      {
+        "Year": 2013,
+        "Articles": 40
+      },
+      {
+        "Year": 2014,
+        "Articles": 43.8
+      },
+      {
+        "Year": 2015,
+        "Articles": 48.05
+      },
+      {
+        "Year": 2016,
+        "Articles": 50.95
+      },
+      {
+        "Year": 2017,
+        "Articles": 54.7
+      },
+      {
+        "Year": 2018,
+        "Articles": 58.4
+      },
+      {
+        "Year": 2019,
+        "Articles": 62.85
+      },
+      {
+        "Year": 2020,
+        "Articles": 67
+      },
+      {
+        "Year": 2021,
+        "Articles": 70.6
+      },
+      {
+        "Year": 2022,
+        "Articles": 74.95
+      },
+      {
+        "Year": 2023,
+        "Articles": 78.8
+      }
+    ]
+  ],
+  "moving_averages_window_size": [5, 10, 20]
+}
